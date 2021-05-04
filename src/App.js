@@ -11,7 +11,6 @@ import AutomatedTrading from "./screens/AutomatedTrading";
 import Enthuasists from "./screens/Enthuasists";
 import ExchangeDashboard from "./screens/ExchangeDashboard";
 import Knowledge from "./screens/Knowledge";
-import Landing from "./screens/Landing";
 import Pricing from "./screens/Pricing";
 import RulesDashboard from "./screens/RulesDashboard";
 import SettingDashboard from "./screens/SettingDashboard";

@@ -1,55 +1,56 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 const Sidebar = () => {
   return (
     <div className="s-layout__sidebar">
-      <a className="s-sidebar__trigger" href="#0">
+      <Link to='/' className="s-sidebar__trigger" >
         <i className="fa fa-bars"></i>
-      </a>
+      </Link>
       <nav className="s-sidebar__nav">
         <ul>
           <li>
-            <a href="">
+            <Link to='/'>
               <img src="files/images/knowledgepage/header-logo.svg" alt="" />
-            </a>
+            </Link>
           </li>
           <li>
-            <a className="s-sidebar__nav-link" href="#0">
+            <Link to='/rule-dsh' className="s-sidebar__nav-link" >
               {" "}
               <i className="fab fa-stumbleupon-circle"></i>
               <span>Rules</span>{" "}
-            </a>
+            </Link>
           </li>
           <li>
-            <a className="s-sidebar__nav-link" href="#0">
+            <Link to='/exchange-dsh' className="s-sidebar__nav-link" >
               {" "}
               <i className="fas fa-exchange-alt"></i>
               <span>Exchange</span>{" "}
-            </a>
+            </Link>
           </li>
           <li>
-            <a className="s-sidebar__nav-link" href="#0">
+            <Link to='/setting-dsh' className="s-sidebar__nav-link" >
               {" "}
               <i className="fas fa-cog"></i>
               <span>Settings</span>{" "}
-            </a>
+            </Link>
           </li>
         </ul>
         <div className="row sidebar-button">
           <div className="offset-2 col-8">
-            <a href="" className="btn d-block">
+            <Link to='/' className="btn d-block">
               Get plans
-            </a>
+            </Link>
           </div>
           <div className="offset-2 col-8">
-            <a href="" className="btn d-block">
+            <Link to='/' className="btn d-block">
               Help Center
-            </a>
+            </Link>
           </div>
           <div className="offset-3 col-6 mt-2 pl-4">
-            <a href="" className="logout">
+            <Link to='/' className="logout">
               <i className="fas fa-sign-out-alt mr-1"></i>Logout
-            </a>
+            </Link>
           </div>
         </div>
       </nav>
