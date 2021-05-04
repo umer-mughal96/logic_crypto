@@ -1,7 +1,15 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import { useDispatch, useSelector } from "react-redux";
+import { userLogout } from "../actions/auth/auth";
+import {withRouter} from 'react-router-dom'
 
-const Sidebar = () => {
+
+const Sidebar = withRouter(({history}) => {
+
+
+  const dispatch = useDispatch();
+  const { loading , user} = useSelector((s) => s.Auth);
   return (
     <div className="s-layout__sidebar">
       <Link to='/' className="s-sidebar__trigger" >
@@ -48,14 +56,13 @@ const Sidebar = () => {
             </Link>
           </div>
           <div className="offset-3 col-6 mt-2 pl-4">
-            <Link to='/' className="logout">
-              <i className="fas fa-sign-out-alt mr-1"></i>Logout
-            </Link>
+              <i className="fas fa-sign-out-alt mr-1" onClick={() => dispatch(userLogout(history))}></i>Logout
+           
           </div>
         </div>
       </nav>
     </div>
   );
-};
+});
 
 export default Sidebar;

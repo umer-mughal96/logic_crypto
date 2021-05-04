@@ -42,20 +42,21 @@ export const userSignUp = (data , history) => async (dispatch) => {
     }
   };
   
-//   // LOGOUT_USER
+
   
-//   export const userLogout = () => async (dispatch) => {
-//     try {
-//       localStorage.removeItem('user');
-//       dispatch({ type: constants.LOGOUT_SUCCESSFULLY });
-//       dispatch({ type: constants.RESET_AUTH_STATE });
-//     } catch (err) {
-//       console.log('🚀 ~ file: auth.js ~ line 63 ~ userLogout ~ err', err);
-//       dispatch({
-//         type: constants.ERROR,
-//       });
-//     }
-//   };
+  export const userLogout = (history) => async (dispatch) => {
+    try {
+      localStorage.removeItem('user');
+      dispatch({ type: constants.LOGOUT_SUCCESSFULLY });
+      dispatch({ type: constants.RESET_AUTH_STATE });
+      history.push('/')
+    } catch (err) {
+      console.log('🚀 ~ file: auth.js ~ line 63 ~ userLogout ~ err', err);
+      dispatch({
+        type: constants.ERROR,
+      });
+    }
+  };
   
 //   // LOGOUT_USER
   
