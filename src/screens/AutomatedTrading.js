@@ -264,7 +264,7 @@ const AutomatedTrading = () => {
               action=""
               method="GET"
               id="update-form"
-              style="position: relative;"
+              style={{position : 'relative'}}
             >
               <input
                 className="form-control my-0 py-1 amber-border"
@@ -452,7 +452,7 @@ const AutomatedTrading = () => {
               action=""
               method="GET"
               id="update-form"
-              style="position: relative;"
+              style={{position : 'relative'}}
             >
               <input
                 className="form-control my-0 py-1 amber-border"
