@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import { errorNotification } from "../utils/notification";
 import {useDispatch , useSelector} from 'react-redux'
@@ -16,8 +16,7 @@ const Signup = ({history}) => {
   });
 
   const dispatch = useDispatch()
-  const user = useSelector((s) => s.Auth)
-  console.log("🚀 ~ file: Signup.js ~ line 19 ~ Signup ~ user", user)
+  const {loading , user} = useSelector((s) => s.Auth)
 
   const { firstName, lastName, email, password, confirmPassword } = formData;
 
@@ -56,6 +55,12 @@ const Signup = ({history}) => {
     dispatch(userSignUp(formData,history))
 
   }
+
+  useEffect(() => {
+    if(user){
+      history.push('/setting-dsh')
+    }
+  },[])
 
   return (
     <div className="container-fluid">
@@ -120,7 +125,7 @@ const Signup = ({history}) => {
             </div>
             <div className="sign-in-up">
               <div className="sign-in">
-                <button href="#" type="submit" className="btn" onClick={(e) => onSignupHandler(e)}>
+                <button  disabled={loading} className="btn" onClick={(e) => onSignupHandler(e)}>
                   Sign up
                 </button>
                 <span className="sign-up">

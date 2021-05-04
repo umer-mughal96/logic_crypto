@@ -3,37 +3,37 @@ import React from "react";
 const Footer = () => {
   return (
     <footer id="footer">
-      <div class="footer-top">
-        <div class="container ad-container">
-          <div class="row">
-            <div class="col-md-12">
-              <div class="row">
+      <div className="footer-top">
+        <div className="container ad-container">
+          <div className="row">
+            <div className="col-md-12">
+              <div className="row">
                 <div
-                  class="col-lg-3 col-md-3 col-sm-6 footer-contact"
+                  className="col-lg-3 col-md-3 col-sm-6 footer-contact"
                   data-aos="fade-up"
                   data-aos-duration="700"
                   data-aos-easing="linear"
                 >
-                  <div class="ml-2 footer-image">
+                  <div className="ml-2 footer-image">
                     <img
                       src="files/images/knowledgepage/footer-logo.svg"
                       alt=""
                     />
                   </div>
-                  <div class="social-links mt-3">
-                    <a href="#" class="facebook">
-                      <i class="fab fa-facebook-square"></i>
+                  <div className="social-links mt-3">
+                    <a href="#" className="facebook">
+                      <i className="fab fa-facebook-square"></i>
                     </a>
-                    <a href="#" class="twitter">
-                      <i class="fab fa-twitter-square"></i>
+                    <a href="#" className="twitter">
+                      <i className="fab fa-twitter-square"></i>
                     </a>
-                    <a href="#" class="instagram">
-                      <i class="fab fa-instagram"></i>
+                    <a href="#" className="instagram">
+                      <i className="fab fa-instagram"></i>
                     </a>
                   </div>
                 </div>
                 <div
-                  class="col-lg-3 col-md-3 col-sm-6 footer-links"
+                  className="col-lg-3 col-md-3 col-sm-6 footer-links"
                   data-aos="fade-down"
                   data-aos-duration="700"
                   data-aos-easing="linear"
@@ -55,7 +55,7 @@ const Footer = () => {
                   </ul>
                 </div>
                 <div
-                  class="col-lg-3 col-md-3 col-sm-6 footer-links"
+                  className="col-lg-3 col-md-3 col-sm-6 footer-links"
                   data-aos="fade-up"
                   data-aos-duration="700"
                   data-aos-easing="linear"
@@ -74,7 +74,7 @@ const Footer = () => {
                   </ul>
                 </div>
                 <div
-                  class="col-lg-3 col-md-3 col-sm-6 footer-links"
+                  className="col-lg-3 col-md-3 col-sm-6 footer-links"
                   data-aos="fade-down"
                   data-aos-duration="700"
                   data-aos-easing="linear"
@@ -100,7 +100,7 @@ const Footer = () => {
           </div>
         </div>
       </div>
-      <div class="footercopy-right">
+      <div className="footercopy-right">
         <p>All rights reserved 2021</p>
       </div>
     </footer>
