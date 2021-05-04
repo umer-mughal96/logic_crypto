@@ -18,6 +18,8 @@ import SettingDashboard from "./screens/SettingDashboard";
 import Signin from "./screens/Signin";
 import Signup from "./screens/Signup";
 import axios from "axios";
+import Categories from "./screens/Categories";
+import Invest from "./screens/Invest";
 
 const App = () => {
   axios.defaults.baseURL = "http://localhost:3001/logiccrypto/api/v1";
@@ -35,6 +37,8 @@ const App = () => {
           <Route path="/pricing" component={Pricing} />
           <Route path="/knowledge" component={Knowledge} />
           <Route path="/enth" component={Enthuasists} />
+          <Route path="/categories" component={Categories} />
+          <Route path="/invest" component={Invest} />
         </Switch>
         <Footer />
       </Router>

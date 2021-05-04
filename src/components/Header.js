@@ -16,8 +16,8 @@ const Header = () => {
                                 <div class="navbar-nav ml-auto ad-navbar">
                                     <Link class="nav-item nav-link active" to='/enth'>About<span class="sr-only">(current)</span></Link>
                                     <Link class="nav-item nav-link" to='/pricing'>Pricing</Link>
-                                    <Link class="nav-item nav-link" to='/'>Learn</Link>
-                                    <Link class="nav-item nav-link" to='/'>Invest</Link>
+                                    <Link class="nav-item nav-link" to='/categories'>Learn</Link>
+                                    <Link class="nav-item nav-link" to='/invest'>Invest</Link>
                                     <Link class="nav-item nav-link" to='/'>Sign in</Link>
                                     <Link class="nav-item nav-link sign-up" to='/'>Free class*</Link>
                                 </div>
