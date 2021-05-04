@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="393" height="293" viewBox="0 0 393 293">
+  <defs>
+    <filter id="Rectangle_21" x="0" y="0" width="393" height="293" filterUnits="userSpaceOnUse">
+      <feOffset dy="3" input="SourceAlpha"/>
+      <feGaussianBlur stdDeviation="3" result="blur"/>
+      <feFlood flood-opacity="0.161"/>
+      <feComposite operator="in" in2="blur"/>
+      <feComposite in="SourceGraphic"/>
+    </filter>
+  </defs>
+  <g id="Group_101" data-name="Group 101" transform="translate(-116 -2636)">
+    <g id="Group_28" data-name="Group 28" transform="translate(125.039 2642)">
+      <g transform="matrix(1, 0, 0, 1, -9.04, -6)" filter="url(#Rectangle_21)">
+        <rect id="Rectangle_21-2" data-name="Rectangle 21" width="375" height="275" rx="20" transform="translate(9 6)" fill="#fff"/>
+      </g>
+      <text id="Project" transform="translate(16.961 26)" font-size="18" font-family="Poppins-Regular, Poppins"><tspan x="0" y="19">Project</tspan></text>
+      <text id="Single_coin" data-name="Single coin" transform="translate(248.961 229)" font-size="18" font-family="Poppins-Regular, Poppins"><tspan x="0" y="19">Single coin</tspan></text>
+      <text id="Stop_Loss" data-name="Stop Loss" transform="translate(16.961 54)" fill="#25317c" font-size="24" font-family="Poppins-Bold, Poppins" font-weight="700"><tspan x="0" y="25">Stop Loss</tspan></text>
+      <text id="Set_custom_automated_trades_and_never_miss_a_rally_or_get_caught_in_a_dip._Coinrule_obsessively_seeks_out_effective_market_indicators_to_enable_smart_allocation_of_funds_while_putting_you_in_control_of_your_trading_machine." data-name="Set custom automated trades and never miss a rally or get caught in a dip. Coinrule obsessively seeks out effective market indicators to enable smart allocation of funds while putting you in control of your trading machine." transform="translate(16.961 101)" font-size="12" font-family="Poppins-Regular, Poppins"><tspan x="0" y="13">Set custom automated trades and never miss a rally or </tspan><tspan x="0" y="31">get caught in a dip. Coinrule obsessively seeks out </tspan><tspan x="0" y="49">effective market indicators to enable smart allocation of </tspan><tspan x="0" y="67">funds while putting you in control of your trading </tspan></text>
+      <line id="Line_20" data-name="Line 20" x2="375" transform="translate(0.5 207.5)" fill="none" stroke="#707070" stroke-width="1"/>
+      <path id="Path_2" data-name="Path 2" d="M67.657,2841.424l21.1-8.549,4.966,4.274,21.932-8.877,17.38,2.959,15.311-2.959,11.587-4.932,8.69-6.247,9.1,24.331,9.518-31.236,23.835,10.06" transform="translate(-45.679 -2588.689)" fill="none" stroke="#1d2761" stroke-linecap="round" stroke-linejoin="round" stroke-width="4"/>
+    </g>
+  </g>
+</svg>
