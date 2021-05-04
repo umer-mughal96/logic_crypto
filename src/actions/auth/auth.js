@@ -11,6 +11,7 @@ export const userSignUp = (data , history) => async (dispatch) => {
       dispatch({ type: constants.SIGNUP_SUCCESS });
       successNotification(res.data.msg);
       dispatch({type : constants.RESET_AUTH_STATE})
+      history.push('/signin')
     } catch (err) {
       err.response?.data?.msg
         ? infoNotification(err.response?.data?.msg)
@@ -19,31 +20,27 @@ export const userSignUp = (data , history) => async (dispatch) => {
     }
   };
   
-  //SIGNIN_USER
+//   SIGNIN_USER
   
-//   export const userSignin = (history, data) => async (dispatch) => {
-//     try {
-//       dispatch({ type: constants.SET_LOADING });
-//       const res = await services.signInUser(data);
-//       dispatch({ type: constants.SIGN_IN_SUCCESS, payload: res.data });
-//       localStorage.setItem('user', JSON.stringify(res.data));
-//       successNotification('Successfully login');
-//       if (res.data.loginUser.role == 'creator') {
-//         history.push('/profile');
-//       } else {
-//         history.push('/');
-//       }
-//     } catch (err) {
-//       err.response?.data?.msg
-//         ? errorNotification(err.response?.data?.msg)
-//         : err.response?.data?.error?.map((err) => errorNotification(err.msg));
-//       dispatch({
-//         type: constants.SIGN_IN_FAIL,
-//         payload: err?.response.data.error ? err?.response.data.error : err?.response.data.msg ,
-//       });
-//       dispatch({type : constants.RESET_AUTH_STATE})
-//     }
-//   };
+  export const userSignin = (history, data) => async (dispatch) => {
+    try {
+      dispatch({ type: constants.SET_LOADING });
+      const res = await services.signInUser(data);
+      dispatch({ type: constants.SIGN_IN_SUCCESS, payload: res.data });
+      localStorage.setItem('user', JSON.stringify(res.data));
+      successNotification('Successfully login');
+     history.push('/setting-dsh')
+    } catch (err) {
+      err.response?.data?.msg
+        ? errorNotification(err.response?.data?.msg)
+        : err.response?.data?.error?.map((err) => errorNotification(err.msg));
+      dispatch({
+        type: constants.SIGN_IN_FAIL,
+        payload: err?.response.data.error ? err?.response.data.error : err?.response.data.msg ,
+      });
+      dispatch({type : constants.RESET_AUTH_STATE})
+    }
+  };
   
 //   // LOGOUT_USER
   

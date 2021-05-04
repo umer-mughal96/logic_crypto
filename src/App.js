@@ -26,7 +26,7 @@ const App = () => {
       <Router>
         <Header/>
         <Switch>
-          <Route exact path='/' component={Landing} />
+          <Route exact path='/' component={Signin} />
           <Route path='/signup' component={Signup} />
           <Route path='/signin' component={Signin} />
           <Route path='/setting-dsh' component={SettingDashboard} />
