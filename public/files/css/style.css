@@ -239,7 +239,7 @@ a.nav-item.nav-link.sign-up:hover,
     top: 0;
     right: 0px;
     background: var(--black-color);
-     color: var(--white-color)
+     color: var(--white-color);
     border-radius: 50px;
     padding: 9px 30px;
 }
@@ -1014,7 +1014,6 @@ section.roadmap .milestones span {
     background: var(--white-color);
     color: var(--dark-blue);
 }
-
 .s-sidebar__nav-link > i {
     position: absolute;
     top: 0;
