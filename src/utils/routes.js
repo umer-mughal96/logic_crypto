@@ -16,7 +16,6 @@ import Invest from "../screens/Invest";
 import AuthenticatedRoute from "../routes/AuthenticatedRoute";
 
 const Routes = withRouter(({ location }) => {
-  console.log("🚀 ~ file: routes.js ~ line 25 ~ Routes ~ location", location);
   return (
     <Fragment>
       {location.pathname == "/setting-dsh" ||
