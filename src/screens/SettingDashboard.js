@@ -1,4 +1,5 @@
 import React from "react";
+import Carousel from "../components/Carousel";
 import Sidebar from "../components/Sidebar";
 
 const SettingDashboard = () => {
@@ -7,12 +8,13 @@ const SettingDashboard = () => {
       <div className="row">
         <div className="col-md-12 p-0">
           <div className="s-layout">
-           <Sidebar/>
+            <Sidebar />
             <main className="s-layout__content">
               <div className="container-fluid">
                 <div className="row exchange">
                   <div className="col-md-12">
                     <h2>Settings</h2>
+                    <Carousel />
                     <ul
                       className="nav nav-pills mb-3"
                       id="crypto-tab"
@@ -415,7 +417,7 @@ const SettingDashboard = () => {
                               <h6>Take Your Trading To The Next Level</h6>
                               <p>Your current plan is Starter</p>
                             </div>
-                            <div className="col-md-4 col-xl-3 col-lg-4 col-sm-6 mb-3" >
+                            <div className="col-md-4 col-xl-3 col-lg-4 col-sm-6 mb-3">
                               <div className="hobbyist-plan">
                                 <h5>
                                   Hobbyist
