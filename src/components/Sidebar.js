@@ -1,19 +1,32 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import { userLogout } from "../actions/auth/auth";
 import { withRouter } from "react-router-dom";
 
-const Sidebar = withRouter(({ history }) => {
+const Sidebar = withRouter(({ history, location }) => {
   const dispatch = useDispatch();
   const { loading, user } = useSelector((s) => s.Auth);
   const [active, setActive] = useState("");
+  console.log("🚀 ~ file: Sidebar.js ~ line 11 ~ Sidebar ~ active", active);
+
+  useEffect(() => {
+    if (location.pathname == "/rule-dsh") {
+      setActive("Rules");
+    }
+    if (location.pathname == "/exchange-dsh") {
+      setActive("Exchange");
+    }
+    if (location.pathname == "/setting-dsh") {
+      setActive("Settings");
+    }
+  }, [location.pathname]);
 
   return (
     <div className="s-layout__sidebar">
-      <Link to="/" className="s-sidebar__trigger">
+      <div className="s-sidebar__trigger">
         <i className="fa fa-bars"></i>
-      </Link>
+      </div>
       <nav className="s-sidebar__nav">
         <ul>
           <li>
@@ -22,49 +35,46 @@ const Sidebar = withRouter(({ history }) => {
             </Link>
           </li>
           <li>
-            <Link
-              to="/rule-dsh"
+            <div
               className={
-                active == "Rules"
-                  ? "s-sidebar__nav-link active"
-                  : "s-sidebar__nav-link"
+                active == "Rules" ? "sidebar-active" : "s-sidebar__nav-link"
               }
-              onClick={(e) => setActive("Rules")}
+              onClick={(e) => {
+                history.push("/rule-dsh");
+              }}
             >
               {" "}
               <i className="fab fa-stumbleupon-circle"></i>
               <span>Rules</span>{" "}
-            </Link>
+            </div>
           </li>
           <li>
-            <Link
-              to="/exchange-dsh"
+            <div
               className={
-                active == "Exchange"
-                  ? "s-sidebar__nav-link active"
-                  : "s-sidebar__nav-link"
+                active == "Exchange" ? "sidebar-active" : "s-sidebar__nav-link"
               }
-              onClick={(e) => setActive("Exchange")}
+              onClick={(e) => {
+                history.push("/exchange-dsh");
+              }}
             >
               {" "}
               <i className="fas fa-exchange-alt"></i>
               <span>Exchange</span>{" "}
-            </Link>
+            </div>
           </li>
           <li>
-            <Link
-              to="/setting-dsh"
+            <div
               className={
-                active == "Settings"
-                  ? "s-sidebar__nav-link active"
-                  : "s-sidebar__nav-link"
+                active == "Settings" ? "sidebar-active" : "s-sidebar__nav-link"
               }
-              onClick={(e) => setActive("Settings")}
+              onClick={(e) => {
+                history.push("/setting-dsh");
+              }}
             >
               {" "}
               <i className="fas fa-cog"></i>
               <span>Settings</span>{" "}
-            </Link>
+            </div>
           </li>
         </ul>
         <div className="row sidebar-button">

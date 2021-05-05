@@ -1012,7 +1012,30 @@ section.roadmap .milestones span {
 
 .s-sidebar__nav-link:hover {
     background: var(--white-color);
-    color: var(--dark-blue);
+    color: #222d71 !important;
+}
+
+.sidebar-active{
+    position: relative;
+    display: inline-block;
+    width: 100%;
+    height: 3em;
+    background: #fff;
+    color: #222d71;
+}
+.sidebar-active span{
+    position: absolute;
+    top: 50%;
+    left: 4em;
+    transform: translateY(-50%);
+}
+.sidebar-active > i{
+    position: absolute;
+    top: 15px;
+    left: 23px;
+    display: inline-block;
+    width: 4em;
+    height: 3em;
 }
 .s-sidebar__nav-link > i {
     position: absolute;
@@ -1628,4 +1651,8 @@ i.red-alert {
     .range-filters output#nums {
         top: 70px;
     }
+
+   
 }
+
+
