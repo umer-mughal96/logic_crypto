@@ -1,11 +1,5 @@
-
-import React, { Fragment } from 'react'
-import {
-  BrowserRouter as Router,
-  Switch,
-  Route,
-  withRouter,
-} from "react-router-dom";
+import React, { Fragment } from "react";
+import { Switch, Route, withRouter } from "react-router-dom";
 import Footer from "../components/Footer";
 import Header from "../components/Header";
 import AutomatedTrading from "../screens/AutomatedTrading";
@@ -19,31 +13,40 @@ import Signin from "../screens/Signin";
 import Signup from "../screens/Signup";
 import Categories from "../screens/Categories";
 import Invest from "../screens/Invest";
-import AuthenticatedRoute from '../routes/AuthenticatedRoute';
+import AuthenticatedRoute from "../routes/AuthenticatedRoute";
 
-const Routes = () => {
+const Routes = withRouter(({ location }) => {
+  console.log("🚀 ~ file: routes.js ~ line 25 ~ Routes ~ location", location);
   return (
     <Fragment>
-        <Router>
+      {location.pathname == "/setting-dsh" ||
+      location.pathname == "/rule-dsh" ||
+      location.pathname == "/exchange-dsh" ? null : (
         <Header />
-        <Switch>
-          <Route exact path="/" component={AutomatedTrading} />
-          <Route path="/signup" component={Signup} />
-          <Route path="/signin" component={Signin} />
-          <AuthenticatedRoute path="/setting-dsh" component={SettingDashboard} />
-          <AuthenticatedRoute path="/rule-dsh" component={RulesDashboard} />
-          <AuthenticatedRoute path="/exchange-dsh" component={ExchangeDashboard} />
-          <Route path="/pricing" component={Pricing} />
-          <Route path="/knowledge" component={Knowledge} />
-          <Route path="/enth" component={Enthuasists} />
-          <Route path="/categories" component={Categories} />
-          <Route path="/invest" component={Invest} />
-        </Switch>
+      )}
+      <Switch>
+        <Route exact path="/" component={AutomatedTrading} />
+        <Route path="/signup" component={Signup} />
+        <Route path="/signin" component={Signin} />
+        <AuthenticatedRoute path="/setting-dsh" component={SettingDashboard} />
+        <AuthenticatedRoute path="/rule-dsh" component={RulesDashboard} />
+        <AuthenticatedRoute
+          path="/exchange-dsh"
+          component={ExchangeDashboard}
+        />
+        <Route path="/pricing" component={Pricing} />
+        <Route path="/knowledge" component={Knowledge} />
+        <Route path="/enth" component={Enthuasists} />
+        <Route path="/categories" component={Categories} />
+        <Route path="/invest" component={Invest} />
+      </Switch>
+      {location.pathname == "/setting-dsh" ||
+      location.pathname == "/rule-dsh" ||
+      location.pathname == "/exchange-dsh" ? null : (
         <Footer />
-      </Router>
+      )}
     </Fragment>
-  )
-}
+  );
+});
 
-export default Routes
-
+export default Routes;
