@@ -1,4 +1,5 @@
 import React from "react";
+import Carousel from "../components/Carousel";
 
 const Enthuasists = () => {
   return (
@@ -14,10 +15,10 @@ const Enthuasists = () => {
                 able to fight back hedge funds and automated bots
               </p>
               <a href="#" className="facebook">
-                <i className="fab fa-facebook-square"></i>
+                <i className="fab fa-facebook-square mr-1"></i>
               </a>
               <a href="#" className="twitter">
-                <i className="fab fa-twitter-square"></i>
+                <i className="fab fa-twitter-square mr-1"></i>
               </a>
               <a href="#" className="instagram">
                 <i className="fab fa-instagram"></i>
@@ -42,7 +43,8 @@ const Enthuasists = () => {
               "We are a team of blockchain and crypto enthusiasts who found that
               trading crypto currencies is unnecessarily complicated"
             </h2>
-            <div className="loop owl-carousel owl-theme">
+            <Carousel/>
+            {/* <div className="loop owl-carousel owl-theme">
               <div className="item">
                 <div className="team-box enthusiasts">
                   <div className="team-image enthusiasts">
@@ -147,7 +149,8 @@ const Enthuasists = () => {
                   </div>
                 </div>
               </div>
-            </div>
+            </div> */}
+
             <h2>
               We’ve had the pleasure of working with over 10+ amazing crypto
               partners for our public alpha, including

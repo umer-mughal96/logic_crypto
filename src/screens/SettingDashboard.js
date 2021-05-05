@@ -14,7 +14,6 @@ const SettingDashboard = () => {
                 <div className="row exchange">
                   <div className="col-md-12">
                     <h2>Settings</h2>
-                    <Carousel />
                     <ul
                       className="nav nav-pills mb-3"
                       id="crypto-tab"

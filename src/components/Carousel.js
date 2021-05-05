@@ -8,43 +8,137 @@ import "owl.carousel/dist/assets/owl.theme.default.css";
 
 const Carousel = () => {
   return (
-    <OwlCarousel center={true} className="owl-theme" loop margin={10} nav>
-      <div class="item">
-        <h4>1</h4>
-      </div>
-      <div class="item">
-        <h4>2</h4>
-      </div>
-      <div class="item">
-        <h4>3</h4>
-      </div>
-      <div class="item">
-        <h4>4</h4>
-      </div>
-      <div class="item">
-        <h4>5</h4>
-      </div>
-      <div class="item">
-        <h4>6</h4>
-      </div>
-      <div class="item">
-        <h4>7</h4>
-      </div>
-      <div class="item">
-        <h4>8</h4>
-      </div>
-      <div class="item">
-        <h4>9</h4>
-      </div>
-      <div class="item">
-        <h4>10</h4>
-      </div>
-      <div class="item">
-        <h4>11</h4>
-      </div>
-      <div class="item">
-        <h4>12</h4>
-      </div>
+    <OwlCarousel className="owl-theme" loop margin={10} nav>
+     <div className="item">
+                <div className="team-box enthusiasts">
+                  <div className="team-image enthusiasts">
+                    <img src="files/images/automated/theater.jpg" alt="" />
+                  </div>
+                  <div className="team-details enthusiasts">
+                    <h6>Gabriele Musella</h6>
+                    <p>CEO, Product</p>
+                    <a href="#" className="facebook">
+                      <i className="fab fa-facebook-square mr-1"></i>
+                    </a>
+                    <a href="#" className="twitter">
+                      <i className="fab fa-twitter-square"></i>
+                    </a>
+                    <p>
+                      By adding liquidity to previously illiquid asset classNamees
+                      such as early-stage tech companies, but also to sectors
+                      such as supply-chains, real estate and many more,
+                      cryptocurrency trading has enabled an immense process of
+                      wealth creation. While speculation might occasionally be
+                      seen critically, it’s role in asset price discovery is
+                      critical for any market and ultimately
+                    </p>
+                  </div>
+                </div>
+              </div>
+              <div className="item">
+                <div className="team-box enthusiasts">
+                  <div className="team-image enthusiasts">
+                    <img src="files/images/automated/theater.jpg" alt="" />
+                  </div>
+                  <div className="team-details enthusiasts">
+                    <h6>Gabriele Musella</h6>
+                    <p>CEO, Product</p>
+                    <a href="#" className="facebook">
+                      <i className="fab fa-facebook-square mr-1"></i>
+                    </a>
+                    <a href="#" className="twitter">
+                      <i className="fab fa-twitter-square"></i>
+                    </a>
+                    <p>
+                      By adding liquidity to previously illiquid asset classNamees
+                      such as early-stage tech companies, but also to sectors
+                      such as supply-chains, real estate and many more,
+                      cryptocurrency trading has enabled an immense process of
+                      wealth creation. While speculation might occasionally be
+                      seen critically, it’s role in asset price discovery is
+                      critical for any market and ultimately
+                    </p>
+                  </div>
+                </div>
+              </div>
+              <div className="item">
+                <div className="team-box enthusiasts">
+                  <div className="team-image enthusiasts">
+                    <img src="files/images/automated/theater.jpg" alt="" />
+                  </div>
+                  <div className="team-details enthusiasts">
+                    <h6>Gabriele Musella</h6>
+                    <p>CEO, Product</p>
+                    <a href="#" className="facebook">
+                      <i className="fab fa-facebook-square mr-1"></i>
+                    </a>
+                    <a href="#" className="twitter">
+                      <i className="fab fa-twitter-square"></i>
+                    </a>
+                    <p>
+                      By adding liquidity to previously illiquid asset classNamees
+                      such as early-stage tech companies, but also to sectors
+                      such as supply-chains, real estate and many more,
+                      cryptocurrency trading has enabled an immense process of
+                      wealth creation. While speculation might occasionally be
+                      seen critically, it’s role in asset price discovery is
+                      critical for any market and ultimately
+                    </p>
+                  </div>
+                </div>
+              </div>
+              <div className="item">
+                <div className="team-box enthusiasts">
+                  <div className="team-image enthusiasts">
+                    <img src="files/images/automated/theater.jpg" alt="" />
+                  </div>
+                  <div className="team-details enthusiasts">
+                    <h6>Gabriele Musella</h6>
+                    <p>CEO, Product</p>
+                    <a href="#" className="facebook">
+                      <i className="fab fa-facebook-square mr-1"></i>
+                    </a>
+                    <a href="#" className="twitter">
+                      <i className="fab fa-twitter-square"></i>
+                    </a>
+                    <p>
+                      By adding liquidity to previously illiquid asset classNamees
+                      such as early-stage tech companies, but also to sectors
+                      such as supply-chains, real estate and many more,
+                      cryptocurrency trading has enabled an immense process of
+                      wealth creation. While speculation might occasionally be
+                      seen critically, it’s role in asset price discovery is
+                      critical for any market and ultimately
+                    </p>
+                  </div>
+                </div>
+              </div>
+              <div className="item">
+                <div className="team-box enthusiasts">
+                  <div className="team-image enthusiasts">
+                    <img src="files/images/automated/theater.jpg" alt="" />
+                  </div>
+                  <div className="team-details enthusiasts">
+                    <h6>Gabriele Musella</h6>
+                    <p>CEO, Product</p>
+                    <a href="#" className="facebook">
+                      <i className="fab fa-facebook-square mr-1"></i>
+                    </a>
+                    <a href="#" className="twitter">
+                      <i className="fab fa-twitter-square"></i>
+                    </a>
+                    <p>
+                      By adding liquidity to previously illiquid asset classNamees
+                      such as early-stage tech companies, but also to sectors
+                      such as supply-chains, real estate and many more,
+                      cryptocurrency trading has enabled an immense process of
+                      wealth creation. While speculation might occasionally be
+                      seen critically, it’s role in asset price discovery is
+                      critical for any market and ultimately
+                    </p>
+                  </div>
+                </div>
+              </div>
     </OwlCarousel>
   );
 };
