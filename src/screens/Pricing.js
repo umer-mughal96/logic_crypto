@@ -1,4 +1,5 @@
 import React from "react";
+import Carousel from "../components/Carousel";
 
 const Pricing = () => {
   return (
@@ -12,7 +13,7 @@ const Pricing = () => {
               and set them up to run automatically on your favourite exchange.
             </p>
           </div>
-          <div className="col-md-4 col-xl-3 col-lg-4 col-sm-6">
+          <div className="col-md-4 col-xl-3 col-lg-4 col-sm-6 mb-3">
             <div className="hobbyist-plan starter-plan">
               <h5>
                 Starter
@@ -33,7 +34,7 @@ const Pricing = () => {
               </div>
             </div>
           </div>
-          <div className="col-md-4 col-xl-3 col-lg-4 col-sm-6">
+          <div className="col-md-4 col-xl-3 col-lg-4 col-sm-6 mb-3">
             <div className="hobbyist-plan">
               <h5>
                 Hobbyist
@@ -60,7 +61,7 @@ const Pricing = () => {
               </div>
             </div>
           </div>
-          <div className="col-md-4 col-xl-3 col-lg-4 col-sm-6">
+          <div className="col-md-4 col-xl-3 col-lg-4 col-sm-6 mb-3">
             <div className="hobbyist-plan trader-plan">
               <h5>
                 Trader Plan
@@ -87,7 +88,7 @@ const Pricing = () => {
               </div>
             </div>
           </div>
-          <div className="col-md-4 col-xl-3 col-lg-4 col-sm-6">
+          <div className="col-md-4 col-xl-3 col-lg-4 col-sm-6 mb-3">
             <div className="hobbyist-plan pro-plan">
               <h5>
                 Pro Plan
@@ -167,7 +168,8 @@ const Pricing = () => {
       <div className="container-fluid">
         <div className="row">
           <div className="col-md-12 p-0 enthusiasts mt-5">
-            <div className="loop owl-carousel owl-theme">
+          <Carousel/>
+            {/* <div className="loop owl-carousel owl-theme">
               <div className="item">
                 <div className="team-box enthusiasts">
                   <div className="team-image enthusiasts">
@@ -272,7 +274,7 @@ const Pricing = () => {
                   </div>
                 </div>
               </div>
-            </div>
+            </div> */}
           </div>
         </div>
       </div>

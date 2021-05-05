@@ -100,7 +100,7 @@ const SettingDashboard = () => {
                                 </div>
                               </form>
                             </div>
-                            <div className="col-md-6 setting-spacing">
+                            <div className="col-md-6 setting-spacing mb-3">
                               <div className="account-form">
                                 <h6>Recommended Exchange</h6>
                                 <p>Signup for a free additional wallet:</p>
@@ -254,7 +254,7 @@ const SettingDashboard = () => {
                               <div className="outer-box">
                                 <h6 className="mb-3">
                                   Via Text <span>Only for Pro Plans</span>
-                                  <a href=""> See Plans ></a>
+                                  <a href=""> See Plans </a>
                                 </h6>
                                 <div className="row">
                                   <div className="col-md-6">
@@ -392,7 +392,7 @@ const SettingDashboard = () => {
                                 </div>
                               </form>
                             </div>
-                            <div className="col-md-6 setting-spacing">
+                            <div className="col-md-6 setting-spacing mb-3">
                               <form className="account-form" action="">
                                 <h6>Reset P&L</h6>
                                 <p>Reset calculation of Profit and Loss:</p>

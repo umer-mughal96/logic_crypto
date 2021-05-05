@@ -1,4 +1,5 @@
-import React from 'react'
+import React from 'react';
+import Carousel from "../components/Carousel";
 
 const Invest = () => {
     return (
@@ -162,7 +163,8 @@ const Invest = () => {
 <div class="container-fluid">
     <div class="row">
         <div class="col-md-12 p-0 enthusiasts">
-            <div class="loop owl-carousel owl-theme">
+        <Carousel/>
+            {/* <div class="loop owl-carousel owl-theme">
                 <div class="item">
                     <div class="team-box enthusiasts">
                         <div class="team-image enthusiasts">
@@ -231,13 +233,13 @@ const Invest = () => {
                         </div>
                     </div>
                 </div>
-            </div>
+            </div> */}
         </div>
     </div>
 </div>
 <div class="container-fluid">
     <div class="row terms">
-        <div class="col-md-4">
+        <div class="col-md-4 mb-3">
             <div class="key-term">
                 <h2>Key Terms</h2>
                 <ul>
@@ -253,7 +255,7 @@ const Invest = () => {
                 </ul>
             </div>
         </div>
-        <div class="col-md-4">
+        <div class="col-md-4 mb-3">
             <div class="key-term">
                 <h2>Use of Funds</h2>
                 <ul>
@@ -278,7 +280,7 @@ const Invest = () => {
                 </ul>
             </div>
         </div>
-        <div class="col-md-4">
+        <div class="col-md-4 mb-3">
             <div class="key-term">
                 <h2>SEIS Approved</h2>
                 <ul>

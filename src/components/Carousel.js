@@ -8,7 +8,7 @@ import "owl.carousel/dist/assets/owl.theme.default.css";
 
 const Carousel = () => {
   return (
-    <OwlCarousel center={true}  items={2} className="owl-theme" loop margin={10} nav>
+    <OwlCarousel center={true} nav={false} items={2} className="owl-theme" loop margin={10} nav>
      <div className="item">
                 <div className="team-box enthusiasts">
                   <div className="team-image enthusiasts">

@@ -89,7 +89,7 @@ const Sidebar = withRouter(({ history, location }) => {
             </Link>
           </div>
           <div
-            className="offset-3 col-6 mt-2 pl-4"
+            className="logout offset-3 col-6 mt-2 pl-4"
             onClick={() => dispatch(userLogout(history))}
           >
             <i className="fas fa-sign-out-alt mr-1"></i>
