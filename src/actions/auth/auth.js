@@ -60,17 +60,36 @@ export const userSignUp = (data , history) => async (dispatch) => {
   
 //   // LOGOUT_USER
   
-//   export const forgotPassword = (history, data) => async (dispatch) => {
-//     try {
-//       dispatch({ type: constants.FORGOT_PASSWORD_REQUEST });
-//       const res = await services.forgotPassword(data);
-//       successNotification(res.data.msg);
-//       history.push('/resetpassword');
-//     } catch (err) {
-//       console.log('🚀 ~ file: auth.js ~ line 63 ~ userLogout ~ err', err);
-//       dispatch({
-//         type: constants.ERROR,
-//       });
-//       errorNotification(err.response?.data?.msg);
-//     }
-//   };
+  export const forgotPassword = (history, data) => async (dispatch) => {
+    try {
+      dispatch({ type: constants.FORGOT_PASSWORD_REQUEST });
+      const res = await services.forgotPassword(data);
+      successNotification(res.data.msg);
+      dispatch({ type: constants.FORGOT_PASSWORD_REQUEST });
+      history.push('/resetpassword');
+    } catch (err) {
+      console.log('🚀 ~ file: auth.js ~ line 63 ~ userLogout ~ err', err);
+      dispatch({
+        type: constants.ERROR,
+      });
+      errorNotification(err.response?.data?.msg);
+    }
+  };
+
+
+
+  export const userResetPassword = (history, data) => async (dispatch) => {
+    try {
+      dispatch({ type: constants.RESET_PASSWORD_REQUEST });
+      const res = await services.resetPassword(data);
+      dispatch({ type: constants.RESET_PASSWORD_SUCCESS });
+      successNotification(res.data.msg);
+      history.push('/signin');
+    } catch (err) {
+      console.log('🚀 ~ file: auth.js ~ line 63 ~ userLogout ~ err', err);
+      dispatch({
+        type: constants.ERROR,
+      });
+      errorNotification(err.response?.data?.msg);
+    }
+  };

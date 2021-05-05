@@ -14,6 +14,8 @@ import Signup from "../screens/Signup";
 import Categories from "../screens/Categories";
 import Invest from "../screens/Invest";
 import AuthenticatedRoute from "../routes/AuthenticatedRoute";
+import ForgotPassword from "../screens/ForgotPassword";
+import ResetPassword from "../screens/ResetPassword";
 
 const Routes = withRouter(({ location }) => {
   return (
@@ -37,6 +39,8 @@ const Routes = withRouter(({ location }) => {
         <Route path="/knowledge" component={Knowledge} />
         <Route path="/enth" component={Enthuasists} />
         <Route path="/categories" component={Categories} />
+        <Route path="/forgotpassword" component={ForgotPassword} />
+        <Route path="/resetpassword" component={ResetPassword} />
         <Route path="/invest" component={Invest} />
       </Switch>
       {location.pathname == "/setting-dsh" ||
