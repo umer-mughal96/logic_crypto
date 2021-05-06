@@ -1,7 +1,24 @@
-import React from "react";
+import React, { useState } from "react";
 import Sidebar from "../components/Sidebar";
 
 const ExchangeDashboard = () => {
+  const [exchange, setExchange] = useState("");
+  const [apiKey, setApiKey] = useState("");
+  const [secretKey, setSecretKey] = useState("");
+
+  let exhangeNames = [
+    "Binance",
+    "Binance US",
+    "Bitpanda pro",
+    "Bitstamp",
+    "Coinbase | Pro",
+    "HitBTC",
+    "Kreken",
+    "Liquid",
+    "Okex",
+    "Poloniex",
+  ];
+
   return (
     <div className="container-fluid">
       <div className="row">
@@ -21,13 +38,14 @@ const ExchangeDashboard = () => {
                         <select
                           id="inputState"
                           className="custom-select form-control"
+                          onChange={(e) => setExchange(e.target.value)}
                         >
                           <option selected>Choose Exchange</option>
-                          <option value="exchange 1">Exchange 1</option>
-                          <option value="exchange 2">Exchange 2</option>
-                          <option value="exchange 3">Exchange 3</option>
-                          <option value="exchange 4">Exchange 4</option>
-                          <option value="exchange 5">Exchange 5</option>
+                          {exhangeNames.map((exchange, ind) => (
+                            <option key={ind} value={exchange}>
+                              {exchange}
+                            </option>
+                          ))}
                         </select>
                       </div>
                       <div className="form-group">
@@ -37,6 +55,7 @@ const ExchangeDashboard = () => {
                           className="form-control"
                           id="api"
                           placeholder="eg. 4143516asd3a1s316as1da"
+                          onChange={(e) => setApiKey(e.target.value)}
                         />
                       </div>
                       <div className="form-group">
@@ -46,6 +65,7 @@ const ExchangeDashboard = () => {
                           className="form-control"
                           id="secretkey"
                           placeholder="eg. 4143516asd3a1s316as1da"
+                          onChange={(e) => setSecretKey(e.target.value)}
                         />
                       </div>
                       <button type="submit" className="btn">

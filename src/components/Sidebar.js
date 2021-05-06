@@ -8,7 +8,6 @@ const Sidebar = withRouter(({ history, location }) => {
   const dispatch = useDispatch();
   const { loading, user } = useSelector((s) => s.Auth);
   const [active, setActive] = useState("");
-  console.log("🚀 ~ file: Sidebar.js ~ line 11 ~ Sidebar ~ active", active);
 
   useEffect(() => {
     if (location.pathname == "/rule-dsh") {
