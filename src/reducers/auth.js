@@ -20,7 +20,7 @@ const iniitialState = {
     const {type , payload} = action
     switch (action.type) {
 
-      case authConstants.SET_LOADING:
+      case authConstants.SET_AUTH_LOADING:
       return {
         ...state,
         loading: true,

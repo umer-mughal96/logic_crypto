@@ -1,10 +1,13 @@
 import React, { useState } from "react";
+import { connectExchange } from "../actions/exchange/exchange";
+import { useDispatch } from "react-redux";
 import Sidebar from "../components/Sidebar";
 
 const ExchangeDashboard = () => {
   const [exchange, setExchange] = useState("");
   const [apiKey, setApiKey] = useState("");
   const [secretKey, setSecretKey] = useState("");
+  const dispatch = useDispatch();
 
   let exhangeNames = [
     "Binance",
@@ -18,6 +21,16 @@ const ExchangeDashboard = () => {
     "Okex",
     "Poloniex",
   ];
+
+  const connectExchangeHandler = (e) => {
+    e.preventDefault();
+    let data = {
+      exchangeName: exchange,
+      apiKey,
+      secretKey,
+    };
+    dispatch(connectExchange(data));
+  };
 
   return (
     <div className="container-fluid">
@@ -68,7 +81,11 @@ const ExchangeDashboard = () => {
                           onChange={(e) => setSecretKey(e.target.value)}
                         />
                       </div>
-                      <button type="submit" className="btn">
+                      <button
+                        type="submit"
+                        onClick={(e) => connectExchangeHandler(e)}
+                        className="btn"
+                      >
                         Connect
                       </button>
                       <div className="notes">

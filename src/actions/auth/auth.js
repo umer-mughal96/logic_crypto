@@ -6,7 +6,7 @@ import { errorNotification, infoNotification, successNotification } from '../../
 
 export const userSignUp = (data , history) => async (dispatch) => {
     try {
-      dispatch({ type: constants.SET_LOADING });
+      dispatch({ type: constants.SET_AUTH_LOADING });
       const res = await services.registerUser(data);
       dispatch({ type: constants.SIGNUP_SUCCESS });
       successNotification(res.data.msg);
@@ -24,7 +24,7 @@ export const userSignUp = (data , history) => async (dispatch) => {
   
   export const userSignin = (history, data) => async (dispatch) => {
     try {
-      dispatch({ type: constants.SET_LOADING });
+      dispatch({ type: constants.SET_AUTH_LOADING });
       const res = await services.signInUser(data);
       dispatch({ type: constants.SIGN_IN_SUCCESS, payload: res.data });
       localStorage.setItem('user', JSON.stringify(res.data));

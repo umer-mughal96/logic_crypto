@@ -1,4 +1,4 @@
-export const SET_LOADING = 'SET_LOADING';
+export const SET_AUTH_LOADING = 'SET_AUTH_LOADING';
 
 export const SIGNUP_SUCCESS = 'SIGNUP_SUCCESS';
 export const SIGNUP_FAIL = 'SIGNUP_FAIL';
