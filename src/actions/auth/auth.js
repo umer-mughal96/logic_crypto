@@ -58,7 +58,6 @@ export const userSignUp = (data , history) => async (dispatch) => {
     }
   };
   
-//   // LOGOUT_USER
   
   export const forgotPassword = (history, data) => async (dispatch) => {
     try {
@@ -68,7 +67,6 @@ export const userSignUp = (data , history) => async (dispatch) => {
       dispatch({ type: constants.FORGOT_PASSWORD_REQUEST });
       history.push('/resetpassword');
     } catch (err) {
-      console.log('🚀 ~ file: auth.js ~ line 63 ~ userLogout ~ err', err);
       dispatch({
         type: constants.ERROR,
       });

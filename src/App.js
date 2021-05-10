@@ -7,7 +7,8 @@ import { setAuthToken } from "./utils/setAuthToken";
 
 const App = () => {
   // axios.defaults.baseURL = "http://localhost:3001/logiccrypto/api/v1";
-  axios.defaults.baseURL = "https://logiccryptobackened.herokuapp.com/logiccrypto/api/v1";
+  axios.defaults.baseURL =
+    "https://logiccryptobackened.herokuapp.com/logiccrypto/api/v1";
   const { token } = useSelector((state) => state.Auth);
   setAuthToken(token);
   return (

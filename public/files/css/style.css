@@ -1,104 +1,104 @@
 @font-face {
-    font-family: Poppins;
-    src: url(../fonts/Poppins-Light.ttf);
+  font-family: Poppins;
+  src: url(../fonts/Poppins-Light.ttf);
 }
 
 body {
-    font-family: Poppins;
+  font-family: Poppins;
 }
 
 .container.ad-container {
-    max-width: 1366px;
-    margin: auto;
+  max-width: 1366px;
+  margin: auto;
 }
 img {
-    width: 100%;
+  width: 100%;
 }
 button:focus {
-    outline: none;
+  outline: none;
 }
 button {
-    cursor: pointer;
+  cursor: pointer;
 }
 :root {
-    --white-color: #fff;
-    --dark-blue:#222d71;
-    --black-color:#000;
-    --font-bold:600;
+  --white-color: #fff;
+  --dark-blue: #222d71;
+  --black-color: #000;
+  --font-bold: 600;
 }
 
 /*********************************  Header *********************************/
 header {
-    background-color: var(--dark-blue);
-    position: fixed;
-    z-index: 10;
-    width: 100%;
+  background-color: var(--dark-blue);
+  position: fixed;
+  z-index: 10;
+  width: 100%;
 }
 .header-logo img,
 footer img {
-    width: 90px;
+  width: 90px;
 }
 .header-navbar .navbar-light .navbar-nav .nav-link.active {
-    color: var(--white-color);
-    font-weight: var(--font-bold);
+  color: var(--white-color);
+  font-weight: var(--font-bold);
 }
 .header-navbar .navbar-light .navbar-nav .nav-link {
-     color: var(--white-color);
-    font-size: 16px;
+  color: var(--white-color);
+  font-size: 16px;
 }
 .ad-navbar a {
-    font: normal normal normal 16px Poppins;
-    letter-spacing: 0px;
+  font: normal normal normal 16px Poppins;
+  letter-spacing: 0px;
 }
 .navbar-expand-lg .navbar-nav .nav-link {
-    padding-right: 1rem;
-    padding-left: 1rem;
+  padding-right: 1rem;
+  padding-left: 1rem;
 }
 
 .ad-navbar {
-    align-items: center;
+  align-items: center;
 }
 a.nav-item.nav-link.sign-up {
-    color: var(--dark-blue) !important;
-    background: #f8f9fa;
-    border-radius: 50px;
-    padding: 7px 25px;
-    border: 1px solid #222d71;
-    text-decoration: none;
-    transition-delay: 0.01s;
-    transition: background-color 0.5s ease-out;
+  color: var(--dark-blue) !important;
+  background: #f8f9fa;
+  border-radius: 50px;
+  padding: 7px 25px;
+  border: 1px solid #222d71;
+  text-decoration: none;
+  transition-delay: 0.01s;
+  transition: background-color 0.5s ease-out;
 }
 a.nav-item.nav-link.sign-up:hover,
 .chart-section a.btn:hover {
-    color: var(--white-color) !important;
-    border: 1px solid #fff;
-    background: transparent;
+  color: var(--white-color) !important;
+  border: 1px solid #fff;
+  background: transparent;
 }
 .banner-content a:hover,
 .overlay-content a:hover {
-    color: var(--white-color);
-    border: 1px solid #fff;
-    background: transparent;
+  color: var(--white-color);
+  border: 1px solid #fff;
+  background: transparent;
 }
 .header-navbar i {
-     color: var(--white-color);
-    font-size: 30px;
+  color: var(--white-color);
+  font-size: 30px;
 }
 
 /********************************* Header End *********************************/
 /********************************* Sign in Form Start *********************************/
 .sign-in-form form {
-    max-width: 420px;
-    margin: 150px auto;
+  max-width: 420px;
+  margin: 150px auto;
 }
 .sign-in-form .form-group {
-    margin-bottom: 7px;
+  margin-bottom: 7px;
 }
 .sign-in-up {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    font-size: small;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: small;
 }
 .sign-in a.btn,
 .banner-text a.btn,
@@ -109,14 +109,14 @@ a.nav-item.nav-link.sign-up:hover,
 .hobbyist-plan a.btn,
 .funding a.btn,
 .sign-in button {
-    background: var(--dark-blue);
-     color: var(--white-color);
-    border: 1px solid #222d71;
-    border-radius: 50px;
-    font-size: 12px;
-    padding: 7px 25px;
-    transition-delay: 0.01s;
-    transition: background-color 0.5s ease-out;
+  background: var(--dark-blue);
+  color: var(--white-color);
+  border: 1px solid #222d71;
+  border-radius: 50px;
+  font-size: 12px;
+  padding: 7px 25px;
+  transition-delay: 0.01s;
+  transition: background-color 0.5s ease-out;
 }
 .sign-in a.btn:hover,
 .banner-text a.btn:hover,
@@ -126,808 +126,812 @@ a.nav-item.nav-link.sign-up:hover,
 .hobbyist-plan a.btn:hover,
 .funding a.btn:hover,
 .sign-in button:hover {
-    background: var(--white-color);
-    color: var(--dark-blue);
-    border: 1px solid #222d71;
+  background: var(--white-color);
+  color: var(--dark-blue);
+  border: 1px solid #222d71;
 }
 .sign-up {
-    color: var(--dark-blue);
+  color: var(--dark-blue);
 }
 .sign-up a {
-    color: var(--dark-blue);
-   font-weight: var(--font-bold);
+  color: var(--dark-blue);
+  font-weight: var(--font-bold);
 }
 .forgot-pwd a {
-    color: #3d3d3d;
+  color: #3d3d3d;
 }
 .sign-in-form h5 {
-    color: var(--dark-blue);
-   font-weight: var(--font-bold);
-    letter-spacing: 2px;
-    line-height: 30px;
+  color: var(--dark-blue);
+  font-weight: var(--font-bold);
+  letter-spacing: 2px;
+  line-height: 30px;
 }
 .sign-in-form form input {
-    border-radius: 50px;
-    font-size: 14px;
-    color: var(--black-color);
+  border-radius: 50px;
+  font-size: 14px;
+  color: var(--black-color);
 }
 /********************************* Sign in Form End *********************************/
 /********************************* Knowledge Page Start *********************************/
 .search-form {
-    margin: 160px auto 50px;
-    text-align: center;
-    max-width: 550px;
+  margin: 160px auto 50px;
+  text-align: center;
+  max-width: 550px;
 }
 .search-form h1,
 .risk-wrapper-text h2,
 .banner-text h1,
 .choose-heading h2 {
-    color: var(--dark-blue);
-    font-size: 42px;
-   font-weight: var(--font-bold);
-    margin-bottom: 40px;
-    line-height: 30px;
+  color: var(--dark-blue);
+  font-size: 42px;
+  font-weight: var(--font-bold);
+  margin-bottom: 40px;
+  line-height: 30px;
 }
 .search-form a {
-    position: absolute;
-    right: 0;
-    background: var(--dark-blue);
-    border-radius: 50px;
-     color: var(--white-color);
-    padding: 9px 20px;
-    font-size: 16px;
+  position: absolute;
+  right: 0;
+  background: var(--dark-blue);
+  border-radius: 50px;
+  color: var(--white-color);
+  padding: 9px 20px;
+  font-size: 16px;
 }
 .search-form input {
-    border-radius: 50px;
-    padding: 0px 100px 0px 35px;
-    height: 44px;
+  border-radius: 50px;
+  padding: 0px 100px 0px 35px;
+  height: 44px;
 }
 .search-form img {
-    width: 21px;
-    height: 21px;
-    position: absolute;
-    top: 12px;
-    left: 12px;
+  width: 21px;
+  height: 21px;
+  position: absolute;
+  top: 12px;
+  left: 12px;
 }
 .knowledge-list ul {
-    list-style-image: url(../images/knowledgepage/list-file-icon.svg);
-    padding: 0px 0px 0px 20px;
+  list-style-image: url(../images/knowledgepage/list-file-icon.svg);
+  padding: 0px 0px 0px 20px;
 }
 .knowledge-list ul li {
-    font-size: 18px;
-    color: var(--black-color);
+  font-size: 18px;
+  color: var(--black-color);
 }
 .knowledge-list h2,
 .pricing-text h2,
 .funding h2,
 .meeting h2 {
-    color: var(--dark-blue);
-    font-size: 36px;
-   font-weight: var(--font-bold);
+  color: var(--dark-blue);
+  font-size: 36px;
+  font-weight: var(--font-bold);
 }
 .knowledge-list a {
-    color: var(--dark-blue);
-    font-size: 16px;
-   font-weight: var(--font-bold);
-    text-decoration: none;
+  color: var(--dark-blue);
+  font-size: 16px;
+  font-weight: var(--font-bold);
+  text-decoration: none;
 }
 .knowledge-list a i {
-    font-size: 14px;
+  font-size: 14px;
 }
 .knowledge-list.spacing {
-    margin-top: 50px;
-    margin-bottom: 50px;
+  margin-top: 50px;
+  margin-bottom: 50px;
 }
 .update-form,
 .analytics {
-    background: transparent linear-gradient(180deg, #2b3990 0%, #161d48 100%) 0% 0% no-repeat padding-box;
-    border: 1px solid #222e73;
-    text-align: center;
-    padding: 80px 0px;
-     color: var(--white-color);
+  background: transparent linear-gradient(180deg, #2b3990 0%, #161d48 100%) 0%
+    0% no-repeat padding-box;
+  border: 1px solid #222e73;
+  text-align: center;
+  padding: 80px 0px;
+  color: var(--white-color);
 }
 .update-form form {
-    max-width: 500px;
-    margin: auto;
+  max-width: 500px;
+  margin: auto;
 }
 .update-form input {
-    border-radius: 50px;
-    padding: 0px 165px 0px 15px;
-    height: 44px;
+  border-radius: 50px;
+  padding: 0px 165px 0px 15px;
+  height: 44px;
 }
 .update-form a {
-    position: absolute;
-    top: 0;
-    right: 0px;
-    background: var(--black-color);
-     color: var(--white-color);
-    border-radius: 50px;
-    padding: 9px 30px;
+  position: absolute;
+  top: 0;
+  right: 0px;
+  background: var(--black-color);
+  color: var(--white-color);
+  border-radius: 50px;
+  padding: 9px 30px;
 }
 .update-form h1 {
-   font-weight: var(--font-bold);
-    font-size: 42px;
-    line-height: 40px;
+  font-weight: var(--font-bold);
+  font-size: 42px;
+  line-height: 40px;
 }
 .update-form p {
-    font-size: 14px;
-    margin-bottom: 40px;
+  font-size: 14px;
+  margin-bottom: 40px;
 }
 form#search-form {
-    position: relative;
-    display: flex;
-    width: 100%;
+  position: relative;
+  display: flex;
+  width: 100%;
 }
 /********************************* Knowledge Page End *********************************/
 /********************************* Categories Page Start *********************************/
 .search-form h1 span {
-    color: var(--black-color);
-    font-size: 14px;
+  color: var(--black-color);
+  font-size: 14px;
 }
 /* accordian */
 .container.risk {
-    margin: 100px auto 150px;
-    max-width: 1170px;
+  margin: 100px auto 150px;
+  max-width: 1170px;
 }
 div#faq {
-    background: #ffffff 0% 0% no-repeat padding-box;
-    box-shadow: 0px 3px 6px #00000029;
+  background: #ffffff 0% 0% no-repeat padding-box;
+  box-shadow: 0px 3px 6px #00000029;
 }
 div#faq .card {
-    border: none;
-    border-radius: 0px;
+  border: none;
+  border-radius: 0px;
 }
 #main #faq .card .card-header {
-    border: 0;
-    border-radius: 2px;
-    padding: 0;
+  border: 0;
+  border-radius: 2px;
+  padding: 0;
 }
 div#faq .card-body {
-    padding: 10px 0px;
+  padding: 10px 0px;
 }
 div#faq .card-body ul {
-    margin: 0;
-    list-style-type: none;
-    padding: 0px 20px;
-    line-height: 30px;
+  margin: 0;
+  list-style-type: none;
+  padding: 0px 20px;
+  line-height: 30px;
 }
 div#faq .card-body ul li a {
-    color: var(--black-color);
-    opacity: 0.24;
-    text-decoration: none;
+  color: var(--black-color);
+  opacity: 0.24;
+  text-decoration: none;
 }
 div#faq .card-body ul li a:hover {
-    color: var(--black-color);
-    opacity: 1;
-    transition: 1s;
-   font-weight: var(--font-bold);
+  color: var(--black-color);
+  opacity: 1;
+  transition: 1s;
+  font-weight: var(--font-bold);
 }
 
 #main #faq .card .card-header .btn-header-link {
-    display: block;
-    text-align: left;
-    background: var(--white-color);
-    padding: 10px 20px;
-    color: #0f153a;
-   font-weight: var(--font-bold);
-    font-size: 22px;
+  display: block;
+  text-align: left;
+  background: var(--white-color);
+  padding: 10px 20px;
+  color: #0f153a;
+  font-weight: var(--font-bold);
+  font-size: 22px;
 }
 div#faq h2 {
-    padding: 20px;
-     color: var(--white-color);
-    font-size: 22px;
-    background: var(--dark-blue);
-    margin-bottom: 0;
+  padding: 20px;
+  color: var(--white-color);
+  font-size: 22px;
+  background: var(--dark-blue);
+  margin-bottom: 0;
 }
 #main #faq .card .card-header .btn-header-link:focus {
-    outline: none;
-    box-shadow: none;
+  outline: none;
+  box-shadow: none;
 }
 
 #main #faq .card .card-header .btn-header-link:after {
-    content: url(../images/automated/chevron-up.svg);
-    transform: rotate(90deg);
-    float: right;
+  content: url(../images/automated/chevron-up.svg);
+  transform: rotate(90deg);
+  float: right;
 }
 
 #main #faq .card .card-header .btn-header-link.collapsed {
-    background: var(--white-color);
-    color: #0f153a;
-   font-weight: var(--font-bold);
-    font-size: 22px;
+  background: var(--white-color);
+  color: #0f153a;
+  font-weight: var(--font-bold);
+  font-size: 22px;
 }
 
 #main #faq .card .card-header .btn-header-link.collapsed:after {
-    content: url(../images/automated/chevron-up.svg);
-    float: right;
-    transform: revert;
+  content: url(../images/automated/chevron-up.svg);
+  float: right;
+  transform: revert;
 }
 
 #main #faq .card .collapsing,
 #main #faq .card .collapse.show,
 .est-cost {
-    background: #f5f5f5;
+  background: #f5f5f5;
 }
 
 #main #faq .card .collapse {
-    border: 0;
+  border: 0;
 }
 .risk-wrapper-text h2 {
-    margin-bottom: 20px;
-    line-height: 40px;
+  margin-bottom: 20px;
+  line-height: 40px;
 }
 .risk-wrapper-text p,
 .banner-text p {
-    font-size: 18px;
+  font-size: 18px;
 }
 /********************************* Categories Page End  *********************************/
 /********************************* Automated Page Start  *********************************/
 .row.banner {
-    display: flex;
-    align-items: center;
+  display: flex;
+  align-items: center;
 }
 .banner,
 .pricing {
-    padding-top: 120px;
+  padding-top: 120px;
 }
 .banner-text {
-    max-width: 530px;
-    margin: auto;
+  max-width: 530px;
+  margin: auto;
 }
 .banner-text h1,
 .choose-heading h2 {
-    margin-bottom: 10px;
-    line-height: 50px;
+  margin-bottom: 10px;
+  line-height: 50px;
 }
 .members {
-    background: #f5f5f5 0% 0% no-repeat padding-box;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+  background: #f5f5f5 0% 0% no-repeat padding-box;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 .members a {
-    width: 150px;
-    margin: 50px 30px;
+  width: 150px;
+  margin: 50px 30px;
 }
 .members a image {
-    width: 100%;
+  width: 100%;
 }
 .Military-work {
-    display: flex;
-    align-items: center;
-    max-width: 360px;
+  display: flex;
+  align-items: center;
+  max-width: 360px;
 }
 .work-icon i {
-    font-size: 80px;
-    color: var(--dark-blue);
+  font-size: 80px;
+  color: var(--dark-blue);
 }
 .work-desc p {
-    margin-bottom: 0;
-    font-size: 18px;
+  margin-bottom: 0;
+  font-size: 18px;
 }
 .work-desc h4 {
-    font-size: 28px;
-    color: var(--dark-blue);
-   font-weight: var(--font-bold);
+  font-size: 28px;
+  color: var(--dark-blue);
+  font-weight: var(--font-bold);
 }
 .work-image {
-    width: 100px;
-    height: 100px;
-    border-radius: 50px;
+  width: 100px;
+  height: 100px;
+  border-radius: 50px;
 }
 .work-image img {
-    width: 100px;
-    height: 100px;
+  width: 100px;
+  height: 100px;
 }
 .work-desc i {
-    color: var(--dark-blue);
+  color: var(--dark-blue);
 }
 .military-row {
-    justify-content: space-around;
-    background: #ffffff 0% 0% no-repeat padding-box;
-    box-shadow: 0px 0px 19px #00000029;
-    padding: 30px 0px;
+  justify-content: space-around;
+  background: #ffffff 0% 0% no-repeat padding-box;
+  box-shadow: 0px 0px 19px #00000029;
+  padding: 30px 0px;
 }
 .row.automated,
 .row.secure {
-    display: flex;
-    align-items: center;
-    padding: 50px 0px;
+  display: flex;
+  align-items: center;
+  padding: 50px 0px;
 }
 .row.secure {
-    padding: 0px;
+  padding: 0px;
 }
 .choose {
-    text-align: center;
-    padding: 80px 0px 0px;
+  text-align: center;
+  padding: 80px 0px 0px;
 }
 select#chartdrop.custom-select {
-    background: #fff url(../images/automated/select-arrow.svg) no-repeat right 0.75rem center;
-    border: 1px solid #e2e2e2;
-    border-radius: 5px;
-    font-size: 14px;
-    color: var(--black-color);
-    padding: 0.375rem 0.75rem;
+  background: #fff url(../images/automated/select-arrow.svg) no-repeat right
+    0.75rem center;
+  border: 1px solid #e2e2e2;
+  border-radius: 5px;
+  font-size: 14px;
+  color: var(--black-color);
+  padding: 0.375rem 0.75rem;
 }
 canvas#myChart {
-    background-color: var(--white-color);
-    padding: 1%;
-    max-width: 90%;
-    margin: 5% auto 5%;
+  background-color: var(--white-color);
+  padding: 1%;
+  max-width: 90%;
+  margin: 5% auto 5%;
 }
 .form-group.range-filter,
 .form-group.range-filters {
-    margin-bottom: 0;
+  margin-bottom: 0;
 }
 .range-filter output#num,
 .range-filters output#nums {
-     color: var(--white-color);
-    text-align: center;
-    font-size: 14px;
-   font-weight: var(--font-bold);
-    margin-left: 15px;
-    position: absolute;
-    left: 0;
-    top: 65px;
+  color: var(--white-color);
+  text-align: center;
+  font-size: 14px;
+  font-weight: var(--font-bold);
+  margin-left: 15px;
+  position: absolute;
+  left: 0;
+  top: 65px;
 }
 .range-filter input,
 .range-filters input {
-    display: block;
-    width: 100%;
+  display: block;
+  width: 100%;
 }
 .range-filter h6,
 .range-filters h6 {
-    margin-bottom: 20px;
-    text-align: initial;
-   font-weight: var(--font-bold);
+  margin-bottom: 20px;
+  text-align: initial;
+  font-weight: var(--font-bold);
 }
 .wrapper {
-    width: 100%;
-    /* max-width: 1024px; */
-    margin: 50px auto 50px;
+  width: 100%;
+  /* max-width: 1024px; */
+  margin: 50px auto 50px;
 }
 
 .wrapper.canvas {
-    position: relative;
-    width: 100%;
+  position: relative;
+  width: 100%;
 }
 
 .note {
-    display: none;
+  display: none;
 }
 
 .wrapper a {
-    text-decoration: none;
-    color: #506678;
-    border-bottom: 1px solid rgba(80, 102, 120, 0.25);
-    transition: all 0.35s;
+  text-decoration: none;
+  color: #506678;
+  border-bottom: 1px solid rgba(80, 102, 120, 0.25);
+  transition: all 0.35s;
 }
 .wrapper a:hover {
-    color: #677f93;
-    border-bottom: 1px solid rgba(149, 76, 233, 0.5);
+  color: #677f93;
+  border-bottom: 1px solid rgba(149, 76, 233, 0.5);
 }
 .chart-section h2,
 .total-cost h2 {
-    letter-spacing: 0px;
-    color: var(--white-color);
-    font-size: 42px;
-    margin-bottom: 20px;
-   font-weight: var(--font-bold);
+  letter-spacing: 0px;
+  color: var(--white-color);
+  font-size: 42px;
+  margin-bottom: 20px;
+  font-weight: var(--font-bold);
 }
 .chart-section a.btn {
-    background-color: var(--white-color);
-    color: var(--dark-blue);
+  background-color: var(--white-color);
+  color: var(--dark-blue);
 }
 
 .chart-filters {
-    max-width: 1180px;
-    margin: auto;
+  max-width: 1180px;
+  margin: auto;
 }
 
 .rangeslider__ruler {
-    cursor: pointer;
-    font-size: 0.7em;
-    margin: 20px 3px 0 3px;
-    position: relative;
-    top: 100%;
-    text-align: justify;
-    padding: 20px 0px;
+  cursor: pointer;
+  font-size: 0.7em;
+  margin: 20px 3px 0 3px;
+  position: relative;
+  top: 100%;
+  text-align: justify;
+  padding: 20px 0px;
 }
 
 .rangeslider__ruler:after {
-    content: "";
-    display: inline-block;
-    width: 100%;
+  content: "";
+  display: inline-block;
+  width: 100%;
 }
 .rangeslider__fill {
-    background: var(--dark-blue) !important;
-    border: 1px solid #fff;
+  background: var(--dark-blue) !important;
+  border: 1px solid #fff;
 }
 .rangeslider--horizontal {
-    height: 10px !important;
+  height: 10px !important;
 }
 .rangeslider__handle {
-    background-image: url(../images/automated/dollar.svg) !important;
-    width: 35px !important;
-    height: 30px !important;
+  background-image: url(../images/automated/dollar.svg) !important;
+  width: 35px !important;
+  height: 30px !important;
 }
 .est-cost h2,
 .support h2,
 .team h2,
 .payments h2,
 .section-heading h2 {
-    font-size: 36px;
-   font-weight: var(--font-bold);
-    color: var(--dark-blue);
-    text-align: center;
-    /* margin-bottom: 0px; */
+  font-size: 36px;
+  font-weight: var(--font-bold);
+  color: var(--dark-blue);
+  text-align: center;
+  /* margin-bottom: 0px; */
 }
 .est-cost h6 {
-    color: var(--dark-blue);
-   font-weight: var(--font-bold);
-    margin-bottom: 0px;
+  color: var(--dark-blue);
+  font-weight: var(--font-bold);
+  margin-bottom: 0px;
 }
 .est-cost h6 span {
-    color: var(--black-color);
-    font-size: 42px;
+  color: var(--black-color);
+  font-size: 42px;
 }
 .row.est-cost,
 .team {
-    max-width: 700px;
-    margin: auto;
-    padding: 50px 0px;
+  max-width: 700px;
+  margin: auto;
+  padding: 50px 0px;
 }
 .est-cost p,
 .support p,
 .team-box p {
-    color: var(--black-color);
-    font-size: 14px;
-    margin-bottom: 0px;
+  color: var(--black-color);
+  font-size: 14px;
+  margin-bottom: 0px;
 }
 .est-cost-box {
-    background: var(--white-color);
-    border: 2px solid #293689;
-    border-radius: 16px;
-    padding: 20px;
+  background: var(--white-color);
+  border: 2px solid #293689;
+  border-radius: 16px;
+  padding: 20px;
 }
 .est-cost-box h3 {
-    font-size: 22px;
-   font-weight: var(--font-bold);
+  font-size: 22px;
+  font-weight: var(--font-bold);
 }
 .members.second {
-    background: transparent;
+  background: transparent;
 }
 .row.member-second {
-    justify-content: center;
-    text-align: center;
-    align-items: center;
-    padding: 50px 0px;
+  justify-content: center;
+  text-align: center;
+  align-items: center;
+  padding: 50px 0px;
 }
 .member-second a img {
-    max-width: 130px;
-    margin: 20px;
+  max-width: 130px;
+  margin: 20px;
 }
 .team-image img {
-    width: 100px;
-    height: 100px;
-    border-radius: 50%;
-    margin-top: -50px;
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  margin-top: -50px;
 }
 .team-box {
-    background: #ffffff 0% 0% no-repeat padding-box;
-    box-shadow: 0px 3px 20px #00000029;
-    border-radius: 16px;
-    text-align: center;
-    margin-top: 60px;
+  background: #ffffff 0% 0% no-repeat padding-box;
+  box-shadow: 0px 3px 20px #00000029;
+  border-radius: 16px;
+  text-align: center;
+  margin-top: 60px;
 }
 .team-box h6 {
-    font-size: 16px;
-    margin-bottom: 0;
-    color: var(--dark-blue);
-   font-weight: var(--font-bold);
+  font-size: 16px;
+  margin-bottom: 0;
+  color: var(--dark-blue);
+  font-weight: var(--font-bold);
 }
 .team-details a i {
-    color: var(--black-color);
+  color: var(--black-color);
 }
 .support p {
-    max-width: 450px;
-    margin: auto;
+  max-width: 450px;
+  margin: auto;
 }
 /********************************* Automated Page End  *********************************/
 /********************************* Enthusiasts Page Start  *********************************/
 .team-image.enthusiasts {
-    width: 100px;
-    margin: auto;
-    position: absolute;
-    height: 100px;
-    transform: translate(-50%, 0%);
-    left: 50%;
+  width: 100px;
+  margin: auto;
+  position: absolute;
+  height: 100px;
+  transform: translate(-50%, 0%);
+  left: 50%;
 }
 .team-details.enthusiasts p {
-    padding: 15px;
+  padding: 15px;
 }
 .team-box.enthusiasts {
-    margin: 55px 15px 15px;
+  margin: 55px 15px 15px;
 }
 .team-details.enthusiasts h6 {
-    padding-top: 55px;
+  padding-top: 55px;
 }
 .banner-text a i {
-    color: var(--dark-blue);
+  color: var(--dark-blue);
 }
 .enthusiasts h2 {
-    font-size: 36px;
-   font-weight: var(--font-bold);
-    max-width: 910px;
-    margin: 30px auto 30px;
-    text-align: center;
+  font-size: 36px;
+  font-weight: var(--font-bold);
+  max-width: 910px;
+  margin: 30px auto 30px;
+  text-align: center;
 }
 .enthusiasts .owl-carousel .owl-dots.disabled {
-    display: block;
+  display: block;
 }
 .enthusiasts .owl-theme .owl-dots .owl-dot.active span,
 .enthusiasts .owl-theme .owl-dots .owl-dot:hover span {
-    background: var(--dark-blue);
+  background: var(--dark-blue);
 }
 .enthusiasts .owl-theme .owl-dots .owl-dot span {
-    background: transparent;
-    border: 1px solid #26327e;
+  background: transparent;
+  border: 1px solid #26327e;
 }
 .enthusiasts .owl-nav {
-    display: none;
+  display: none;
 }
 .coinrule {
-    background: var(--dark-blue);
-     color: var(--white-color);
-    text-align: center;
+  background: var(--dark-blue);
+  color: var(--white-color);
+  text-align: center;
 }
 .coinrule .team {
-    max-width: 1140px;
+  max-width: 1140px;
 }
 .coinrule .team h2 {
-     color: var(--white-color);
+  color: var(--white-color);
 }
 .coinrule .team p,
 .payments p {
-    max-width: 650px;
-    margin: auto;
-    text-align: center;
+  max-width: 650px;
+  margin: auto;
+  text-align: center;
 }
 .payments {
-    margin: 30px 0px;
+  margin: 30px 0px;
 }
 /********************************* Enthusiasts Page End  *********************************/
 /********************************* Pricing Page Start  *********************************/
 .pricing-text p,
 .pricing-text h2 {
-    max-width: 500px;
+  max-width: 500px;
 }
 /********************************* Pricing Page End  *********************************/
 /********************************* Invest Page Start  *********************************/
 .invest,
 .terms {
-    max-width: 1000px;
-    margin: auto;
-    text-align: center;
+  max-width: 1000px;
+  margin: auto;
+  text-align: center;
 }
 .terms {
-    text-align: initial;
-    margin: 50px auto;
+  text-align: initial;
+  margin: 50px auto;
 }
 .key-term {
-    background: #000000 0% 0% no-repeat padding-box;
-    border: 1px solid #707070;
-    border-radius: 20px;
-    padding: 15px;
-     color: var(--white-color);
-    min-height: 100%;
+  background: #000000 0% 0% no-repeat padding-box;
+  border: 1px solid #707070;
+  border-radius: 20px;
+  padding: 15px;
+  color: var(--white-color);
+  min-height: 100%;
 }
-.key-term ul, .account-form ol {
-    padding: 0px 0px 0px 20px;
+.key-term ul,
+.account-form ol {
+  padding: 0px 0px 0px 20px;
 }
 .key-term h2 {
-    font-size: 26px;
-   font-weight: var(--font-bold);
+  font-size: 26px;
+  font-weight: var(--font-bold);
 }
 .key-term p {
-    font-size: 13px;
-    margin-bottom: 0;
+  font-size: 13px;
+  margin-bottom: 0;
 }
 .key-term p span {
-   font-weight: var(--font-bold);
+  font-weight: var(--font-bold);
 }
 .funding {
-    background: #f5f5f5 0% 0% no-repeat padding-box;
-    padding: 50px 0px;
-    text-align: center;
+  background: #f5f5f5 0% 0% no-repeat padding-box;
+  padding: 50px 0px;
+  text-align: center;
 }
 .meeting {
-    max-width: 500px;
-    margin-top: 50px;
+  max-width: 500px;
+  margin-top: 50px;
 }
 .pnote p {
-    font-size: 12px;
-    text-align: center;
-    margin-top: 40px;
+  font-size: 12px;
+  text-align: center;
+  margin-top: 40px;
 }
 /* Road Map */
 .box {
-    padding-top: 20px;
-    padding-bottom: 20px;
-    min-height: 175px;
-    height: 100%;
-    opacity: 1;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  min-height: 175px;
+  height: 100%;
+  opacity: 1;
 }
 section.roadmap .box.left {
-    padding-right: 40px;
-    text-align: right;
+  padding-right: 40px;
+  text-align: right;
 }
 section.roadmap .box.right {
-    padding-left: 40px;
+  padding-left: 40px;
 }
 section.roadmap span.heading div {
-    font-family: Arial, Helvetica !important;
+  font-family: Arial, Helvetica !important;
 }
 
 /*Responsive test*/
 @media (max-width: 991px) {
-    section.roadmap .box {
-        margin-top: 30px;
-    }
+  section.roadmap .box {
+    margin-top: 30px;
+  }
 }
 @media (min-width: 992px) {
-    section.roadmap .box.left:after {
-        content: "";
-        width: 80px;
-        height: 3px;
-        background: #ccc;
-        position: absolute;
-        top: 50%;
-        /* right: -80px; */
-        right: -60px;
-         color: var(--white-color);
-        text-align: center;
-        z-index: 1;
-    }
-    section.roadmap .box.right:after {
-        content: "";
-        width: 70px;
-        height: 3px;
-        background: #ccc;
-        position: absolute;
-        top: 50%;
-        /* left: -70px; */
-        left: -50px;
-         color: var(--white-color);
-        text-align: center;
-        z-index: 1;
-    }
+  section.roadmap .box.left:after {
+    content: "";
+    width: 80px;
+    height: 3px;
+    background: #ccc;
+    position: absolute;
+    top: 50%;
+    /* right: -80px; */
+    right: -60px;
+    color: var(--white-color);
+    text-align: center;
+    z-index: 1;
+  }
+  section.roadmap .box.right:after {
+    content: "";
+    width: 70px;
+    height: 3px;
+    background: #ccc;
+    position: absolute;
+    top: 50%;
+    /* left: -70px; */
+    left: -50px;
+    color: var(--white-color);
+    text-align: center;
+    z-index: 1;
+  }
 }
 
 @media (min-width: 992px) {
-    section.roadmap .box.right.first {
-        margin-top: 110px !important;
-    }
-    section.roadmap .box.right.second {
-        top: 45px !important;
-    }
-    section.roadmap .box.right.third {
-        top: 88px !important;
-    }
-    section.roadmap .box.left.second {
-        top: -65px !important;
-    }
-    section.roadmap .box.left.third {
-        top: -20px !important;
-    }
-    section.roadmap .box.left.fourth {
-        top: 24px !important;
-    }
+  section.roadmap .box.right.first {
+    margin-top: 110px !important;
+  }
+  section.roadmap .box.right.second {
+    top: 45px !important;
+  }
+  section.roadmap .box.right.third {
+    top: 88px !important;
+  }
+  section.roadmap .box.left.second {
+    top: -65px !important;
+  }
+  section.roadmap .box.left.third {
+    top: -20px !important;
+  }
+  section.roadmap .box.left.fourth {
+    top: 24px !important;
+  }
 }
 
 section.roadmap span.heading {
-    font-family: Arial, Helvetica !important;
-    font-size: 20px;
-    top: -4px;
+  font-family: Arial, Helvetica !important;
+  font-size: 20px;
+  top: -4px;
 }
 section.roadmap .green {
-     color: var(--white-color);
-   font-weight: var(--font-bold);
+  color: var(--white-color);
+  font-weight: var(--font-bold);
 }
 section.roadmap .dots {
-    width: 50% !important;
+  width: 50% !important;
 }
 section.roadmap .dots.pull-right {
-    margin-right: 50px !important;
+  margin-right: 50px !important;
 }
 section.roadmap .dots.pull-right span {
-    position: relative;
-    right: -50px !important;
+  position: relative;
+  right: -50px !important;
 }
 section.roadmap .dots.pull-left {
-    margin-left: 50px !important;
+  margin-left: 50px !important;
 }
 section.roadmap .dots.pull-left span {
-    position: relative;
-    left: -50px !important;
+  position: relative;
+  left: -50px !important;
 }
 section.roadmap .vertical-line.right {
-    border-right: 2px solid #fff;
-    margin-right: 0;
-    padding-right: 20px;
-    margin-top: 10px !important;
+  border-right: 2px solid #fff;
+  margin-right: 0;
+  padding-right: 20px;
+  margin-top: 10px !important;
 }
 section.roadmap .vertical-line.left {
-    border-left: 2px solid #fff;
-    margin-left: 0;
-    padding-left: 20px;
-    margin-top: 10px !important;
+  border-left: 2px solid #fff;
+  margin-left: 0;
+  padding-left: 20px;
+  margin-top: 10px !important;
 }
 section.roadmap .row.left,
 section.roadmap .row.right {
-    position: relative !important;
+  position: relative !important;
 }
 section.roadmap .milestones span {
-     color: var(--white-color);
+  color: var(--white-color);
 }
 
 @media (min-width: 992px) {
-    section.roadmap .lines {
-        position: absolute;
-        left: 50%;
-    }
-    section.roadmap .lines.second {
-        top: 5px;
-    }
-    section.roadmap .lines.first {
-        top: 75px;
-    }
-    section.roadmap .lines.third {
-        top: 48px;
-    }
-    section.roadmap .lines.fourth {
-        top: 93px;
-    }
-    section.roadmap .roadmap-line {
-        background: #ccc;
-        width: 2px;
-        height: 70px;
-        position: relative;
-        margin-top: 40px;
-    }
-    section.roadmap .roadmap-line.higher {
-        height: 135px;
-    }
-    section.roadmap .roadmap-line:after {
-        content: "";
-        width: 200px;
-        width: 12px;
-        height: 12px;
-        border-radius: 50%;
-        position: absolute;
-        top: -30px;
-        left: -5px;
-         color: var(--white-color);
-        text-align: center;
-        z-index: 2;
-    }
-    section.roadmap .roadmap-line.active {
-        background: var(--white-color) !important;
-    }
-    section.roadmap .roadmap-line.active:after {
-        background: var(--white-color) !important;
-    }
-    section.roadmap .roadmap-line:after {
-        background: #ccc !important;
-    }
+  section.roadmap .lines {
+    position: absolute;
+    left: 50%;
+  }
+  section.roadmap .lines.second {
+    top: 5px;
+  }
+  section.roadmap .lines.first {
+    top: 75px;
+  }
+  section.roadmap .lines.third {
+    top: 48px;
+  }
+  section.roadmap .lines.fourth {
+    top: 93px;
+  }
+  section.roadmap .roadmap-line {
+    background: #ccc;
+    width: 2px;
+    height: 70px;
+    position: relative;
+    margin-top: 40px;
+  }
+  section.roadmap .roadmap-line.higher {
+    height: 135px;
+  }
+  section.roadmap .roadmap-line:after {
+    content: "";
+    width: 200px;
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    position: absolute;
+    top: -30px;
+    left: -5px;
+    color: var(--white-color);
+    text-align: center;
+    z-index: 2;
+  }
+  section.roadmap .roadmap-line.active {
+    background: var(--white-color) !important;
+  }
+  section.roadmap .roadmap-line.active:after {
+    background: var(--white-color) !important;
+  }
+  section.roadmap .roadmap-line:after {
+    background: #ccc !important;
+  }
 }
 #roadmap {
-    background: transparent linear-gradient(180deg, #2b3990 0%, #161d48 100%) 0% 0% no-repeat padding-box;
-    padding: 70px 0px 100px;
-    margin-bottom: 70px;
+  background: transparent linear-gradient(180deg, #2b3990 0%, #161d48 100%) 0%
+    0% no-repeat padding-box;
+  padding: 70px 0px 100px;
+  margin-bottom: 70px;
 }
-.section-heading h2{
-     color: var(--white-color);
+.section-heading h2 {
+  color: var(--white-color);
 }
 /* Road Map */
 /********************************* Invest Page End *********************************/
@@ -935,783 +939,836 @@ section.roadmap .milestones span {
 
 /* Layout */
 .s-layout a {
-    text-decoration: none;
-    color: inherit;
+  text-decoration: none;
+  color: inherit;
 }
 .s-layout {
-    /* display: flex; */
-    width: 100%;
-    min-height: 100vh;
-    background: #f5f6fa 0% 0% no-repeat padding-box;
+  /* display: flex; */
+  width: 100%;
+  min-height: 100vh;
+  background: #f5f6fa 0% 0% no-repeat padding-box;
 }
 
 .s-layout__content {
-    display: block;
-    padding-top: 5%;
+  display: block;
+  padding-top: 5%;
 }
 
 /* Sidebar */
 .s-sidebar__trigger {
-    z-index: 2;
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 4em;
-    background:var(--dark-blue);
+  z-index: 2;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 4em;
+  background: var(--dark-blue);
 }
 
 .s-sidebar__trigger > i {
-    display: inline-block;
-    margin: 1.5em 0 0 1.5em;
-     color: var(--white-color);
+  display: inline-block;
+  margin: 1.5em 0 0 1.5em;
+  color: var(--white-color);
 }
 
 .s-sidebar__nav {
-    position: fixed;
-    top: 0;
-    left: -15em;
-    overflow: hidden;
-    transition: all 0.3s ease-in;
-    width: 15em;
-    height: 100%;
-    background: var(--dark-blue);
-     color: var(--white-color);
-    z-index: 1;
+  position: fixed;
+  top: 0;
+  left: -15em;
+  overflow: hidden;
+  transition: all 0.3s ease-in;
+  width: 15em;
+  height: 100%;
+  background: var(--dark-blue);
+  color: var(--white-color);
+  z-index: 1;
 }
 
 .s-sidebar__nav:hover,
 .s-sidebar__nav:focus,
 .s-sidebar__trigger:focus + .s-sidebar__nav,
 .s-sidebar__trigger:hover + .s-sidebar__nav {
-    left: 0;
+  left: 0;
 }
 
 .s-sidebar__nav ul {
-    position: absolute;
-    top: 4em;
-    left: 0;
-    margin: 0;
-    padding: 0;
-    width: 15em;
+  position: absolute;
+  top: 4em;
+  left: 0;
+  margin: 0;
+  padding: 0;
+  width: 15em;
 }
 
 .s-sidebar__nav ul li {
-    width: 100%;
+  width: 100%;
 }
 
 .s-sidebar__nav-link {
-    position: relative;
-    display: inline-block;
-    width: 100%;
-    height: 3em;
+  position: relative;
+  display: inline-block;
+  width: 100%;
+  height: 3em;
 }
 
 .s-sidebar__nav-link span {
-    position: absolute;
-    top: 50%;
-    left: 4em;
-    transform: translateY(-50%);
+  position: absolute;
+  top: 50%;
+  left: 4em;
+  transform: translateY(-50%);
 }
 
 .s-sidebar__nav-link:hover {
-    background: var(--white-color);
-    color: #222d71 !important;
+  background: var(--white-color);
+  color: #222d71 !important;
 }
 
-.sidebar-active{
-    position: relative;
-    display: inline-block;
-    width: 100%;
-    height: 3em;
-    background: #fff;
-    color: #222d71;
+.sidebar-active {
+  position: relative;
+  display: inline-block;
+  width: 100%;
+  height: 3em;
+  background: #fff;
+  color: #222d71;
 }
-.sidebar-active span{
-    position: absolute;
-    top: 50%;
-    left: 4em;
-    transform: translateY(-50%);
+.sidebar-active span {
+  position: absolute;
+  top: 50%;
+  left: 4em;
+  transform: translateY(-50%);
 }
-.sidebar-active > i{
-    position: absolute;
-    top: 15px;
-    left: 23px;
-    display: inline-block;
-    width: 4em;
-    height: 3em;
+.sidebar-active > i {
+  position: absolute;
+  top: 15px;
+  left: 23px;
+  display: inline-block;
+  width: 4em;
+  height: 3em;
 }
 .s-sidebar__nav-link > i {
-    position: absolute;
-    top: 0;
-    left: 0;
-    display: inline-block;
-    width: 4em;
-    height: 3em;
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: inline-block;
+  width: 4em;
+  height: 3em;
 }
 
 .s-sidebar__nav-link > i::before {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 }
 .sidebar-button {
-    position: absolute;
-    bottom: 10%;
+  position: absolute;
+  bottom: 10%;
 }
 .sidebar-button a.btn,
 .link-exchange a.btn,
 .account-form a.btn {
-    background: var(--white-color);
-    color: var(--dark-blue);
-    /*font-weight: var(--font-bold); */
-    border-radius: 25px;
-    align-items: center;
-    margin: 5px 0px;
-    border: 1px solid #222d71;
+  background: var(--white-color);
+  color: var(--dark-blue);
+  /*font-weight: var(--font-bold); */
+  border-radius: 25px;
+  align-items: center;
+  margin: 5px 0px;
+  border: 1px solid #222d71;
 }
 .sidebar-button a.btn:hover,
 .link-exchange a.btn:hover,
 .account-form a.btn:hover {
-    background: var(--dark-blue);
-     color: var(--white-color);
-    border: 1px solid #fff;
+  background: var(--dark-blue);
+  color: var(--white-color);
+  border: 1px solid #fff;
 }
 a.logout:hover {
-   font-weight: var(--font-bold);
-    transition: 0.2s;
+  font-weight: var(--font-bold);
+  transition: 0.2s;
 }
 .s-sidebar__nav ul li img {
-    width: 80px;
-    height: 80px;
-    margin-left: 35px;
+  width: 80px;
+  height: 80px;
+  margin-left: 35px;
 }
 .net-profit h5 {
-    font-size: 14px;
-   font-weight: var(--font-bold);
+  font-size: 14px;
+  font-weight: var(--font-bold);
 }
 .net-profit h5 span {
-    font-size: 18px;
-   font-weight: var(--font-bold);
-    color: var(--dark-blue);
+  font-size: 18px;
+  font-weight: var(--font-bold);
+  color: var(--dark-blue);
 }
 .profit-row {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 .wallet-icon a i,
 .notification-icon a i {
-    background: var(--white-color);
-    padding: 10px;
-    font-size: 20px;
-    color: var(--dark-blue);
-    border-radius: 50px;
+  background: var(--white-color);
+  padding: 10px;
+  font-size: 20px;
+  color: var(--dark-blue);
+  border-radius: 50px;
 }
 .wallet-icon a i:hover,
 .notification-icon a i:hover {
-    background: #283586;
-     color: var(--white-color);
+  background: #283586;
+  color: var(--white-color);
 }
 .icons-top,
 .buttons-top {
-    display: flex;
+  display: flex;
 }
 #crypto-tab.nav-pills .nav-link.active {
-    background: transparent;
-    color: initial;
-    border-bottom: 3px solid #283586;
-    border-radius: 0;
+  background: transparent;
+  color: initial;
+  border-bottom: 3px solid #283586;
+  border-radius: 0;
 }
 #crypto-tab.nav-pills .nav-link {
-    padding-left: 0;
-    padding-right: 0;
-    margin: 0px 5px;
-    padding-bottom: 5px;
-   font-weight: var(--font-bold);
+  padding-left: 0;
+  padding-right: 0;
+  margin: 0px 5px;
+  padding-bottom: 5px;
+  font-weight: var(--font-bold);
 }
 ul#crypto-tab {
-    position: relative;
+  position: relative;
 }
 ul#crypto-tab p {
-    position: absolute;
-    right: 0;
-    top: 7px;
-   font-weight: var(--font-bold);
+  position: absolute;
+  right: 0;
+  top: 7px;
+  font-weight: var(--font-bold);
 }
 .crypto-stats .chart img {
-    width: 123px;
+  width: 123px;
 }
 .stats-bar {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 .crypto-stats {
-    background: #ffffff 0% 0% no-repeat padding-box;
-    box-shadow: 0px 0px 6px #00000029;
-    border-radius: 73px;
-    padding: 15px;
+  background: #ffffff 0% 0% no-repeat padding-box;
+  box-shadow: 0px 0px 6px #00000029;
+  border-radius: 73px;
+  padding: 15px;
 }
 .crypto-stats p {
-    margin-bottom: 0px;
-    font-size: 14px;
-   font-weight: var(--font-bold);
+  margin-bottom: 0px;
+  font-size: 14px;
+  font-weight: var(--font-bold);
 }
 .growth p span {
-    color: #ff0000;
+  color: #ff0000;
 }
 .netprofit p span {
-    color: #2b3990;
+  color: #2b3990;
 }
 .high-low i {
-    color: #ff0000;
+  color: #ff0000;
 }
 .bitcoin i {
-    background: #ffffff 0% 0% no-repeat padding-box;
-    box-shadow: 0px 0px 6px #00000029;
-    color: var(--dark-blue);
-    font-size: 30px;
-    border-radius: 50px;
-    padding: 8px;
+  background: #ffffff 0% 0% no-repeat padding-box;
+  box-shadow: 0px 0px 6px #00000029;
+  color: var(--dark-blue);
+  font-size: 30px;
+  border-radius: 50px;
+  padding: 8px;
 }
 .crypto-stats .switch {
-    position: relative;
-    display: inline-block;
-    width: 32px;
-    height: 16px;
-    margin: 3px 10px;
+  position: relative;
+  display: inline-block;
+  width: 32px;
+  height: 16px;
+  margin: 3px 10px;
 }
 .crypto-stats .switch input {
-    opacity: 0;
-    width: 0;
-    height: 0;
+  opacity: 0;
+  width: 0;
+  height: 0;
 }
 .crypto-stats .slider {
-    position: absolute;
-    cursor: pointer;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background-color: #c1c1c1;
-    -webkit-transition: 0.4s;
-    transition: 0.4s;
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #c1c1c1;
+  -webkit-transition: 0.4s;
+  transition: 0.4s;
 }
 .crypto-stats .slider.round {
-    border-radius: 34px;
+  border-radius: 34px;
 }
 .crypto-stats .slider:before {
-    position: absolute;
-    content: "";
-    height: 16px;
-    width: 16px;
-    left: 0px;
-    bottom: 0px;
-    background-color: var(--white-color);
-    -webkit-transition: 0.4s;
-    transition: 0.4s;
+  position: absolute;
+  content: "";
+  height: 16px;
+  width: 16px;
+  left: 0px;
+  bottom: 0px;
+  background-color: var(--white-color);
+  -webkit-transition: 0.4s;
+  transition: 0.4s;
 }
 .slider.round:before {
-    border-radius: 50%;
+  border-radius: 50%;
 }
 .crypto-stats input:checked + .slider {
-    background-color: #1d47a2;
+  background-color: #1d47a2;
 }
 
 .crypto-stats input:focus + .slider {
-    box-shadow: 0 0 1px #1d47a2;
+  box-shadow: 0 0 1px #1d47a2;
 }
 
 .crypto-stats input:checked + .slider:before {
-    -webkit-transform: translateX(16px);
-    -ms-transform: translateX(16px);
-    transform: translateX(16px);
+  -webkit-transform: translateX(16px);
+  -ms-transform: translateX(16px);
+  transform: translateX(16px);
 }
 .status-toggle {
-    display: flex;
+  display: flex;
 }
 .demo p,
 .outer-box h6 span {
-    background: var(--dark-blue);
-     color: var(--white-color);
-    font-size: 10px;
-    border-radius: 25px;
-    padding: 2px 6px;
+  background: var(--dark-blue);
+  color: var(--white-color);
+  font-size: 10px;
+  border-radius: 25px;
+  padding: 2px 6px;
 }
-.notification-icon{
-    position: relative;
+.notification-icon {
+  position: relative;
 }
 i.red-alert {
-    position: absolute;
-    right: 8px;
-    font-size: 8px;
-    top: 10px;
-    color: #FF0000;
+  position: absolute;
+  right: 8px;
+  font-size: 8px;
+  top: 10px;
+  color: #ff0000;
 }
 /* Exchange Page*/
 .row.exchange input,
 .row.exchange select {
-    border-radius: 22px;
-    border: 1px solid #2b3990;
-    font-size: 14px;
+  border-radius: 22px;
+  border: 1px solid #2b3990;
+  font-size: 14px;
 }
 .exchange .custom-select {
-    background: #fff url(../images/dashboard/exchange/select-arrow.svg) no-repeat right 0.75rem center;
-    border: 1px solid #e2e2e2;
-    border-radius: 5px;
-    padding: 0.375rem 0.75rem;
+  background: #fff url(../images/dashboard/exchange/select-arrow.svg) no-repeat
+    right 0.75rem center;
+  border: 1px solid #e2e2e2;
+  border-radius: 5px;
+  padding: 0.375rem 0.75rem;
 }
 .exchange h2 {
-    font-size: 36px;
-   font-weight: var(--font-bold);
-    margin-bottom: 30px;
+  font-size: 36px;
+  font-weight: var(--font-bold);
+  margin-bottom: 30px;
 }
 .exchange h6 {
-    font-size: 20px;
-   font-weight: var(--font-bold);
-    margin-bottom: 0px;
+  font-size: 20px;
+  font-weight: var(--font-bold);
+  margin-bottom: 0px;
 }
 .notes p {
-    max-width: 500px;
-    margin: 30px 0px;
+  max-width: 500px;
+  margin: 30px 0px;
 }
 .notes p a {
-    text-decoration: revert;
-   font-weight: var(--font-bold);
+  text-decoration: revert;
+  font-weight: var(--font-bold);
+}
+
+.exchange .live label span {
+  color: lightgreen;
+  border: 1px solid lightgreen;
+  padding: 0px 5px;
+  font-size: 12px;
+  border-radius: 5px;
+}
+.exchange .live a {
+  color: var(--dark-blue);
+  text-decoration: underline;
 }
 /* Exchange Page */
 /* Settings Page */
 .account-form,
 .outer-box {
-    background: #ffffff 0% 0% no-repeat padding-box;
-    box-shadow: 0px 0px 6px #00000029;
-    border-radius: 20px;
-    padding: 15px;
+  background: #ffffff 0% 0% no-repeat padding-box;
+  box-shadow: 0px 0px 6px #00000029;
+  border-radius: 20px;
+  padding: 15px;
 }
 .status-toggle.crypto-stats {
-    background: transparent;
-    box-shadow: none;
-    border-radius: 0;
-    padding: 0;
+  background: transparent;
+  box-shadow: none;
+  border-radius: 0;
+  padding: 0;
 }
 .telegram .status-toggle {
-    justify-content: space-between;
+  justify-content: space-between;
 }
 .setting-spacing {
-    margin-top: 20px;
+  margin-top: 20px;
 }
 .hobbyist-plan {
-    background: #787878 0% 0% no-repeat padding-box;
-    border: 1px solid #707070;
-    border-radius: 20px;
-     color: var(--white-color);
-    padding: 15px;
-    min-height: 100%;
+  background: #787878 0% 0% no-repeat padding-box;
+  border: 1px solid #707070;
+  border-radius: 20px;
+  color: var(--white-color);
+  padding: 15px;
+  min-height: 100%;
 }
 .hobbyist-plan.starter-plan {
-    background: #c2c2c2 0% 0% no-repeat padding-box;
-    border: 1px solid #c2c2c2;
+  background: #c2c2c2 0% 0% no-repeat padding-box;
+  border: 1px solid #c2c2c2;
 }
 .hobbyist-plan.trader-plan {
-    background: #323334 0% 0% no-repeat padding-box;
+  background: #323334 0% 0% no-repeat padding-box;
 }
 .hobbyist-plan.pro-plan {
-    background: #000000 0% 0% no-repeat padding-box;
+  background: #000000 0% 0% no-repeat padding-box;
 }
 .hobbyist-plan ul {
-    padding: inherit;
+  padding: inherit;
 }
 .hobbyist-plan h5 {
-   font-weight: var(--font-bold);
+  font-weight: var(--font-bold);
 }
 .hobbyist-plan h5 span {
-    font-weight: 300;
-    font-size: 12px;
+  font-weight: 300;
+  font-size: 12px;
 }
 .hobbyist-plan a.btn {
-    position: absolute;
-    bottom: 2%;
-    transform: translate(-50%, 0%);
-    left: 50%;
+  position: absolute;
+  bottom: 2%;
+  transform: translate(-50%, 0%);
+  left: 50%;
 }
 .outer-box h6 a {
-    color: var(--dark-blue);
-    font-size: 12px;
+  color: var(--dark-blue);
+  font-size: 12px;
 }
-div.logout:hover{
-    cursor: pointer;
-   font-weight: var(--font-bold);
-    transition: .5s;
+div.logout:hover {
+  cursor: pointer;
+  font-weight: var(--font-bold);
+  transition: 0.5s;
 }
 /* Settings Page */
 @media (min-width: 767px) {
-    .s-layout__content {
-        margin-left: 4em;
-    }
-    .s-layout {
-        background: #f5f6fa 0% 0% no-repeat padding-box;
-    }
-    /* Sidebar */
-    .s-sidebar__trigger {
-        width: 4em;
-    }
+  .s-layout__content {
+    margin-left: 4em;
+  }
+  .s-layout {
+    background: #f5f6fa 0% 0% no-repeat padding-box;
+  }
+  /* Sidebar */
+  .s-sidebar__trigger {
+    width: 4em;
+  }
 
-    .s-sidebar__nav {
-        width: 4em;
-        left: 0;
-    }
+  .s-sidebar__nav {
+    width: 4em;
+    left: 0;
+  }
 
-    .s-sidebar__nav:hover,
-    .s-sidebar__nav:focus,
-    .s-sidebar__trigger:hover + .s-sidebar__nav,
-    .s-sidebar__trigger:focus + .s-sidebar__nav {
-        width: 15em;
-    }
+  .s-sidebar__nav:hover,
+  .s-sidebar__nav:focus,
+  .s-sidebar__trigger:hover + .s-sidebar__nav,
+  .s-sidebar__trigger:focus + .s-sidebar__nav {
+    width: 15em;
+  }
 }
 @media (min-width: 767px) {
-    .s-layout__content {
-        margin-left: 15em;
-        border-top-left-radius: 50px;
-        border-bottom-left-radius: 50px;
-        background: #f5f6fa 0% 0% no-repeat padding-box;
-    }
+  .s-layout__content {
+    margin-left: 15em;
+    border-top-left-radius: 50px;
+    border-bottom-left-radius: 50px;
+    background: #f5f6fa 0% 0% no-repeat padding-box;
+  }
 
-    /* Sidebar */
-    .s-sidebar__trigger {
-        display: none;
-    }
+  /* Sidebar */
+  .s-sidebar__trigger {
+    display: none;
+  }
 
-    .s-sidebar__nav {
-        width: 15em;
-    }
+  .s-sidebar__nav {
+    width: 15em;
+  }
 
-    .s-sidebar__nav ul {
-        top: 2em;
-    }
+  .s-sidebar__nav ul {
+    top: 2em;
+  }
 }
 @media (max-width: 1200px) {
-    .stats-bar {
-        padding-bottom: 2%;
-    }
+  .stats-bar {
+    padding-bottom: 2%;
+  }
 }
 @media (max-width: 1030px) {
-    .profit-row {
-        display: grid;
-        justify-content: flex-start;
-        align-items: center;
-    }
+  .profit-row {
+    display: grid;
+    justify-content: flex-start;
+    align-items: center;
+  }
 }
 @media (max-width: 766px) {
-    .s-layout__content {
-        padding-top: 15%;
-    }
-    .buttons-top {
-        display: block;
-    }
-    .stats-bar {
-        justify-content: space-evenly;
-        align-items: center;
-        padding-bottom: 2%;
-    }
+  .s-layout__content {
+    padding-top: 15%;
+  }
+  .buttons-top {
+    display: block;
+  }
+  .stats-bar {
+    justify-content: space-evenly;
+    align-items: center;
+    padding-bottom: 2%;
+  }
 }
 @media (max-width: 576px) {
-    .s-layout__content {
-        padding-top: 22%;
-    }
+  .s-layout__content {
+    padding-top: 22%;
+  }
 }
 @media (max-width: 767px) {
-    .crypto-stats .chart img {
-        width: 50px;
-    }
-    .crypto-stats p {
-        font-size: 12px;
-    }
-    .crypto-stats {
-        border-radius: 0px;
-        padding: 10px;
-    }
-    .exchange h2 {
-        font-size: 24px;
-        margin-bottom: 10px;
-    }
-    .exchange h6 {
-        font-size: 16px;
-       font-weight: var(--font-bold);
-        margin-bottom: 10px;
-    }
-    .exchange p, .exchange label,.pricing-text p,.hobbyist-plan ul li,.row.exchange input, .row.exchange select,.coinrule .team p, .payments p,.est-cost p, .support p, .team-box p,.update-form p {
-        font-size: 12px;
-    }
-    form.mt-4 {
-        margin-top: 0px !important;
-    }
-    .notes p {
-        margin: 10px 0px;
-    }
-    .s-sidebar__nav-link span {
-        font-size: small;
-    }
-    .s-sidebar__nav-link > i,.s-sidebar__nav-link {
-        height: 2em;
-    }
-    .net-profit h5,ul#crypto-tab p,.account-form ol li,.link-exchange a.btn,.sidebar-button a.btn,a.logout,#crypto-tab.nav-pills .nav-link,.risk-wrapper-text p, .banner-text p,div#faq .card-body ul li a, .invest p,.meeting p,section.roadmap .milestones span{
-        font-size: 14px;
-    }
-    .pnote p {
-        line-height: initial;
-        font-size: 12px;
-        margin-top: 10px;
-    }
-    .net-profit h5 span , .hobbyist-plan h5,.est-cost-box h3,.enthusiasts h2,.key-term h2{
-        font-size: 16px;
-    }
-    div#faq h2,#main #faq .card .card-header .btn-header-link.collapsed,#main #faq .card .card-header .btn-header-link {
-        padding: 10px;
-        font-size: 16px;
-    }
-    form.account-form.telegram {
-        margin-top: 15px;
-    }
-    .knowledge-list h2, .pricing-text h2, .funding h2, .meeting h2, .est-cost h2, .support h2, .team h2, .payments h2, .section-heading h2,.update-form h1 {
-        font-size: 24px;
-    }
-    .update-form, .analytics{
-        padding: 50px 15px;
-    }
-    .update-form a{
-        font-size: 10px;
-    }
-    .update-form input{
-        padding: 0px 130px 0px 15px;
-    }
-    .search-form input{
-        padding: 0px 86px 0px 30px;
-    }
-    .update-form input,.search-form input {
-        height: 35px;
-        font-size: 12px;
-    }
-    .banner-text a.btn,div#faq{
-        margin-bottom: 25px;
-    }
-    .banner-text,.pricing-text {
-        text-align: center;
-    }
-    .choose {
-        padding: 10px 0px 0px;
-    }
-    .container.risk {
-        margin: 0px auto 25px;
-    }
-    .search-form {
-        margin: 100px auto 30px;
-    }
-    .search-form img {
-        width: 15px;
-        height: 15px;
-        top: 10px;
-    }
-    .search-form a {
-        padding: 7px 20px;
-        font-size: 12px;
-    }
-    section.roadmap .box {
-        margin-top: 0px;
-    }
-    .box {
-        padding-bottom: 0px;
-    }
-    section.roadmap .box.left,section.roadmap .box.right{
-        padding: 0px;
-    }
+  .crypto-stats .chart img {
+    width: 50px;
+  }
+  .crypto-stats p {
+    font-size: 12px;
+  }
+  .crypto-stats {
+    border-radius: 0px;
+    padding: 10px;
+  }
+  .exchange h2 {
+    font-size: 24px;
+    margin-bottom: 10px;
+  }
+  .exchange h6 {
+    font-size: 16px;
+    font-weight: var(--font-bold);
+    margin-bottom: 10px;
+  }
+  .exchange p,
+  .exchange label,
+  .pricing-text p,
+  .hobbyist-plan ul li,
+  .row.exchange input,
+  .row.exchange select,
+  .coinrule .team p,
+  .payments p,
+  .est-cost p,
+  .support p,
+  .team-box p,
+  .update-form p {
+    font-size: 12px;
+  }
+  form.mt-4 {
+    margin-top: 0px !important;
+  }
+  .notes p {
+    margin: 10px 0px;
+  }
+  .s-sidebar__nav-link span {
+    font-size: small;
+  }
+  .s-sidebar__nav-link > i,
+  .s-sidebar__nav-link {
+    height: 2em;
+  }
+  .net-profit h5,
+  ul#crypto-tab p,
+  .account-form ol li,
+  .link-exchange a.btn,
+  .sidebar-button a.btn,
+  a.logout,
+  #crypto-tab.nav-pills .nav-link,
+  .risk-wrapper-text p,
+  .banner-text p,
+  div#faq .card-body ul li a,
+  .invest p,
+  .meeting p,
+  section.roadmap .milestones span {
+    font-size: 14px;
+  }
+  .pnote p {
+    line-height: initial;
+    font-size: 12px;
+    margin-top: 10px;
+  }
+  .net-profit h5 span,
+  .hobbyist-plan h5,
+  .est-cost-box h3,
+  .enthusiasts h2,
+  .key-term h2 {
+    font-size: 16px;
+  }
+  div#faq h2,
+  #main #faq .card .card-header .btn-header-link.collapsed,
+  #main #faq .card .card-header .btn-header-link {
+    padding: 10px;
+    font-size: 16px;
+  }
+  form.account-form.telegram {
+    margin-top: 15px;
+  }
+  .knowledge-list h2,
+  .pricing-text h2,
+  .funding h2,
+  .meeting h2,
+  .est-cost h2,
+  .support h2,
+  .team h2,
+  .payments h2,
+  .section-heading h2,
+  .update-form h1 {
+    font-size: 24px;
+  }
+  .update-form,
+  .analytics {
+    padding: 50px 15px;
+  }
+  .update-form a {
+    font-size: 10px;
+  }
+  .update-form input {
+    padding: 0px 130px 0px 15px;
+  }
+  .search-form input {
+    padding: 0px 86px 0px 30px;
+  }
+  .update-form input,
+  .search-form input {
+    height: 35px;
+    font-size: 12px;
+  }
+  .banner-text a.btn,
+  div#faq {
+    margin-bottom: 25px;
+  }
+  .banner-text,
+  .pricing-text {
+    text-align: center;
+  }
+  .choose {
+    padding: 10px 0px 0px;
+  }
+  .container.risk {
+    margin: 0px auto 25px;
+  }
+  .search-form {
+    margin: 100px auto 30px;
+  }
+  .search-form img {
+    width: 15px;
+    height: 15px;
+    top: 10px;
+  }
+  .search-form a {
+    padding: 7px 20px;
+    font-size: 12px;
+  }
+  section.roadmap .box {
+    margin-top: 0px;
+  }
+  .box {
+    padding-bottom: 0px;
+  }
+  section.roadmap .box.left,
+  section.roadmap .box.right {
+    padding: 0px;
+  }
 }
 /********************************* Crypto Dashboard *********************************/
 /********************************* Footer Start *********************************/
 #footer {
-    background: #f5f5f5;
+  background: #f5f5f5;
 }
 
 #footer {
-    color: #fff !important;
-    font-size: 14px;
+  color: #fff !important;
+  font-size: 14px;
 }
 
 #footer .footer-top {
-    padding: 60px 0 30px 0;
+  padding: 60px 0 30px 0;
 }
 
 #footer .footer-top .footer-contact {
-    margin-bottom: 30px;
-    text-align: center;
+  margin-bottom: 30px;
+  text-align: center;
 }
 .footercopy-right p {
-    background: var(--dark-blue);
-    padding: 10px;
-    margin-bottom: 0;
+  background: var(--dark-blue);
+  padding: 10px;
+  margin-bottom: 0;
 }
 #footer .footer-top .footer-contact h3 {
-    font-size: 24px;
-    margin: 0 0 15px 0;
-    padding: 2px 0 2px 0;
-    line-height: 1;
-   font-weight: var(--font-bold);
+  font-size: 24px;
+  margin: 0 0 15px 0;
+  padding: 2px 0 2px 0;
+  line-height: 1;
+  font-weight: var(--font-bold);
 }
 
 #footer .footer-top .footer-contact h3 span {
-     color: var(--white-color);
+  color: var(--white-color);
 }
 
 #footer .footer-top .footer-contact p {
-    font-size: 14px;
-    line-height: 24px;
-    margin-bottom: 0;
-     color: var(--white-color);
-    margin-top: 1rem;
+  font-size: 14px;
+  line-height: 24px;
+  margin-bottom: 0;
+  color: var(--white-color);
+  margin-top: 1rem;
 }
 
 #footer .footer-top h4 {
-    font-size: 16px;
-    font-weight: bold;
-    color: var(--dark-blue);
-    position: relative;
-    padding-bottom: 12px;
+  font-size: 16px;
+  font-weight: bold;
+  color: var(--dark-blue);
+  position: relative;
+  padding-bottom: 12px;
 }
 
 #footer .footer-top .footer-links {
-    margin-bottom: 30px;
+  margin-bottom: 30px;
 }
 
 #footer .footer-top .footer-links ul {
-    list-style: none;
-    padding: 0;
-    margin: 0;
+  list-style: none;
+  padding: 0;
+  margin: 0;
 }
 
 #footer .footer-top .footer-links ul i {
-    padding-right: 2px;
-     color: var(--white-color);
-    font-size: 18px;
-    line-height: 1;
+  padding-right: 2px;
+  color: var(--white-color);
+  font-size: 18px;
+  line-height: 1;
 }
 
 #footer .footer-top .footer-links ul li {
-    padding: 5px 0px;
-    display: flex;
-    align-items: center;
+  padding: 5px 0px;
+  display: flex;
+  align-items: center;
 }
 
 #footer .footer-top .footer-links ul li:first-child {
-    padding-top: 0;
+  padding-top: 0;
 }
 
 #footer .footer-top .footer-links ul a {
-    color: #3d3d3d;
-    display: inline-block;
-    line-height: 1;
-    text-decoration: none;
+  color: #3d3d3d;
+  display: inline-block;
+  line-height: 1;
+  text-decoration: none;
 }
 #footer .footer-top .footer-links ul a:hover {
-    transform: scale(1.3);
-    transition: 0.5s;
+  transform: scale(1.3);
+  transition: 0.5s;
 }
 
 #footer .footer-top .social-links a {
-    font-size: 20px;
-    display: inline-block;
-    color: var(--dark-blue);
-    line-height: 1;
-    border-radius: 4px;
-    text-align: center;
-    width: 25px;
-    height: 25px;
-    transition: 0.5s;
-    padding-top: 3px;
+  font-size: 20px;
+  display: inline-block;
+  color: var(--dark-blue);
+  line-height: 1;
+  border-radius: 4px;
+  text-align: center;
+  width: 25px;
+  height: 25px;
+  transition: 0.5s;
+  padding-top: 3px;
 }
 
 #footer .footer-top .social-links a:hover {
-    background: var(--dark-blue);
-    color: #f8f9fa;
-    text-decoration: none;
-    transform: scale3d(1.2, 1.2, 1.2);
+  background: var(--dark-blue);
+  color: #f8f9fa;
+  text-decoration: none;
+  transform: scale3d(1.2, 1.2, 1.2);
 }
 .footer-image i {
-    color: var(--dark-blue);
-    font-size: 50px;
+  color: var(--dark-blue);
+  font-size: 50px;
 }
 /********************************* Footer End *********************************/
 
 /********************************* Media Queries for different screens *********************************/
 @media only screen and (max-width: 991px) {
-    .fitness-overlay .banner-overlay-inner {
-        border: none;
-        margin: 0;
-    }
-    .member-overlay.result-overlay {
-        top: 50%;
-    }
-    .health iframe {
-        min-height: 350px;
-    }
-    a.nav-item.nav-link.sign-up {
-        margin-bottom: 10px;
-        width: 100%;
-        text-align: center;
-    }
-    .ad-navbar {
-        align-items: baseline !important;
-    }
-    .header-logo img {
-        width: 80px;
-    }
-    .header-toggler .navbar-toggler-icon {
-        width: 1em;
-        height: 1em;
-    }
-    .header-navbar .navbar {
-        padding: 8px 0px;
-    }
-    .header-navbar .navbar-light .navbar-nav .nav-link {
-        font-size: 12px;
-    }
-    .header-navbar .navbar-light .navbar-toggler {
-        color: rgb(34 45 113);
-        background: var(--white-color);
-    }
+  .fitness-overlay .banner-overlay-inner {
+    border: none;
+    margin: 0;
+  }
+  .member-overlay.result-overlay {
+    top: 50%;
+  }
+  .health iframe {
+    min-height: 350px;
+  }
+  a.nav-item.nav-link.sign-up {
+    margin-bottom: 10px;
+    width: 100%;
+    text-align: center;
+  }
+  .ad-navbar {
+    align-items: baseline !important;
+  }
+  .header-logo img {
+    width: 80px;
+  }
+  .header-toggler .navbar-toggler-icon {
+    width: 1em;
+    height: 1em;
+  }
+  .header-navbar .navbar {
+    padding: 8px 0px;
+  }
+  .header-navbar .navbar-light .navbar-nav .nav-link {
+    font-size: 12px;
+  }
+  .header-navbar .navbar-light .navbar-toggler {
+    color: rgb(34 45 113);
+    background: var(--white-color);
+  }
 }
 @media only screen and (max-width: 767px) {
-    .header-logo img {
-        width: 80px;
-    }
+  .header-logo img {
+    width: 80px;
+  }
 }
 @media (max-width: 767px) {
-    .member-second a img {
-        max-width: 110px;
-        margin: 15px;
-    }
-    .form-group.range-filter,
-    .form-group.range-filters {
-        margin-bottom: 25px;
-    }
-    .search-form h1,
-    .risk-wrapper-text h2,
-    .banner-text h1,
-    .choose-heading h2 {
-        font-size: 22px;
-        line-height: 30px;
-        margin-bottom: 0;
-    }
-    .range-filter h6,
-    .range-filters h6 {
-        margin-top: 10px;
-    }
-    .range-filter output#num,
-    .range-filters output#nums {
-        top: 70px;
-    }
-
-   
+  .member-second a img {
+    max-width: 110px;
+    margin: 15px;
+  }
+  .form-group.range-filter,
+  .form-group.range-filters {
+    margin-bottom: 25px;
+  }
+  .search-form h1,
+  .risk-wrapper-text h2,
+  .banner-text h1,
+  .choose-heading h2 {
+    font-size: 22px;
+    line-height: 30px;
+    margin-bottom: 0;
+  }
+  .range-filter h6,
+  .range-filters h6 {
+    margin-top: 10px;
+  }
+  .range-filter output#num,
+  .range-filters output#nums {
+    top: 70px;
+  }
 }
-
-

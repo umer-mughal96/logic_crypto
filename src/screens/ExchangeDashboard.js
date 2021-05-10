@@ -1,6 +1,10 @@
-import React, { useState } from "react";
-import { connectExchange } from "../actions/exchange/exchange";
-import { useDispatch } from "react-redux";
+import React, { useEffect, useState } from "react";
+import {
+  connectExchange,
+  deleteUserExchange,
+  getUserExchanges,
+} from "../actions/exchange/exchange";
+import { useDispatch, useSelector } from "react-redux";
 import Sidebar from "../components/Sidebar";
 
 const ExchangeDashboard = () => {
@@ -8,6 +12,7 @@ const ExchangeDashboard = () => {
   const [apiKey, setApiKey] = useState("");
   const [secretKey, setSecretKey] = useState("");
   const dispatch = useDispatch();
+  const { exchanges } = useSelector((s) => s.Exchange);
 
   let exhangeNames = [
     "Binance",
@@ -32,13 +37,16 @@ const ExchangeDashboard = () => {
     dispatch(connectExchange(data));
   };
 
+  useEffect(() => {
+    dispatch(getUserExchanges());
+  }, []);
+
   return (
     <div className="container-fluid">
       <div className="row">
         <div className="col-md-12 p-0">
           <div className="s-layout">
             <Sidebar />
-
             <main className="s-layout__content">
               <div className="container-fluid">
                 <div className="row exchange">
@@ -100,11 +108,55 @@ const ExchangeDashboard = () => {
                       </div>
                     </form>
                   </div>
-                  <div className="col-md-12 col-xl-6 col-lg-6 col-12 mt-5">
-                    <form className="mt-4">
+                  <div class="col-md-12 col-xl-6 col-lg-6 col-12 mt-5">
+                    <form class="mt-4">
                       <h6>Connected Exchange</h6>
                       <p>You haven't connected any exchange yet.</p>
                     </form>
+                    <div class="row">
+                      {exchanges?.exchanges &&
+                        exchanges?.exchanges.map((exc) => {
+                          return (
+                            <div class="col-md-12 setting-spacing mb-3">
+                              <div class="account-form">
+                                <div class="row">
+                                  <div class="col-5">
+                                    <img
+                                      src="files/images/dashboard/settings/binance.svg"
+                                      alt=""
+                                    />
+                                  </div>
+                                  <div class="col-7">
+                                    <div class="form-group live">
+                                      <label for="api">
+                                        {exc.exchangeName} <span>LIVE</span>
+                                      </label>
+                                      <input
+                                        type="text"
+                                        class="form-control"
+                                        id="api"
+                                        placeholder="eg. 4143516asd3a1s316as1da"
+                                      />
+                                      <a
+                                        onClick={() =>
+                                          dispatch(
+                                            deleteUserExchange(
+                                              exc._id,
+                                              exchanges._id
+                                            )
+                                          )
+                                        }
+                                      >
+                                        Remove
+                                      </a>
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                          );
+                        })}
+                    </div>
                   </div>
                 </div>
               </div>
