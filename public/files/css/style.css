@@ -1016,6 +1016,7 @@ section.roadmap .milestones span {
   top: 50%;
   left: 4em;
   transform: translateY(-50%);
+  cursor: pointer;
 }
 
 .s-sidebar__nav-link:hover {
@@ -1036,6 +1037,7 @@ section.roadmap .milestones span {
   top: 50%;
   left: 4em;
   transform: translateY(-50%);
+  cursor: pointer;
 }
 .sidebar-active > i {
   position: absolute;
@@ -1700,6 +1702,13 @@ div.logout:hover {
 .footer-image i {
   color: var(--dark-blue);
   font-size: 50px;
+}
+
+.Toastify__toast--success {
+  background-color: var(--dark-blue) !important;
+}
+.Toastify__toast--info {
+  background-color: rgb(172, 38, 38) !important;
 }
 /********************************* Footer End *********************************/
 

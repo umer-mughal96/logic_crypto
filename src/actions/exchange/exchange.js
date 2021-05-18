@@ -49,16 +49,15 @@ export const deleteUserExchange = (exchangeId, id) => async (dispatch) => {
     };
     dispatch({ type: constants.SET_EXCHANGE_LOADING });
     const res = await services.deleteExchange(data);
-    if(res.status == 200){
+    if (res.status == 200) {
       dispatch({
         type: constants.DELETE_USER_EXCHANGE_SUCCESS,
         payload: exchangeId,
       });
       successNotification(res.data.msg);
-    }else{
-      errorNotification("Something Gone Wrong")
+    } else {
+      errorNotification("Something Gone Wrong");
     }
-  
   } catch (err) {
     err.response?.data?.msg
       ? infoNotification(err.response?.data?.msg)
