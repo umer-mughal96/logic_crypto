@@ -131,13 +131,15 @@ const ExchangeDashboard = () => {
                                       <label for="api">
                                         {exc.exchangeName} <span>LIVE</span>
                                       </label>
-                                      <input
-                                        type="text"
-                                        class="form-control"
-                                        id="api"
-                                        placeholder="eg. 4143516asd3a1s316as1da"
-                                      />
-                                      <a
+
+                                      <p>key : {exc.apiKey}</p>
+                                      <button
+                                      className="exchange-card-btn"
+                                        style={{
+                                          background: "none",
+                                          border: "none",
+                                          color: "red",
+                                        }}
                                         onClick={() =>
                                           dispatch(
                                             deleteUserExchange(
@@ -148,7 +150,7 @@ const ExchangeDashboard = () => {
                                         }
                                       >
                                         Remove
-                                      </a>
+                                      </button>
                                     </div>
                                   </div>
                                 </div>

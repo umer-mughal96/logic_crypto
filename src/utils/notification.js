@@ -1,5 +1,5 @@
-import { ToastContainer, toast } from 'react-toastify';
-import 'react-toastify/dist/ReactToastify.css';
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 toast.configure();
 
@@ -13,4 +13,3 @@ export const errorNotification = (msg) => {
 export const infoNotification = (msg) => {
   toast.info(msg, { position: toast.POSITION.TOP_RIGHT, autoClose: 2500 });
 };
-
