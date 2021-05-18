@@ -56,9 +56,9 @@ const RulesDashboard = () => {
                       </Link>
                     </div>
                     <div className="link-exchange">
-                      <a href="" className="btn">
+                      <Link to="/rule" className="btn">
                         + Create Rules
-                      </a>
+                      </Link>
                     </div>
                   </div>
                 </div>

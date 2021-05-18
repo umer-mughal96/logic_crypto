@@ -16,12 +16,14 @@ import Invest from "../screens/Invest";
 import AuthenticatedRoute from "../routes/AuthenticatedRoute";
 import ForgotPassword from "../screens/ForgotPassword";
 import ResetPassword from "../screens/ResetPassword";
+import NewRule from "../screens/NewRule";
 
 const Routes = withRouter(({ location }) => {
   return (
     <Fragment>
       {location.pathname == "/setting-dsh" ||
       location.pathname == "/rule-dsh" ||
+      location.pathname == "/rule" ||
       location.pathname == "/exchange-dsh" ? null : (
         <Header />
       )}
@@ -31,6 +33,7 @@ const Routes = withRouter(({ location }) => {
         <Route path="/signin" component={Signin} />
         <AuthenticatedRoute path="/setting-dsh" component={SettingDashboard} />
         <AuthenticatedRoute path="/rule-dsh" component={RulesDashboard} />
+        <AuthenticatedRoute path="/rule" component={NewRule} />
         <AuthenticatedRoute
           path="/exchange-dsh"
           component={ExchangeDashboard}
@@ -45,6 +48,7 @@ const Routes = withRouter(({ location }) => {
       </Switch>
       {location.pathname == "/setting-dsh" ||
       location.pathname == "/rule-dsh" ||
+      location.pathname == "/rule" ||
       location.pathname == "/exchange-dsh" ? null : (
         <Footer />
       )}

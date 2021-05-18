@@ -108,6 +108,7 @@ a.nav-item.nav-link.sign-up:hover,
 .exchange button.btn,
 .hobbyist-plan a.btn,
 .funding a.btn,
+.form-group button,
 .sign-in button {
   background: var(--dark-blue);
   color: var(--white-color);
@@ -125,6 +126,7 @@ a.nav-item.nav-link.sign-up:hover,
 .exchange button.btn:hover,
 .hobbyist-plan a.btn:hover,
 .funding a.btn:hover,
+.form-group button:hover,
 .sign-in button:hover {
   background: var(--white-color);
   color: var(--dark-blue);
@@ -1588,6 +1590,165 @@ div.logout:hover {
     padding: 0px;
   }
 }
+
+/* Add New Rule Page*/
+.add-exchange {
+  display: flex;
+  align-items: center;
+  color: var(--dark-blue);
+  }
+  .add-exchange span,.alert-notification span{
+  color: var(--black-color);
+  }
+  .alert-notification p{
+  margin-bottom: 0;
+  }
+  .demo-exchange-row {
+  border-left: 5px solid black;
+  margin-left: 60px;
+  position: relative;
+  margin-bottom: 40px;
+  }
+  .on-state p {
+  position: absolute;
+  top: 40%;
+  left: -65px;
+  font-size: 14px;
+  font-weight: 600;
+  }
+  #rule-tab.nav-pills .nav-link {
+  color: var(--dark-blue);
+  background-color: var(--white-color);
+  border: 2px solid #222d71;
+  margin: 0px 10px;
+  font-weight:var(--font-bold);
+  }
+  #rule-tab.nav-pills .nav-link.active {
+  color: var(--white-color);
+  background-color: var(--dark-blue);
+  border: 2px solid #222d71;
+  }
+  .currency-select{
+  display: flex;
+  }
+  .currency-select input[type="number"] {
+  border-right: 0px;
+  border-top-right-radius: 0px;
+  border-bottom-right-radius: 0px;
+  padding-left: 10px;
+  width: 100%;
+  }
+  .currency-select input[type="number"]:focus{
+  outline: none;
+  }
+  .currency-select select#inputState {
+  border-left: 0px;
+  border-bottom-left-radius: 0px;
+  border-top-left-radius: 0px;
+  }
+  #pills-event form, #pills-timer form, #pills-order p, .row.execute{
+  background: white;
+  color: var(--dark-blue);
+  border-radius: 50px;
+  padding: 5px 10px;
+  }
+  .row.execute .form-group span, .row.prices .form-group span, .row.prices .form-group h2{
+  white-space: pre;
+  }
+  #pills-order p{
+  padding: 10px 10px;
+  }
+  #pills-event form .form-group,#pills-timer form .form-group, .row.execute .form-group{
+  margin-bottom: 0px;
+  }
+  div.floating-action-menu > .action-menu {
+  visibility: hidden;
+  transform: translateY(65px);
+  opacity: 0;
+  max-height: 0;
+  overflow: hidden;
+  transition: all 300ms linear;
+  }
+  div.floating-action-menu.active > .action-menu {
+  visibility: visible;
+  transform: translate(0);
+  opacity: 1;
+  padding-bottom: 15px;
+  max-height: 1000px;
+  background: #fff;
+  padding: 10px;
+  margin-bottom: 10px;
+  }
+  
+  div.floating-action-menu > .action-menu .btn-floating,
+  div.floating-action-menu > .action-menu .badge
+  {
+  transform: scale(0.4);
+  transition: all 500ms ease-in-out;
+  }
+  div.floating-action-menu.active > .action-menu .btn-floating,
+  div.floating-action-menu.active > .action-menu .badge
+  {
+  transform: scale(1);
+  }
+  
+  div.floating-action-menu > .action-button > .btn-floating {
+  transition: all 500ms linear;
+  background-color: #222d71;
+  border-color: #222d71;
+  border-radius: 50%;
+  padding: 5px 10px;
+  color: #fff;
+  cursor: pointer;
+  }
+  div.floating-action-menu.active > .action-button > .btn-floating {
+  background-color: #222d71;
+  border-color: #222d71;
+  border-radius: 50%;
+  padding: 5px 10px;
+  color: #fff;
+  cursor: pointer;
+  }
+  div.floating-action-menu.active > .action-button > .btn-floating:hover {
+  background-color: #222d71;
+  border-color: #222d71;
+  }
+  
+  div.floating-action-menu > .action-button > .btn-floating > i {
+  transition: transform 500ms ease-in-out;
+  }
+  div.floating-action-menu.active > .action-button > .btn-floating > i {
+  transform: rotate(-315deg);
+  
+  }
+  .floating-action a i {
+  background: #222d71;
+  color: #fff;
+  padding: 10px;
+  border-radius: 50%;
+  cursor: pointer;
+  width: 33px;
+  text-align: center;
+  }
+  .floating-action{
+  padding: 2px 0px;
+  }
+  .floating-action .badge {
+  background: #222d71;
+  color: #fff;
+  }
+  .floating-action-menu-position{
+    bottom: 0px; 
+    right: 10px;
+  }
+  @media (max-width: 576px) {
+    #rule-tab.nav-pills .nav-link {
+    margin:0px 1px;
+    font-size: 12px;
+    padding: 5px;
+    }
+  }
+  /* / Add New Rule Page / */
 /********************************* Crypto Dashboard *********************************/
 /********************************* Footer Start *********************************/
 #footer {
