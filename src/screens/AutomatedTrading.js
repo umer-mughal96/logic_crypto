@@ -7,6 +7,7 @@ const AutomatedTrading = () => {
         <div className="row banner">
           <div className="col-md-6">
             <div className="banner-text">
+            
               <h1>Automated Trading Made Easy</h1>
               <p>
                 Coinrule empowers traders to compete with professional
@@ -148,6 +149,7 @@ const AutomatedTrading = () => {
                   oninput="num.value = this.value"
                 />
                 <output id="num">0</output>
+                
               </div>
             </div>
             <div className="col-md-3">
