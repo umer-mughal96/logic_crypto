@@ -1,26 +1,22 @@
-import * as authConstants from '../actions/auth/constants';
-
-
-
-
-const userinfoFromLocalStorage = localStorage.getItem('user')
-  ? JSON.parse(localStorage.getItem('user'))
-  : null;
+import * as authConstants from "../actions/auth/constants";
 
 const iniitialState = {
-  token: userinfoFromLocalStorage ? userinfoFromLocalStorage?.token : null,
-  user: userinfoFromLocalStorage ? userinfoFromLocalStorage?.loginUser : null,
+  token: null,
+  user: null,
   loading: false,
   success: false,
   error: null,
   isSignup: false,
 };
-  
-  export const Auth = (state = iniitialState, action) => {
-    const {type , payload} = action
-    switch (action.type) {
 
-      case authConstants.SET_AUTH_LOADING:
+
+
+
+
+export const Auth = (state = iniitialState, action) => {
+  const { type, payload } = action;
+  switch (action.type) {
+    case authConstants.SET_AUTH_LOADING:
       return {
         ...state,
         loading: true,
@@ -56,7 +52,7 @@ const iniitialState = {
         isSignup: false,
       };
 
-      case authConstants.RESET_AUTH_STATE:
+    case authConstants.RESET_AUTH_STATE:
       return {
         ...state,
         loading: false,
@@ -70,10 +66,7 @@ const iniitialState = {
         loading: false,
       };
 
-      default:
-        return {
-          ...state,
-        };
-    }
-  };
-  
+    default:
+      return state
+  }
+};
