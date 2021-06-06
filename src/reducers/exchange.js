@@ -42,8 +42,6 @@ export const Exchange = (state = iniitialState, action) => {
       };
 
     default:
-      return {
-        ...state,
-      };
+      return state
   }
 };

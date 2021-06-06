@@ -52,6 +52,16 @@ export const Auth = (state = iniitialState, action) => {
         isSignup: false,
       };
 
+      case authConstants.SOCKET_ACCOUNT_DEACTIVATED_SUCCESS:
+      return {
+        token: null,
+        user: null,
+        loading: false,
+        success: false,
+        error: null,
+        isSignup: false,
+      };
+
     case authConstants.RESET_AUTH_STATE:
       return {
         ...state,
