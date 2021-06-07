@@ -1,6 +1,7 @@
 import React from "react";
 import Carousel from "../components/Carousel";
 // import Stripe from "../components/Stripe/Stripe";
+import {Link} from 'react-router-dom';
 
 const Pricing = () => {
   return (
@@ -31,9 +32,9 @@ const Pricing = () => {
                 <li>Up to $3k Monthly Trade Volume</li>
               </ul>
               <div className="text-center">
-                <a href="" className="btn">
+                <Link to="/pay" className="btn">
                   Choose
-                </a>
+                </Link>
               </div>
             </div>
           </div>
@@ -58,9 +59,9 @@ const Pricing = () => {
                 <li>Advanced Indicators and Operators</li>
               </ul>
               <div className="text-center">
-                <a href="" className="btn">
+                <Link to="/pay" className="btn">
                   Choose
-                </a>
+                </Link>
               </div>
             </div>
           </div>
@@ -85,9 +86,9 @@ const Pricing = () => {
                 <li>Advanced Indicators and Operators</li>
               </ul>
               <div className="text-center">
-                <a href="" className="btn">
+                <Link to="/pay" className="btn">
                   Choose
-                </a>
+                </Link>
               </div>
             </div>
           </div>
@@ -114,9 +115,9 @@ const Pricing = () => {
                 <li>Advanced Indicators and Operators</li>
               </ul>
               <div className="text-center">
-                <a href="" className="btn">
+                <Link to="/pay" className="btn">
                   Choose
-                </a>
+                </Link>
               </div>
             </div>
           </div>
@@ -161,9 +162,9 @@ const Pricing = () => {
               <h3>Trader $59.99</h3>
               <p>Cost only</p>
               <h3>0.05% of trade volume</h3>
-              <a href="" className="btn">
+              <Link to="/pay" className="btn">
                 Start for free
-              </a>
+              </Link>
             </div>
           </div>
         </div>
@@ -172,112 +173,6 @@ const Pricing = () => {
         <div className="row">
           <div className="col-md-12 p-0 enthusiasts mt-5">
           <Carousel/>
-            {/* <div className="loop owl-carousel owl-theme">
-              <div className="item">
-                <div className="team-box enthusiasts">
-                  <div className="team-image enthusiasts">
-                    <img src="files/images/automated/theater.jpg" alt="" />
-                  </div>
-                  <div className="team-details enthusiasts">
-                    <h6>Gabriele Musella</h6>
-                    <p>CEO, Product</p>
-                    <a href="#" className="facebook">
-                      <i className="fab fa-facebook-square"></i>
-                    </a>
-                    <a href="#" className="twitter">
-                      <i className="fab fa-twitter-square"></i>
-                    </a>
-                    <p>
-                      By adding liquidity to previously illiquid asset classNamees
-                      such as early-stage tech companies, but also to sectors
-                      such as supply-chains, real estate and many more,
-                      cryptocurrency trading has enabled an immense process of
-                      wealth creation. While speculation might occasionally be
-                      seen critically, it’s role in asset price discovery is
-                      critical for any market and ultimately
-                    </p>
-                  </div>
-                </div>
-              </div>
-              <div className="item">
-                <div className="team-box enthusiasts">
-                  <div className="team-image enthusiasts">
-                    <img src="files/images/automated/theater.jpg" alt="" />
-                  </div>
-                  <div className="team-details enthusiasts">
-                    <h6>Gabriele Musella</h6>
-                    <p>CEO, Product</p>
-                    <a href="#" className="facebook">
-                      <i className="fab fa-facebook-square"></i>
-                    </a>
-                    <a href="#" className="twitter">
-                      <i className="fab fa-twitter-square"></i>
-                    </a>
-                    <p>
-                      By adding liquidity to previously illiquid asset classNamees
-                      such as early-stage tech companies, but also to sectors
-                      such as supply-chains, real estate and many more,
-                      cryptocurrency trading has enabled an immense process of
-                      wealth creation. While speculation might occasionally be
-                      seen critically, it’s role in asset price discovery is
-                      critical for any market and ultimately
-                    </p>
-                  </div>
-                </div>
-              </div>
-              <div className="item">
-                <div className="team-box enthusiasts">
-                  <div className="team-image enthusiasts">
-                    <img src="files/images/automated/theater.jpg" alt="" />
-                  </div>
-                  <div className="team-details enthusiasts">
-                    <h6>Gabriele Musella</h6>
-                    <p>CEO, Product</p>
-                    <a href="#" className="facebook">
-                      <i className="fab fa-facebook-square"></i>
-                    </a>
-                    <a href="#" className="twitter">
-                      <i className="fab fa-twitter-square"></i>
-                    </a>
-                    <p>
-                      By adding liquidity to previously illiquid asset classNamees
-                      such as early-stage tech companies, but also to sectors
-                      such as supply-chains, real estate and many more,
-                      cryptocurrency trading has enabled an immense process of
-                      wealth creation. While speculation might occasionally be
-                      seen critically, it’s role in asset price discovery is
-                      critical for any market and ultimately
-                    </p>
-                  </div>
-                </div>
-              </div>
-              <div className="item">
-                <div className="team-box enthusiasts">
-                  <div className="team-image enthusiasts">
-                    <img src="files/images/automated/theater.jpg" alt="" />
-                  </div>
-                  <div className="team-details enthusiasts">
-                    <h6>Gabriele Musella</h6>
-                    <p>CEO, Product</p>
-                    <a href="#" className="facebook">
-                      <i className="fab fa-facebook-square"></i>
-                    </a>
-                    <a href="#" className="twitter">
-                      <i className="fab fa-twitter-square"></i>
-                    </a>
-                    <p>
-                      By adding liquidity to previously illiquid asset classNamees
-                      such as early-stage tech companies, but also to sectors
-                      such as supply-chains, real estate and many more,
-                      cryptocurrency trading has enabled an immense process of
-                      wealth creation. While speculation might occasionally be
-                      seen critically, it’s role in asset price discovery is
-                      critical for any market and ultimately
-                    </p>
-                  </div>
-                </div>
-              </div>
-            </div> */}
           </div>
         </div>
       </div>

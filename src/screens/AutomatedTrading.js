@@ -1,4 +1,5 @@
 import React from "react";
+import VolumeSlider from "../components/RangeSlider/RangeSlider";
 
 const AutomatedTrading = () => {
   return (
@@ -142,26 +143,28 @@ const AutomatedTrading = () => {
             <div className="col-md-3">
               <div className="form-group range-filter">
                 <h6>Initial Amount</h6>
-                <input
+                {/* <input
                   type="range"
                   value="0"
                   max="100"
                   oninput="num.value = this.value"
                 />
-                <output id="num">0</output>
+                <output id="num">0</output> */}
+                <VolumeSlider orientation="vertical" />
                 
               </div>
             </div>
             <div className="col-md-3">
               <div className="form-group range-filters">
                 <h6>Length of investment</h6>
-                <input
+                {/* <input
                   type="range"
                   value="0"
                   max="1000"
                   oninput="nums.value = this.value"
                 />
-                <output id="nums">0</output>
+                <output id="nums">0</output> */}
+                <VolumeSlider  />
               </div>
             </div>
             <div className="col-md-3">

@@ -78,7 +78,7 @@ const Sidebar = withRouter(({ history, location }) => {
         </ul>
         <div className="row sidebar-button">
           <div className="offset-2 col-8">
-            <Link to="/" className="btn d-block">
+            <Link to="/pricing" className="btn d-block">
               Get plans
             </Link>
           </div>
