@@ -17,6 +17,7 @@ import AuthenticatedRoute from "../routes/AuthenticatedRoute";
 import ForgotPassword from "../screens/ForgotPassword";
 import ResetPassword from "../screens/ResetPassword";
 import NewRule from "../screens/NewRule";
+import Payment from "../screens/Payment";
 
 const Routes = withRouter(({ location }) => {
   return (
@@ -45,6 +46,7 @@ const Routes = withRouter(({ location }) => {
         <Route path="/forgotpassword" component={ForgotPassword} />
         <Route path="/resetpassword" component={ResetPassword} />
         <Route path="/invest" component={Invest} />
+        <Route path="/pay" component={Payment} />
       </Switch>
       {location.pathname == "/setting-dsh" ||
       location.pathname == "/rule-dsh" ||
