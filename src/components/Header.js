@@ -1,9 +1,37 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { useSelector } from "react-redux";
-import { Link } from "react-router-dom";
+import { Link, withRouter } from "react-router-dom";
 
-const Header = () => {
+const Header = withRouter(({location}) => {
   const { user } = useSelector((s) => s.Auth);
+
+
+  const [active, setActive] = useState("");
+
+  useEffect(() => {
+    if (location.pathname == "/enth") {
+      setActive("About");
+    }
+    if (location.pathname == "/pricing") {
+      setActive("Pricing");
+    }
+    if (location.pathname == "/categories") {
+      setActive("Learn");
+    }
+    if (location.pathname == "/invest") {
+      setActive("Invest");
+    }
+    if (location.pathname == "/setting-dsh") {
+      setActive("Dashboard");
+    }
+    if (location.pathname == "/signin") {
+      setActive("Sign in");
+    }
+    if (location.pathname == "/") {
+      setActive("Free class*");
+    }
+  }, [location.pathname]);
+
   return (
     <header
       data-aos="fade-down"
@@ -30,29 +58,29 @@ const Header = () => {
               </button>
               <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
                 <div class="navbar-nav ml-auto ad-navbar">
-                  <Link class="nav-item nav-link active" to="/enth">
-                    About<span class="sr-only">(current)</span>
+                  <Link onClick={() => setActive("About")} class={ active == "About" ?  `nav-item nav-link active` : "nav-item nav-link"} to="/enth">
+                    About
                   </Link>
-                  <Link class="nav-item nav-link" to="/pricing">
+                  <Link onClick={() => setActive("Pricing")} class={ active == "Pricing" ?  `nav-item nav-link active` : "nav-item nav-link"} to="/pricing">
                     Pricing
                   </Link>
-                  <Link class="nav-item nav-link" to="/categories">
+                  <Link onClick={() => setActive("Learn")} class={ active == "Learn" ?  `nav-item nav-link active` : "nav-item nav-link"} to="/categories">
                     Learn
                   </Link>
-                  <Link class="nav-item nav-link" to="/invest">
+                  <Link onClick={() => setActive("Invest")} class={ active == "Invest" ?  `nav-item nav-link active` : "nav-item nav-link"} to="/invest">
                     Invest
                   </Link>
                   {user ? (
-                    <Link class="nav-item nav-link" to="/setting-dsh">
+                    <Link onClick={() => setActive("Dashboard")} class={ active == "Dashboard" ?  `nav-item nav-link active` : "nav-item nav-link"} to="/setting-dsh">
                       Dashboard
                     </Link>
                   ) : (
-                    <Link class="nav-item nav-link" to="/signin">
+                    <Link onClick={() => setActive("Sign in")} class={ active == "Sign in" ?  `nav-item nav-link active` : "nav-item nav-link"} to="/signin">
                       Sign in
                     </Link>
                   )}
 
-                  <Link class="nav-item nav-link sign-up" to="/">
+                  <Link onClick={() => setActive("Free class*")} class="nav-item nav-link sign-up" to="/">
                     Free class*
                   </Link>
                 </div>
@@ -63,6 +91,6 @@ const Header = () => {
       </div>
     </header>
   );
-};
+});
 
 export default Header;
