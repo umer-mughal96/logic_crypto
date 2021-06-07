@@ -9,10 +9,6 @@ const iniitialState = {
   isSignup: false,
 };
 
-
-
-
-
 export const Auth = (state = iniitialState, action) => {
   const { type, payload } = action;
   switch (action.type) {
@@ -52,7 +48,7 @@ export const Auth = (state = iniitialState, action) => {
         isSignup: false,
       };
 
-      case authConstants.SOCKET_ACCOUNT_DEACTIVATED_SUCCESS:
+    case authConstants.SOCKET_ACCOUNT_DEACTIVATED_SUCCESS:
       return {
         token: null,
         user: null,
@@ -77,6 +73,6 @@ export const Auth = (state = iniitialState, action) => {
       };
 
     default:
-      return state
+      return state;
   }
 };
