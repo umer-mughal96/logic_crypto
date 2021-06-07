@@ -1,13 +1,16 @@
 import React from "react";
 import Carousel from "../components/Carousel";
+// import Stripe from "../components/Stripe/Stripe";
 
 const Pricing = () => {
   return (
     <div>
+   
       <div className="container-fluid">
         <div className="row pricing">
           <div className="col-md-12 pricing-text">
             <h2>Pricing</h2>
+            {/* <Stripe /> */}
             <p>
               With Coinrule you can easily develop your own trading strategies
               and set them up to run automatically on your favourite exchange.
