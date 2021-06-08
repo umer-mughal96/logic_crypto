@@ -27,9 +27,9 @@ const Pricing = () => {
               <ul>
                 <li>2 Live Rules</li>
                 <li>2 Demo Rules</li>
-                <li>7 Template Strategies</li>
+                <li>7 Templates Strategies</li>
                 <li>1 Connected Exchange</li>
-                <li>Up to $3k Monthly Trade Volume</li>
+                <li>Up to 3k Monthly Trade Volume</li>
               </ul>
               <div className="text-center">
                 <Link to="/pay" className="btn">
@@ -43,20 +43,20 @@ const Pricing = () => {
               <h5>
                 Hobbyist
                 <br />
-                $29<span>.99/mo</span>
+                $14<span>.99/mo</span>
               </h5>
               <ul>
                 <li>7 Live Rules</li>
                 <li>7 Demo Rules</li>
                 <li>40 Template Strategies</li>
                 <li>2 Connected Exchanges</li>
-                <li>Up to $100k Monthly</li>
+                <li>Up to 100k Monthly Trade volume</li>
                 <li>Trade Volume</li>
                 <li>Leverage Strategies</li>
                 <li>Live Telegram + Text Notifications</li>
                 <li>Free Access to Trader</li>
-                <li>Community</li>
                 <li>Advanced Indicators and Operators</li>
+                <li>Live Support</li>
               </ul>
               <div className="text-center">
                 <Link to="/pay" className="btn">
@@ -68,9 +68,9 @@ const Pricing = () => {
           <div className="col-md-4 col-xl-3 col-lg-4 col-sm-6 mb-3">
             <div className="hobbyist-plan trader-plan">
               <h5>
-                Trader Plan
+                Trader
                 <br />
-                $59<span>.99/mo</span>
+                $24<span>.99/mo</span>
               </h5>
               <ul>
                 <li>15 Live Rules</li>
@@ -83,6 +83,7 @@ const Pricing = () => {
                 <li>Free Access to Trader</li>
                 <li>Community</li>
                 <li>One-to-one Training Sessions</li>
+                <li>Live Support</li>
                 <li>Advanced Indicators and Operators</li>
               </ul>
               <div className="text-center">
@@ -95,13 +96,13 @@ const Pricing = () => {
           <div className="col-md-4 col-xl-3 col-lg-4 col-sm-6 mb-3">
             <div className="hobbyist-plan pro-plan">
               <h5>
-                Pro Plan
+                Pro
                 <br />
-                $449<span>.99/mo</span>
+                $299<span>.99/mo</span>
               </h5>
               <ul>
-                <li>15 Live Rules</li>
-                <li>15 Demo Rules</li>
+                <li>50 Live Rules</li>
+                <li>50 Demo Rules</li>
                 <li>Unlimited Template Strategies</li>
                 <li>Unlimited Exchanges</li>
                 <li>Up to $5M Monthly Trade Volume</li>
@@ -111,6 +112,7 @@ const Pricing = () => {
                 <li>Community</li>
                 <li>One-to-one Training Sessions</li>
                 <li>Ultra-Fast Executions</li>
+                <li>Prioritised Access and Execution</li>
                 <li>Dedicated Server</li>
                 <li>Advanced Indicators and Operators</li>
               </ul>
