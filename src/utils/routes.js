@@ -17,7 +17,6 @@ import AuthenticatedRoute from "../routes/AuthenticatedRoute";
 import ForgotPassword from "../screens/ForgotPassword";
 import ResetPassword from "../screens/ResetPassword";
 import NewRule from "../screens/NewRule";
-<<<<<<< HEAD
 import Payment from "../screens/Payment";
 
 const Routes = withRouter(({ location }) => {
@@ -56,55 +55,6 @@ const Routes = withRouter(({ location }) => {
         <Footer />
       )}
     </Fragment>
-=======
-import { Elements } from "@stripe/react-stripe-js";
-import { loadStripe } from "@stripe/stripe-js";
-import Payment from "../screens/Payment";
-
-const stripePromise = loadStripe("pk_test_TYooMQauvdEDq54NiTphI7jx");
-
-const Routes = withRouter(({ location }) => {
-  return (
-    <Elements stripe={stripePromise}>
-      <Fragment>
-        {location.pathname == "/setting-dsh" ||
-        location.pathname == "/rule-dsh" ||
-        location.pathname == "/rule" ||
-        location.pathname == "/exchange-dsh" ? null : (
-          <Header />
-        )}
-        <Switch>
-          <Route exact path="/" component={AutomatedTrading} />
-          <Route path="/signup" component={Signup} />
-          <Route path="/signin" component={Signin} />
-          <AuthenticatedRoute
-            path="/setting-dsh"
-            component={SettingDashboard}
-          />
-          <AuthenticatedRoute path="/rule-dsh" component={RulesDashboard} />
-          <AuthenticatedRoute path="/rule" component={NewRule} />
-          <AuthenticatedRoute
-            path="/exchange-dsh"
-            component={ExchangeDashboard}
-          />
-          <Route path="/pricing" component={Pricing} />
-          <Route path="/knowledge" component={Knowledge} />
-          <Route path="/enth" component={Enthuasists} />
-          <Route path="/categories" component={Categories} />
-          <Route path="/forgotpassword" component={ForgotPassword} />
-          <Route path="/resetpassword" component={ResetPassword} />
-          <Route path="/invest" component={Invest} />
-          <Route path="/pay" component={Payment} />
-        </Switch>
-        {location.pathname == "/setting-dsh" ||
-        location.pathname == "/rule-dsh" ||
-        location.pathname == "/rule" ||
-        location.pathname == "/exchange-dsh" ? null : (
-          <Footer />
-        )}
-      </Fragment>
-    </Elements>
->>>>>>> e22a64e3c4bfe5904905a068c308f24e12cff53f
   );
 });
 
