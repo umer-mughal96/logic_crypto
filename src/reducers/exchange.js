@@ -1,7 +1,7 @@
 import * as exchangeConstants from "../actions/exchange/constants";
 
 const iniitialState = {
-  loading: false,
+  exLoading: false,
   exchanges: null,
 };
 
@@ -11,37 +11,42 @@ export const Exchange = (state = iniitialState, action) => {
     case exchangeConstants.SET_EXCHANGE_LOADING:
       return {
         ...state,
-        loading: true,
+        exLoading: true,
       };
 
     case exchangeConstants.CONNECT_EXCHANGE_SUCCESS:
       return {
         ...state,
         exchanges: payload,
-        loading: false,
+        exLoading: false,
       };
 
     case exchangeConstants.CONNECT_EXCHANGE_FAIL:
       return {
         ...state,
-        loading: false,
+        exLoading: false,
       };
 
     case exchangeConstants.GET_EXCHANGES_SUCCESS:
       return {
         ...state,
         exchanges: payload,
-        loading: false,
+        exLoading: false,
       };
 
-      case exchangeConstants.DELETE_USER_EXCHANGE_SUCCESS:
+    case exchangeConstants.DELETE_USER_EXCHANGE_SUCCESS:
       return {
         ...state,
-        exchanges: {...state.exchanges , exchanges : state.exchanges.exchanges.filter((exc) => exc._id !== payload)},
-        loading: false,
+        exchanges: {
+          ...state.exchanges,
+          exchanges: state.exchanges.exchanges.filter(
+            (exc) => exc._id !== payload
+          ),
+        },
+        exLoading: false,
       };
 
     default:
-      return state
+      return state;
   }
 };

@@ -1,12 +1,18 @@
 import React from "react";
 import Carousel from "../components/Carousel";
 // import Stripe from "../components/Stripe/Stripe";
-import {Link} from 'react-router-dom';
+import { Link } from "react-router-dom";
+import { paymentDetails } from "../actions/stripe/stripe";
+import { useDispatch } from "react-redux";
 
-const Pricing = () => {
+const Pricing = ({ history }) => {
+  const dispatch = useDispatch();
+
+  const choosePaymenthandler = (packageName, packaPrice) => {
+    dispatch(paymentDetails(packageName, packaPrice, history));
+  };
   return (
     <div>
-   
       <div className="container-fluid">
         <div className="row pricing">
           <div className="col-md-12 pricing-text">
@@ -32,9 +38,7 @@ const Pricing = () => {
                 <li>Up to 3k Monthly Trade Volume</li>
               </ul>
               <div className="text-center">
-                <Link to="/pay" className="btn">
-                  Choose
-                </Link>
+                <button className="btn">Default</button>
               </div>
             </div>
           </div>
@@ -59,9 +63,12 @@ const Pricing = () => {
                 <li>Live Support</li>
               </ul>
               <div className="text-center">
-                <Link to="/pay" className="btn">
+                <button
+                  className="btn"
+                  onClick={() => choosePaymenthandler("Hobbyist", 14)}
+                >
                   Choose
-                </Link>
+                </button>
               </div>
             </div>
           </div>
@@ -87,9 +94,12 @@ const Pricing = () => {
                 <li>Advanced Indicators and Operators</li>
               </ul>
               <div className="text-center">
-                <Link to="/pay" className="btn">
+                <button
+                  className="btn"
+                  onClick={() => choosePaymenthandler("Trader", 24)}
+                >
                   Choose
-                </Link>
+                </button>
               </div>
             </div>
           </div>
@@ -117,9 +127,12 @@ const Pricing = () => {
                 <li>Advanced Indicators and Operators</li>
               </ul>
               <div className="text-center">
-                <Link to="/pay" className="btn">
+                <button
+                  className="btn"
+                  onClick={() => choosePaymenthandler("Pro", 299)}
+                >
                   Choose
-                </Link>
+                </button>
               </div>
             </div>
           </div>
@@ -174,7 +187,7 @@ const Pricing = () => {
       <div className="container-fluid">
         <div className="row">
           <div className="col-md-12 p-0 enthusiasts mt-5">
-          <Carousel/>
+            <Carousel />
           </div>
         </div>
       </div>
@@ -217,7 +230,7 @@ const Pricing = () => {
               action=""
               method="GET"
               id="update-form"
-              style={{position: "relative"}}
+              style={{ position: "relative" }}
             >
               <input
                 className="form-control my-0 py-1 amber-border"

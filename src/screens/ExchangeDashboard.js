@@ -37,10 +37,6 @@ const ExchangeDashboard = () => {
     dispatch(connectExchange(data));
   };
 
-  useEffect(() => {
-    dispatch(getUserExchanges());
-  }, []);
-
   return (
     <div className="container-fluid">
       <div className="row">

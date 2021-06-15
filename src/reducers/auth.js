@@ -3,7 +3,7 @@ import * as authConstants from "../actions/auth/constants";
 const iniitialState = {
   token: null,
   user: null,
-  loading: false,
+  auLoading: false,
   success: false,
   error: null,
   isSignup: false,
@@ -15,12 +15,12 @@ export const Auth = (state = iniitialState, action) => {
     case authConstants.SET_AUTH_LOADING:
       return {
         ...state,
-        loading: true,
+        auLoading: true,
       };
     case authConstants.SIGN_IN_SUCCESS:
       return {
         ...state,
-        loading: false,
+        auLoading: false,
         user: payload.loginUser,
         success: true,
         token: payload.token,
@@ -35,14 +35,14 @@ export const Auth = (state = iniitialState, action) => {
       return {
         ...state,
         success: false,
-        loading: false,
+        auLoading: false,
         error: payload,
       };
     case authConstants.LOGOUT_SUCCESSFULLY:
       return {
         token: null,
         user: null,
-        loading: false,
+        auLoading: false,
         success: false,
         error: null,
         isSignup: false,
@@ -52,7 +52,7 @@ export const Auth = (state = iniitialState, action) => {
       return {
         token: null,
         user: null,
-        loading: false,
+        auLoading: false,
         success: false,
         error: null,
         isSignup: false,
@@ -61,7 +61,7 @@ export const Auth = (state = iniitialState, action) => {
     case authConstants.RESET_AUTH_STATE:
       return {
         ...state,
-        loading: false,
+        auLoading: false,
         success: false,
         error: null,
         isSignup: false,
@@ -69,7 +69,7 @@ export const Auth = (state = iniitialState, action) => {
     case authConstants.ERROR:
       return {
         ...state,
-        loading: false,
+        auLoading: false,
       };
 
     default:
