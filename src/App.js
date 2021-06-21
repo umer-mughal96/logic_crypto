@@ -28,8 +28,11 @@ const App = () => {
   }, [user]);
 
   useEffect(() => {
-    dispatch(getUserExchanges());
-  }, []);
+    if(user){
+
+      dispatch(getUserExchanges());
+    }
+  }, [user]);
 
   axios.defaults.baseURL = process.env.REACT_APP_BACKEND_SERVER;
   const { token } = useSelector((state) => state.Auth);

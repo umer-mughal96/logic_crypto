@@ -5,13 +5,19 @@ import Sidebar from "../components/Sidebar";
 
 const NewRule = () => {
   const [toogler, setToogler] = useState(false);
+  const [selectedCoin , setCoinCurrency] = useState("")
+  const [coinMVP , setCoinPVM] = useState("")
+  const [coinPresidencec , setCoinPresidence] = useState("")
   const { exchanges } = useSelector((s) => s.Exchange);
+  const { binanceAssets } = useSelector((s) => s.User);
 
   const dispatch = useDispatch();
 
   const onExchangeSelectHandler = (e) => {
-    console.log(e.target.value);
-    dispatch(getExchangeAssets(e.target.value))
+    console.log(e.target.value)
+    if (e.target.value !== "null") {
+      dispatch(getExchangeAssets(e.target.value))
+    }
   };
 
   return (
@@ -154,6 +160,7 @@ const NewRule = () => {
                                           <select
                                             id="inputState"
                                             class="custom-select form-control mr-2"
+                                            onChange={(e) => setCoinCurrency(e.target.value)}
                                           >
                                             <option selected="">
                                               any coin
@@ -161,8 +168,15 @@ const NewRule = () => {
                                             <option value="anyofmycoins">
                                               any of my coins
                                             </option>
-                                            <option value="aion">AION</option>
-                                            <option value="1inch">!INCH</option>
+                                            {
+                                              binanceAssets?.coins && binanceAssets.coins.map((c, ind) => {
+                                                return (
+                                                  <option key={ind} value={c.coin} >
+                                                    {c.coin}
+                                                  </option>
+                                                )
+                                              })
+                                            }
                                           </select>
                                           <span>has</span>
                                         </div>
@@ -172,8 +186,9 @@ const NewRule = () => {
                                           <select
                                             id="inputState"
                                             class="custom-select form-control"
+                                            onChange={(e) => setCoinPVM(e.target.value)}
                                           >
-                                            <option selected="">---</option>
+                                            <option selected="" value={null}>---</option>
                                             <option value="price">Price</option>
                                             <option value="volume">
                                               Volume
@@ -189,8 +204,9 @@ const NewRule = () => {
                                           <select
                                             id="inputState"
                                             class="custom-select form-control"
+                                            onChange={(e) => setCoinPresidence(e.target.value)}
                                           >
-                                            <option selected="">---</option>
+                                            <option selected="" value={null}>---</option>
                                             <option value="increased">
                                               Increased By
                                             </option>

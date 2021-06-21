@@ -2,10 +2,12 @@ import * as userConstants from "../actions/user/constants";
 
 const iniitialState = {
   usLoading: false,
-  exchangeAssets: null,
+  binanceAssets: null,
+  binanceUsAssets: null
+
 };
 
-export const Exchange = (state = iniitialState, action) => {
+export const User = (state = iniitialState, action) => {
   const { type, payload } = action;
   switch (action.type) {
     case userConstants.SET_USER_LOADING:
@@ -13,11 +15,11 @@ export const Exchange = (state = iniitialState, action) => {
         ...state,
         usLoading: true,
       };
-    case userConstants.GET_EXCHANGE_ASSETS_SUCCESSFULL:
+    case userConstants.GET_BINANCE_EXCHANGE_ASSETES_SUCCESS:
       return {
         ...state,
         usLoading: false,
-        exchangeAssets: payload,
+        binanceAssets: payload,
       };
     case userConstants.GET_EXCHANGE_ASSETS_FAIL:
       return {
