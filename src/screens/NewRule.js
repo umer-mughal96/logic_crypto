@@ -21,13 +21,13 @@ const NewRule = () => {
   };
 
   return (
-    <div className="container-fluid">
+    <div className="container-fluid crypto-container">
       <div className="row">
         <div className="col-md-12 p-0">
           <div className="s-layout">
             <Sidebar />
             <main class="s-layout__content">
-              <div class="container-fluid">
+              <div class="container-fluid crypto-container">
                 <div class="row exchange prices">
                   <div class="col-md-7 col-xl-9 col-lg-8 col-12">
                     <h2>New Rule</h2>
@@ -150,7 +150,7 @@ const NewRule = () => {
                             role="tabpanel"
                             aria-labelledby="pills-event-tab"
                           >
-                            <div class="container-fluid">
+                            <div class="container-fluid crypto-container">
                               <div class="row">
                                 <div class="col-md-12 p-0">
                                   <form action="">
@@ -250,7 +250,7 @@ const NewRule = () => {
                             role="tabpanel"
                             aria-labelledby="pills-timer-tab"
                           >
-                            <div class="container-fluid">
+                            <div class="container-fluid crypto-container">
                               <div class="row">
                                 <div class="col-md-12 p-0">
                                   <form action="">
@@ -316,7 +316,7 @@ const NewRule = () => {
                             role="tabpanel"
                             aria-labelledby="pills-order-tab"
                           >
-                            <div class="container-fluid">
+                            <div class="container-fluid crypto-container">
                               <div class="row">
                                 <div class="col-md-12 p-0">
                                   <div class="alert-notification">

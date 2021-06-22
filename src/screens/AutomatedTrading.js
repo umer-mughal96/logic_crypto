@@ -4,7 +4,7 @@ import VolumeSlider from "../components/RangeSlider/RangeSlider";
 const AutomatedTrading = () => {
   return (
     <div>
-      <div className="container-fluid">
+      <div className="container-fluid crypto-container">
         <div className="row banner">
           <div className="col-md-6">
             <div className="banner-text">
@@ -123,7 +123,7 @@ const AutomatedTrading = () => {
           </div>
         </div>
       </div>
-      <div className="container-fluid analytics">
+      <div className="container-fluid crypto-container analytics">
         <div className="col-md-12">
           <div className="row chart-filters">
             <div className="col-md-12">
@@ -207,7 +207,7 @@ const AutomatedTrading = () => {
           </div>
         </div>
       </div>
-      <div className="container-fluid">
+      <div className="container-fluid crypto-container">
         <div className="row choose">
           <div className="col-md-12">
             <div className="choose-heading">
@@ -260,7 +260,7 @@ const AutomatedTrading = () => {
           </div>
         </div>
       </div>
-      <div className="container-fluid">
+      <div className="container-fluid crypto-container">
         <div className="row">
           <div className="col-12 update-form">
             <h1>Getting Started Is Easy!</h1>
@@ -285,7 +285,7 @@ const AutomatedTrading = () => {
           </div>
         </div>
       </div>
-      <div className="container-fluid est-cost">
+      <div className="container-fluid crypto-container est-cost">
         <div className="row est-cost">
           <div className="col-md-12 mb-4">
             <h2>Estimate Your Cost</h2>
@@ -320,7 +320,7 @@ const AutomatedTrading = () => {
           </div>
         </div>
       </div>
-      <div className="container-fluid">
+      <div className="container-fluid crypto-container">
         <div className="row team">
           <div className="col-md-12">
             <h2>Meet the Founding Team</h2>
@@ -378,7 +378,7 @@ const AutomatedTrading = () => {
           </div>
         </div>
       </div>
-      <div className="container-fluid">
+      <div className="container-fluid crypto-container">
         <div className="row">
           <div className="col-md-12 text-center support mt-3">
             <h2>Supported Exchanges</h2>
@@ -448,7 +448,7 @@ const AutomatedTrading = () => {
           </div>
         </div>
       </div>
-      <div className="container-fluid">
+      <div className="container-fluid crypto-container">
         <div className="row">
           <div className="col-12 update-form">
             <h1>Getting Started Is Easy!</h1>

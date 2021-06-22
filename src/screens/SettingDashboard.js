@@ -437,9 +437,9 @@ const SettingDashboard = () => {
                                   <li>Advanced Indicators and Operators</li>
                                 </ul>
                                 <div className="text-center">
-                                  <a href="" className="btn">
+                                  <button href="" className="btn">
                                     Choose
-                                  </a>
+                                  </button>
                                 </div>
                               </div>
                             </div>
@@ -464,9 +464,9 @@ const SettingDashboard = () => {
                                   <li>Advanced Indicators and Operators</li>
                                 </ul>
                                 <div className="text-center">
-                                  <a href="" className="btn">
+                                  <button href="" className="btn">
                                     Choose
-                                  </a>
+                                  </button>
                                 </div>
                               </div>
                             </div>
@@ -493,9 +493,9 @@ const SettingDashboard = () => {
                                   <li>Advanced Indicators and Operators</li>
                                 </ul>
                                 <div className="text-center">
-                                  <a href="" className="btn">
+                                  <button href="" className="btn">
                                     Choose
-                                  </a>
+                                  </button>
                                 </div>
                               </div>
                             </div>

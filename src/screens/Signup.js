@@ -63,7 +63,7 @@ const Signup = ({history}) => {
   },[])
 
   return (
-    <div className="container-fluid">
+    <div className="container-fluid crypto-container">
       <div className="row">
         <div className="col-12 sign-in-form">
           <form>

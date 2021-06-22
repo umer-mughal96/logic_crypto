@@ -3,7 +3,7 @@ import React from 'react'
 const Categories = () => {
     return (
         <div>
-        <div className="container-fluid">
+        <div className="container-fluid crypto-container">
             <div className="row">
                 <div className="col-12 search-form">
                     <h1>
@@ -163,7 +163,7 @@ const Categories = () => {
             </div>
         </div>
 
-        <div className="container-fluid">
+        <div className="container-fluid crypto-container">
             <div className="row">
                 <div className="col-12 update-form">
                     <h1>Getting Started Is Easy!</h1>

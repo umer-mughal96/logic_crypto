@@ -4,7 +4,7 @@ import Carousel from "../components/Carousel";
 const Enthuasists = () => {
   return (
     <div>
-      <div className="container-fluid">
+      <div className="container-fluid crypto-container">
         <div className="row banner">
           <div className="col-md-6">
             <div className="banner-text">
@@ -36,7 +36,7 @@ const Enthuasists = () => {
           </div>
         </div>
       </div>
-      <div className="container-fluid">
+      <div className="container-fluid crypto-container">
         <div className="row">
           <div className="col-md-12 p-0 enthusiasts">
             <h2>
@@ -51,7 +51,7 @@ const Enthuasists = () => {
           </div>
         </div>
       </div>
-      <div className="container-fluid coinrule">
+      <div className="container-fluid crypto-container coinrule">
         <div className="row team">
           <div className="col-md-12">
             <h2>Meet the Coinrule Team</h2>
@@ -130,7 +130,7 @@ const Enthuasists = () => {
           </div>
         </div>
       </div>
-      <div className="container-fluid">
+      <div className="container-fluid crypto-container">
         <div className="row">
           <div className="col-md-12 text-center support mt-3">
             <h2>Partners</h2>
@@ -203,7 +203,7 @@ const Enthuasists = () => {
           </div>
         </div>
       </div>
-      <div className="container-fluid">
+      <div className="container-fluid crypto-container">
         <div className="row">
           <div className="col-12 update-form">
             <h1>Getting Started Is Easy!</h1>

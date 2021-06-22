@@ -84,7 +84,9 @@ a.nav-item.nav-link.sign-up:hover,
   color: var(--white-color);
   font-size: 30px;
 }
-
+.container-fluid.crypto-container{
+  max-width: 1396px;
+}
 /********************************* Header End *********************************/
 /********************************* Sign in Form Start *********************************/
 .sign-in-form form {
@@ -106,7 +108,7 @@ a.nav-item.nav-link.sign-up:hover,
 .chart-section a.btn,
 .est-cost a.btn,
 .exchange button.btn,
-.hobbyist-plan a.btn,
+.hobbyist-plan button,
 .funding a.btn,
 .form-group button,
 .sign-in button {
@@ -114,7 +116,7 @@ a.nav-item.nav-link.sign-up:hover,
   color: var(--white-color);
   border: 1px solid #222d71;
   border-radius: 50px;
-  font-size: 12px;
+  font-size: 16px;
   padding: 7px 25px;
   transition-delay: 0.01s;
   transition: background-color 0.5s ease-out;
@@ -124,7 +126,7 @@ a.nav-item.nav-link.sign-up:hover,
 .choose a.btn:hover,
 .est-cost a.btn:hover,
 .exchange button.btn:hover,
-.hobbyist-plan a.btn:hover,
+.hobbyist-plan button:hover,
 .funding a.btn:hover,
 .form-group button:hover,
 .sign-in button:hover {
@@ -152,6 +154,10 @@ a.nav-item.nav-link.sign-up:hover,
   border-radius: 50px;
   font-size: 14px;
   color: var(--black-color);
+}
+.banner-image img {
+  box-shadow: 0px 0px 47px #00000030;
+  border-radius: 20px;
 }
 /********************************* Sign in Form End *********************************/
 /********************************* Knowledge Page Start *********************************/
@@ -399,6 +405,7 @@ div#faq h2 {
   display: flex;
   align-items: center;
   max-width: 360px;
+  margin: auto;
 }
 .work-icon i {
   font-size: 80px;
@@ -632,6 +639,10 @@ canvas#myChart {
 }
 .team-details a i {
   color: var(--black-color);
+  font-size: 20px;
+}
+.team-details a {
+  margin: 4px;
 }
 .support p {
   max-width: 450px;
@@ -729,6 +740,9 @@ canvas#myChart {
 .key-term ul,
 .account-form ol {
   padding: 0px 0px 0px 20px;
+}
+.key-term ul li{
+  padding: 10px 0px;
 }
 .key-term h2 {
   font-size: 26px;
@@ -1135,7 +1149,7 @@ a.logout:hover {
 #crypto-tab.nav-pills .nav-link {
   padding-left: 0;
   padding-right: 0;
-  margin: 0px 5px;
+  margin: 0px 10px;
   padding-bottom: 5px;
   font-weight: var(--font-bold);
 }
@@ -1280,7 +1294,7 @@ i.red-alert {
 .exchange h6 {
   font-size: 20px;
   font-weight: var(--font-bold);
-  margin-bottom: 0px;
+  /* margin-bottom: 20px; */
 }
 .notes p {
   max-width: 500px;
@@ -1351,7 +1365,7 @@ i.red-alert {
   font-weight: 300;
   font-size: 12px;
 }
-.hobbyist-plan a.btn {
+.hobbyist-plan button {
   position: absolute;
   bottom: 2%;
   transform: translate(-50%, 0%);
@@ -1770,10 +1784,14 @@ div.logout:hover {
   margin-bottom: 30px;
   text-align: center;
 }
-.footercopy-right p {
+.footercopy-right {
   background: var(--dark-blue);
+}
+.footercopy-right p {
   padding: 10px;
   margin-bottom: 0;
+  max-width: 1396px;
+  margin: auto;
 }
 #footer .footer-top .footer-contact h3 {
   font-size: 24px;
@@ -1835,10 +1853,6 @@ div.logout:hover {
   display: inline-block;
   line-height: 1;
   text-decoration: none;
-}
-#footer .footer-top .footer-links ul a:hover {
-  transform: scale(1.3);
-  transition: 0.5s;
 }
 
 #footer .footer-top .social-links a {
