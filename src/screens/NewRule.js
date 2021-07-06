@@ -5,9 +5,10 @@ import Sidebar from "../components/Sidebar";
 
 const NewRule = () => {
   const [toogler, setToogler] = useState(false);
-  const [selectedCoin , setCoinCurrency] = useState("")
-  const [coinMVP , setCoinPVM] = useState("")
-  const [coinPresidencec , setCoinPresidence] = useState("")
+  const [selectedExchange, setSelectedExchange] = useState(false);
+  const [selectedCoin, setCoinCurrency] = useState("")
+  const [coinMVP, setCoinPVM] = useState("")
+  const [coinPresidencec, setCoinPresidence] = useState("")
   const { exchanges } = useSelector((s) => s.Exchange);
   const { binanceAssets } = useSelector((s) => s.User);
 
@@ -16,7 +17,11 @@ const NewRule = () => {
   const onExchangeSelectHandler = (e) => {
     console.log(e.target.value)
     if (e.target.value !== "null") {
+      setSelectedExchange(true)
       dispatch(getExchangeAssets(e.target.value))
+    } else {
+      setSelectedExchange(false)
+
     }
   };
 
@@ -86,12 +91,14 @@ const NewRule = () => {
                           <span>Add Exchange</span>
                         </div>
                       </div>
-                      <div class="col-12 mt-4">
+
+                      {!selectedExchange && <div class="col-12 mt-4">
                         <div class="alert-notification">
                           <i class="fal fa-exclamation-circle mr-2"></i>{" "}
                           <span>Please select exchange first</span>
                         </div>
-                      </div>
+                      </div>}
+
                       <div class="on-state">
                         <p>ON</p>
                       </div>

@@ -11,9 +11,9 @@ import { loadStripe } from "@stripe/stripe-js";
 import { getUserExchanges } from "./actions/exchange/exchange";
 
 const App = () => {
-  const { user } = useSelector((x) => x.Auth);
   const dispatch = useDispatch();
   const stripePromise = loadStripe(process.env.REACT_APP_STRIPE_API_KEY);
+  const {user} = useSelector(s => s.Auth)
 
   useEffect(() => {
     if (user) {
@@ -28,7 +28,7 @@ const App = () => {
   }, [user]);
 
   useEffect(() => {
-    if(user){
+    if (user) {
 
       dispatch(getUserExchanges());
     }
