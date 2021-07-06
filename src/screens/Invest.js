@@ -4,7 +4,7 @@ import Carousel from "../components/Carousel";
 const Invest = () => {
     return (
         <>
-            <div class="container-fluid">
+            <div class="container-fluid crypto-container">
             <div class="row banner">
                 <div class="col-md-6">
                     <div class="banner-text">
@@ -43,19 +43,19 @@ const Invest = () => {
                 </div>
             </div>
             {/* <!-- Banner Section --> */}
-            <div class="container-fluid">
+            <div class="container-fluid crypto-container">
     <div class="row">
         <div class="col-md-12 p-0">
             <section class="roadmap" id="roadmap">
                 <div class="transition-gradient-after adjust-top"></div>
-                <div class="container-fluid">
+                <div class="container-fluid crypto-container">
                     <div class="dots-vert"></div>
                     <div class="section-heading text-center">
                         <h2>Roadmap</h2>
                     </div>
                     <div class="row clearfix">
                         <div class="col-md-12">
-                            <div class="container-fluid">
+                            <div class="container-fluid crypto-container">
                                 <div class="row clearfix left">
                                     <div class="col-lg-5 box left first reveal">
                                         <div class="dots pull-right"></div>
@@ -160,7 +160,7 @@ const Invest = () => {
         </div>
     </div>
 </div>
-<div class="container-fluid">
+<div class="container-fluid crypto-container">
     <div class="row">
         <div class="col-md-12 p-0 enthusiasts">
         <Carousel/>
@@ -237,7 +237,7 @@ const Invest = () => {
         </div>
     </div>
 </div>
-<div class="container-fluid">
+<div class="container-fluid crypto-container">
     <div class="row terms">
         <div class="col-md-4 mb-3">
             <div class="key-term">
@@ -298,7 +298,7 @@ const Invest = () => {
         </div>
     </div>
 </div>
-<div class="container-fluid">
+<div class="container-fluid crypto-container">
     <div class="row">
         <div class="col-md-12 p-0 mt-3">
             <div class="funding">
@@ -308,7 +308,7 @@ const Invest = () => {
         </div>
     </div>
 </div>
-<div class="container-fluid">
+<div class="container-fluid crypto-container">
     <div class="row">
         <div class="col-md-12 meeting">
             <h2>Take a part in our weekly meeting</h2>
@@ -327,7 +327,7 @@ const Invest = () => {
         </div>
     </div>
 </div>
-<div class="container-fluid">
+<div class="container-fluid crypto-container">
     <div class="row">
         <div class="col-12 update-form">
             <h1>Getting Started Is Easy!</h1>

@@ -13,7 +13,7 @@ const Pricing = ({ history }) => {
   };
   return (
     <div>
-      <div className="container-fluid">
+      <div className="container-fluid crypto-container">
         <div className="row pricing">
           <div className="col-md-12 pricing-text">
             <h2>Pricing</h2>
@@ -149,7 +149,7 @@ const Pricing = ({ history }) => {
           </div>
         </div>
       </div>
-      <div className="container-fluid est-cost">
+      <div className="container-fluid crypto-container est-cost">
         <div className="row est-cost">
           <div className="col-md-12 mb-4">
             <h2>Estimate Your Cost</h2>
@@ -184,14 +184,14 @@ const Pricing = ({ history }) => {
           </div>
         </div>
       </div>
-      <div className="container-fluid">
+      <div className="container-fluid crypto-container">
         <div className="row">
           <div className="col-md-12 p-0 enthusiasts mt-5">
             <Carousel />
           </div>
         </div>
       </div>
-      <div className="container-fluid">
+      <div className="container-fluid crypto-container">
         <div className="row choose">
           <div className="col-md-12">
             <div className="choose-heading">
@@ -221,7 +221,7 @@ const Pricing = ({ history }) => {
           </div>
         </div>
       </div>
-      <div className="container-fluid">
+      <div className="container-fluid crypto-container">
         <div className="row">
           <div className="col-12 update-form mt-4">
             <h1>Getting Started Is Easy!</h1>

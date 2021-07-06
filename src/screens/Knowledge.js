@@ -3,7 +3,7 @@ import React from "react";
 const Knowledge = () => {
   return (
     <div>
-      <div className="container-fluid">
+      <div className="container-fluid crypto-container">
         <div className="row">
           <div className="col-12 search-form">
             <h1>Knowledgebase</h1>
@@ -23,7 +23,7 @@ const Knowledge = () => {
           </div>
         </div>
       </div>
-      <div className="container-fluid">
+      <div className="container-fluid crypto-container">
         <div className="row knowledge-list">
           <div className="col-md-4">
             <h2>Get Started</h2>
@@ -113,7 +113,7 @@ const Knowledge = () => {
           </div>
         </div>
       </div>
-      <div className="container-fluid">
+      <div className="container-fluid crypto-container">
         <div className="row">
           <div className="col-12 update-form">
             <h1>Getting Started Is Easy!</h1>
