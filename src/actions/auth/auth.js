@@ -18,7 +18,7 @@ export const userSignUp = (data, history) => async (dispatch) => {
     err.response?.data?.msg
       ? infoNotification(err.response?.data?.msg)
       : err.response?.data?.error?.map((err) => errorNotification(err.msg));
-    dispatch({ type: constants.SIGNUP_FAIL, payload: err.response.data.error });
+    dispatch({ type: constants.SIGNUP_FAIL, payload: err.response.data?.error });
   }
 };
 

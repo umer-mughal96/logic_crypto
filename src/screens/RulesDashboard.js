@@ -1,8 +1,15 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import Sidebar from "../components/Sidebar";
+import {useSelector} from 'react-redux'
 
 const RulesDashboard = () => {
+
+  const {user} = useSelector(s => s.Auth)
+  const state = useSelector(s => s.User)
+  var date = new Date(user.createdAt)
+
+  console.log(state)
   return (
     <div className="container-fluid">
       <div className="row">
@@ -31,7 +38,7 @@ const RulesDashboard = () => {
                     <h5>
                       Since
                       <br />
-                      <span>12/04/2021</span>
+                      <span>{date.toLocaleDateString()}</span>
                     </h5>
                   </div>
                 </div>
@@ -159,7 +166,7 @@ const RulesDashboard = () => {
                                 <div className="status-toggle">
                                   <p>Status</p>
                                   <label className="switch">
-                                    <input type="checkbox" checked />
+                                    <input type="checkbox" />
                                     <span className="slider round"></span>
                                   </label>
                                 </div>

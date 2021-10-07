@@ -125,7 +125,7 @@ const Signup = ({history}) => {
             </div>
             <div className="sign-in-up">
               <div className="sign-in">
-                <button  disabled={loading} className="btn" onClick={(e) => onSignupHandler(e)}>
+                <button  disabled={loading || password !== confirmPassword} className="btn" onClick={(e) => onSignupHandler(e)}>
                   Sign up
                 </button>
                 <span className="sign-up">

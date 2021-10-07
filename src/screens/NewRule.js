@@ -13,6 +13,38 @@ const NewRule = () => {
   const { binanceAssets } = useSelector((s) => s.User);
 
   const dispatch = useDispatch();
+  const data = useSelector(s => s)
+  console.log(data)
+
+  const [newRule, setNewRule] = useState({
+    demoExchange:'',
+    event:{
+      coin:null,
+      type:'',
+      rating:'',
+      price:''
+    },
+    timer:{
+      time:'',
+      min:'',
+      date:''
+    },
+    startDate:'',
+    executeTime:'',
+    ruleName:''
+  })
+
+  const {demoExchange, startDate, executeTime, ruleName, event, timer} = newRule
+  const {coin, type, rating, price} = event
+  const {time, min, date} = timer
+
+  const changeHandler = (e) =>{
+    setNewRule({ ...newRule, ...event, ...timer, [e.target.name]: e.target.value})
+    // setNewRule({ ...event, [e.target.name]: e.target.value})
+    // setNewRule({ ...timer, [e.target.name]: e.target.value})
+  }
+
+  console.log(newRule)
 
   const onExchangeSelectHandler = (e) => {
     console.log(e.target.value)
@@ -61,6 +93,8 @@ const NewRule = () => {
                             class="form-control"
                             id="demo"
                             placeholder="Demo exchange"
+                            name='demoExchange'
+                            onChange={changeHandler}
                           />
                         </div>
                       </div>
@@ -167,7 +201,9 @@ const NewRule = () => {
                                           <select
                                             id="inputState"
                                             class="custom-select form-control mr-2"
-                                            onChange={(e) => setCoinCurrency(e.target.value)}
+                                            name='coin'
+                                            // onChange={(e) => setCoinCurrency(e.target.value)}
+                                            onChange={changeHandler}
                                           >
                                             <option selected="">
                                               any coin
@@ -193,7 +229,9 @@ const NewRule = () => {
                                           <select
                                             id="inputState"
                                             class="custom-select form-control"
-                                            onChange={(e) => setCoinPVM(e.target.value)}
+                                            name='type'
+                                            // onChange={(e) => setCoinPVM(e.target.value)}
+                                            onChange={changeHandler}
                                           >
                                             <option selected="" value={null}>---</option>
                                             <option value="price">Price</option>
@@ -211,7 +249,9 @@ const NewRule = () => {
                                           <select
                                             id="inputState"
                                             class="custom-select form-control"
-                                            onChange={(e) => setCoinPresidence(e.target.value)}
+                                            name='rating'
+                                            // onChange={(e) => setCoinPresidence(e.target.value)}
+                                            onChange={changeHandler}
                                           >
                                             <option selected="" value={null}>---</option>
                                             <option value="increased">
@@ -234,6 +274,8 @@ const NewRule = () => {
                                           <input
                                             type="number"
                                             placeholder="2.5"
+                                            name='price'
+                                            onChange={changeHandler}
                                           />
                                           <select
                                             id="inputState"
@@ -390,7 +432,11 @@ const NewRule = () => {
                               <div class="form-group d-flex align-items-center">
                                 <div class="form-group  d-flex align-items-center">
                                   <span class="mr-2">Start</span>
-                                  <input type="date" class="form-control" />
+                                  <input 
+                                  type="date" 
+                                  class="form-control"
+                                  name='startDate'
+                                  onChange={changeHandler} />
                                 </div>
                               </div>
                             </div>
@@ -402,6 +448,8 @@ const NewRule = () => {
                                   class="form-control"
                                   id="demo"
                                   placeholder="Demo exchange"
+                                  name='executeTime'
+                                  onChange={changeHandler}
                                 />
                                 <span class="ml-2">times</span>
                               </div>
@@ -425,6 +473,8 @@ const NewRule = () => {
                                   class="form-control"
                                   id="demo"
                                   placeholder="Eg. Drive and conquer"
+                                  name='ruleName'
+                                  onChange={changeHandler}
                                 />
                               </div>
                             </div>

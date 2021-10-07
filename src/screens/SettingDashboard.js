@@ -93,7 +93,7 @@ const SettingDashboard = () => {
                                   <div className="status-toggle crypto-stats">
                                     <p>Status</p>
                                     <label className="switch">
-                                      <input type="checkbox" checked="" />
+                                      <input type="checkbox" />
                                       <span className="slider round"></span>
                                     </label>
                                   </div>
@@ -213,7 +213,7 @@ const SettingDashboard = () => {
                                         <div className="status-toggle crypto-stats">
                                           <p>Rule exchange</p>
                                           <label className="switch">
-                                            <input type="checkbox" checked="" />
+                                            <input type="checkbox" />
                                             <span className="slider round"></span>
                                           </label>
                                         </div>
@@ -222,7 +222,7 @@ const SettingDashboard = () => {
                                         <div className="status-toggle crypto-stats">
                                           <p>Rule errors</p>
                                           <label className="switch">
-                                            <input type="checkbox" checked="" />
+                                            <input type="checkbox" />
                                             <span className="slider round"></span>
                                           </label>
                                         </div>
@@ -231,7 +231,7 @@ const SettingDashboard = () => {
                                         <div className="status-toggle crypto-stats">
                                           <p>Rule finished</p>
                                           <label className="switch">
-                                            <input type="checkbox" checked="" />
+                                            <input type="checkbox" />
                                             <span className="slider round"></span>
                                           </label>
                                         </div>
@@ -284,7 +284,7 @@ const SettingDashboard = () => {
                                         <div className="status-toggle crypto-stats">
                                           <p>Daily Summary</p>
                                           <label className="switch">
-                                            <input type="checkbox" checked="" />
+                                            <input type="checkbox" />
                                             <span className="slider round"></span>
                                           </label>
                                         </div>
@@ -376,7 +376,7 @@ const SettingDashboard = () => {
                                   <div className="status-toggle crypto-stats">
                                     <p>Level 1: Moving Average, RSI</p>
                                     <label className="switch">
-                                      <input type="checkbox" checked="" />
+                                      <input type="checkbox" />
                                       <span className="slider round"></span>
                                     </label>
                                   </div>
@@ -385,7 +385,7 @@ const SettingDashboard = () => {
                                   <div className="status-toggle crypto-stats">
                                     <p>Level 2: Bollinger Bands, +5</p>
                                     <label className="switch">
-                                      <input type="checkbox" checked="" />
+                                      <input type="checkbox" />
                                       <span className="slider round"></span>
                                     </label>
                                   </div>

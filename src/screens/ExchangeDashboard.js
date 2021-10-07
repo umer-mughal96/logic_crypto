@@ -11,8 +11,11 @@ const ExchangeDashboard = () => {
   const [exchange, setExchange] = useState("");
   const [apiKey, setApiKey] = useState("");
   const [secretKey, setSecretKey] = useState("");
+  const [passPhrase, setPassPhrase] = useState("");
   const dispatch = useDispatch();
   const { exchanges } = useSelector((s) => s.Exchange);
+  const data = useSelector(s => s)
+  console.log(data)
 
   let exhangeNames = [
     "Binance",
@@ -33,7 +36,9 @@ const ExchangeDashboard = () => {
       exchangeName: exchange,
       apiKey,
       secretKey,
+      passPhrase
     };
+    console.log(data)
     dispatch(connectExchange(data));
   };
 
@@ -83,6 +88,17 @@ const ExchangeDashboard = () => {
                           id="secretkey"
                           placeholder="eg. 4143516asd3a1s316as1da"
                           onChange={(e) => setSecretKey(e.target.value)}
+                        />
+                      </div>
+
+                      <div className="form-group">
+                        <label for="passPhrase">Pass phrase</label>
+                        <input
+                          type="password"
+                          className="form-control"
+                          id="passphrase"
+                          placeholder="passphrase"
+                          onChange={(e) => setPassPhrase(e.target.value)}
                         />
                       </div>
                       <button
