@@ -10,6 +10,7 @@ export const connectExchange = (data) => async (dispatch) => {
   try {
     dispatch({ type: constants.SET_EXCHANGE_LOADING });
     const res = await services.connectingExchange(data);
+    console.log(res)
     dispatch({
       type: constants.CONNECT_EXCHANGE_SUCCESS,
       payload: res.data.exchanges,
@@ -34,9 +35,9 @@ export const getUserExchanges = () => async (dispatch) => {
     });
     successNotification(res.data.msg);
   } catch (err) {
-    err.response?.data?.msg
-      ? infoNotification(err.response?.data?.msg)
-      : err.response?.data?.error?.map((err) => errorNotification(err.msg));
+    // err.response?.data?.msg
+    //   ? infoNotification(err.response?.data?.msg)
+    //   : err.response?.data?.error?.map((err) => errorNotification(err.msg));
     dispatch({ type: constants.GET_EXCHANGESS_FAIL });
   }
 };
@@ -65,3 +66,15 @@ export const deleteUserExchange = (exchangeId, id) => async (dispatch) => {
     dispatch({ type: constants.DELETE_USER_EXCHANGE_FAIL });
   }
 };
+
+
+export const createNewRule = (rules) => async(dispatch) =>{
+  try {
+    console.log(rules)
+    
+    const res = await services.newRule(rules)
+    console.log(res)
+  } catch (error) {
+    
+  }
+}

@@ -12,3 +12,7 @@ export const getExchanges = () => {
 export const deleteExchange = (data) => {
   return axios.post("/logiccrypto/api/v1/exchange/delete",data);
 };
+
+export const newRule = (rules) =>{
+  return axios.post('/logiccrypto/api/v1/rule/new',rules)
+}
