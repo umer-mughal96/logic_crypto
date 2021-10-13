@@ -439,22 +439,22 @@ const NewRule = () => {
                                             onChange={changeHandler}
                                           >
                                             <option value="">Select Amount</option>
-                                            <option value="100">
-                                              100
+                                            <option value="10">
+                                              10
                                             </option>
-                                            <option value="500">
-                                              500
+                                            <option value="20">
+                                              20
                                             </option>
-                                            <option value="1000">
-                                              1000
+                                            <option value="30">
+                                              30
                                             </option>
-                                            <option value="2000">
-                                              2000
+                                            <option value="40">
+                                              40
                                             </option>
-                                            <option value="5000">5000</option>
-                                            <option value="10000">10000</option>
-                                            <option value="20000">
-                                              20000
+                                            <option value="50">50</option>
+                                            <option value="100">100</option>
+                                            <option value="200">
+                                              200
                                             </option>
                                           </select>
                                           <span>Action</span>
@@ -469,8 +469,8 @@ const NewRule = () => {
                                             placeholder='Action'
                                             onChange={changeHandler}
                                           >
-                                            <option selected="BUY">BUY</option>
-                                            <option value="SELL">SELL</option>
+                                            <option selected="Buy">BUY</option>
+                                            <option value="Sell">SELL</option>
                                           </select>
                                         </div>
                                       </div>

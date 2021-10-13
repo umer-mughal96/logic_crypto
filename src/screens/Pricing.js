@@ -19,8 +19,7 @@ const Pricing = ({ history }) => {
             <h2>Pricing</h2>
             {/* <Stripe /> */}
             <p>
-              With Coinrule you can easily develop your own trading strategies
-              and set them up to run automatically on your favourite exchange.
+            Logic crypto enables beginners as well as experts operating on their favorite exchanges in clicks. Improvise your own crypto strategies with Logic crypto; Join us with a free account.
             </p>
           </div>
           <div className="col-md-4 col-xl-3 col-lg-4 col-sm-6 mb-3">

@@ -74,6 +74,7 @@ export const createNewRule = (rules) => async(dispatch) =>{
     
     const res = await services.newRule(rules)
     console.log(res)
+    
   } catch (error) {
     
   }

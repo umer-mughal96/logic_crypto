@@ -12,13 +12,12 @@ const AutomatedTrading = () => {
         <div className="row banner">
           <div className="col-md-6">
             <div className="banner-text">
-            
-              <h1>Automated Trading Made Easy</h1>
+
+              <h1>Mechanized Trade with no complexities</h1>
               <p>
-                Coinrule empowers traders to compete with professional
-                algorithmic traders and hedge funds. No coding required.
+                Indulge yourself with automated transactions and trade through Logic Crypto. Beginners now trade like algorithm experts with no hands on coding and data equations.
               </p>
-              <a  className="btn">
+              <a className="btn">
                 Start for free
               </a>
             </div>
@@ -113,14 +112,11 @@ const AutomatedTrading = () => {
           </div>
           <div className="col-md-6">
             <div className="banner-text">
-              <h1>Create Automated Trading Rules, 24/7</h1>
+              <h1>Improvise your own trading Schedules</h1>
               <p>
-                Set custom automated trades and never miss a rally or get caught
-                in a dip. Coinrule obsessively seeks out effective market
-                indicators to enable smart allocation of funds while putting you
-                in control of your trading machine.
+                Logic Crypto works anonymously to seek out the best market gestures. Now get in campaigns of trading in spite of juggling with complexities and algorithms. Using Logic crypto, your mechanized trades are on the track within your custom parameters and schedules.
               </p>
-              <a  className="btn">
+              <a className="btn">
                 Start for free
               </a>
             </div>
@@ -155,7 +151,7 @@ const AutomatedTrading = () => {
                 />
                 <output id="num">0</output> */}
                 <VolumeSlider orientation="vertical" />
-                
+
               </div>
             </div>
             <div className="col-md-3">
@@ -168,7 +164,7 @@ const AutomatedTrading = () => {
                   oninput="nums.value = this.value"
                 />
                 <output id="nums">0</output> */}
-                <VolumeSlider  />
+                <VolumeSlider />
               </div>
             </div>
             <div className="col-md-3">
@@ -205,7 +201,7 @@ const AutomatedTrading = () => {
         <div className="col-md-12">
           <div className="chart-section">
             <h2>Test your Strategy today</h2>
-            <a  className="btn">
+            <a className="btn">
               Start Test
             </a>
           </div>
@@ -235,7 +231,7 @@ const AutomatedTrading = () => {
             <img src="files/images/automated/Group 30.png" alt="" />
           </div>
           <div className="col-md-12">
-            <a  className="btn mt-3">
+            <a className="btn mt-3">
               Start for free
             </a>
           </div>
@@ -245,14 +241,11 @@ const AutomatedTrading = () => {
         <div className="row secure">
           <div className="col-md-6">
             <div className="banner-text">
-              <h1>Securely Trade Across Exchanges</h1>
+              <h1>Exchanges trading are now secured</h1>
               <p>
-                Coinrule is a beginner-friendly and safe platform to send
-                automated trading instructions to your favorite exchanges,
-                including Binance, Coinbase Pro, Kraken, etc. We don't ask for
-                private keys or withdrawal rights.
+                For beginners working on favorite exchanges might become a rocket science. But with Logic crypto the situation varies as your automotive instructions could be transferred on your favorite exchanges including Kraken, Coins base Pro and Binance.  The transfer of instructions and exchanges are secured without keys and secret credentials.
               </p>
-              <a  className="btn">
+              <a className="btn">
                 Start for free
               </a>
             </div>
@@ -267,13 +260,13 @@ const AutomatedTrading = () => {
       <div className="container-fluid crypto-container">
         <div className="row">
           <div className="col-12 update-form">
-            <h1>Getting Started Is Easy!</h1>
-            <p>Sign Up Today or Simply Get Market Updates In Your Inbox</p>
+            <h1>Entering the Logic Crypto Pros is simple!</h1>
+            <p>To get updates on the market, you can sign up now or Subscribe to the email newsletter.</p>
             <form
               action=""
               method="GET"
               id="update-form"
-              style={{position : 'relative'}}
+              style={{ position: 'relative' }}
             >
               <input
                 className="form-control my-0 py-1 amber-border"
@@ -282,7 +275,7 @@ const AutomatedTrading = () => {
                 name="keyword"
                 value=""
               />
-              <a  className="btn">
+              <a className="btn">
                 Get updates
               </a>
             </form>
@@ -317,7 +310,7 @@ const AutomatedTrading = () => {
               <h3>Trader $59.99</h3>
               <p>Cost only</p>
               <h3>0.05% of trade volume</h3>
-              <a  className="btn">
+              <a className="btn">
                 Start for free
               </a>
             </div>
@@ -461,7 +454,7 @@ const AutomatedTrading = () => {
               action=""
               method="GET"
               id="update-form"
-              style={{position : 'relative'}}
+              style={{ position: 'relative' }}
             >
               <input
                 className="form-control my-0 py-1 amber-border"
@@ -470,7 +463,7 @@ const AutomatedTrading = () => {
                 name="keyword"
                 value=""
               />
-              <a  className="btn">
+              <a className="btn">
                 Get updates
               </a>
             </form>

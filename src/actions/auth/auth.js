@@ -56,6 +56,7 @@ export const userLogout = (history) => async (dispatch) => {
   try {
     dispatch({ type: constants.LOGOUT_SUCCESSFULLY });
     dispatch({ type: constants.RESET_AUTH_STATE });
+    successNotification('Successfully Logout')
     history.push("/");
   } catch (err) {
     console.log("🚀 ~ file: auth.js ~ line 63 ~ userLogout ~ err", err);

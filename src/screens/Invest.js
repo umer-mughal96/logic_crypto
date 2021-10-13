@@ -9,8 +9,8 @@ const Invest = () => {
                 <div class="col-md-6">
                     <div class="banner-text">
                         <h1>Invest In Us</h1>
-                        <p>Democratizing access to investment opportunities through automated trading is our mission. Today you can join this exciting journey and make a difference.</p>
-                        <p>Coinrule’s Crowdfunding Campaign is Now Live on Seedrs. Access Exclusive Rewards:</p>
+                        <p>Investing in mechanized trading is becoming a trend. Logic crypto is aiming to open up investment gateways in mechanized trading. Thus Join our successful trading journey today and take a step forward.</p>
+                        <p>Join our live crowdfunding campaign on seeders. Click to enjoy rewards.</p>
                         <a href="" class="btn">Join Today</a>
                     </div>
                 </div>

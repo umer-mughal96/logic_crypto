@@ -81,7 +81,7 @@ const Header = withRouter(({location}) => {
                   )}
 
                   <Link onClick={() => setActive("Free class*")} class="nav-item nav-link sign-up" to="/">
-                    Free class*
+                    SignUp
                   </Link>
                 </div>
               </div>

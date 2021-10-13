@@ -10,9 +10,7 @@ const Enthuasists = () => {
             <div className="banner-text">
               <h1>An A-Team of Crypto Enthusiasts That Love Trading</h1>
               <p>
-                Logiccrypto is the smart assistant for crypto currency trading,
-                allowing you to take full control of your trading while being
-                able to fight back hedge funds and automated bots
+              When it comes to a smart assistant in crypto trading, Logic crypto confronts every complexity for you. Get full control of your crypto trading and winning hedges despite of loss.
               </p>
               <a href="#" className="facebook">
                 <i className="fab fa-facebook-square mr-1"></i>
@@ -40,8 +38,7 @@ const Enthuasists = () => {
         <div className="row">
           <div className="col-md-12 p-0 enthusiasts">
             <h2>
-              "We are a team of blockchain and crypto enthusiasts who found that
-              trading crypto currencies is unnecessarily complicated"
+              "Changing crypto currency into rocket science is completely unnecessary. It is simply easier with logic crypto's block chain developers and crypto currency developers."
             </h2>
             <Carousel/>
             <h2>
