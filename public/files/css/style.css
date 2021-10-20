@@ -2265,3 +2265,107 @@ div.floating-action-menu.active>.action-button>.btn-floating>i {
         top: 70px;
     }
 }
+
+
+/* <--- Start of Blog CSS ---> */
+
+
+/* Blog Page Starts */
+
+.blog-text {
+    text-align: center;
+}
+
+.blog-text h1 {
+    font-size: 28px;
+    font-weight: bold;
+    color: var(--dark-blue);
+    margin-bottom: 0px;
+}
+
+.blog-text p {
+    font-size: 16px;
+    color: var(--black-color);
+    margin-bottom: 5px;
+}
+
+.blog-text a {
+    font-size: 16px;
+    text-decoration: underline;
+    color: var(--black-color);
+}
+
+.blog-text a.btn {
+    background: var(--dark-blue);
+    color: var(--white-color);
+    border: 1px solid #222d71;
+    border-radius: 50px;
+    font-size: 16px;
+    padding: 7px 25px;
+    transition-delay: 0.01s;
+    transition: background-color 0.5s ease-out;
+    text-decoration: none;
+}
+
+.blog-text a.btn:hover {
+    background: var(--white-color);
+    color: var(--dark-blue);
+    border: 1px solid #222d71;
+}
+
+.blog-border {
+    border: 2px solid #222d71;
+    border-radius: 25px;
+}
+
+.blog-image img {
+    border-top-left-radius: 23px;
+    border-top-right-radius: 23px;
+}
+
+.blog-text.blog-pagination {
+    justify-content: space-between;
+    display: flex;
+}
+
+.blog-logo img {
+    width: 120px;
+}
+
+.blog-text-details {
+    text-align: left;
+}
+
+.blog-text-details h2 {
+    font-size: 24px;
+    font-weight: bold;
+    color: var(--dark-blue);
+}
+
+.blog-text-details ul li::marker {
+    color: var(--dark-blue);
+}
+
+.blog-text a.post-text {
+    font-size: 18px;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+.blog-text-details img {
+    border: 2px solid #222d71;
+    border-radius: 20px;
+    margin: 3% 0%;
+}
+
+@media (max-width: 767px) {
+    .blog-text h1 {
+        font-size: 22px;
+    }
+}
+
+
+/* Blog Page Ends */
+
+
+/* <--- End of Blog CSS ---> */

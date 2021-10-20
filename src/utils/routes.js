@@ -21,9 +21,13 @@ import { Elements } from "@stripe/react-stripe-js";
 import { loadStripe } from "@stripe/stripe-js";
 import Payment from "../screens/Payment";
 
+import Blog from "../screens/Blog";
+import BlogDetail from "../screens/BlogDetail";
+
 const stripePromise = loadStripe("pk_test_TYooMQauvdEDq54NiTphI7jx");
 
 const Routes = withRouter(({ location }) => {
+  console.log(location)
   return (
     <Elements stripe={stripePromise}>
       <Fragment>
@@ -55,6 +59,8 @@ const Routes = withRouter(({ location }) => {
           <Route path="/resetpassword" component={ResetPassword} />
           <Route path="/invest" component={Invest} />
           <Route path="/pay" component={Payment} />
+          <Route path="/blog" component={Blog} />
+          <Route path="/blogdetail" component={BlogDetail} />
         </Switch>
         {location.pathname == "/setting-dsh" ||
         location.pathname == "/rule-dsh" ||
