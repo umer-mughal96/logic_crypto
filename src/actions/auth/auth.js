@@ -8,6 +8,7 @@ import {
 
 export const userSignUp = (data, history) => async (dispatch) => {
   try {
+    
     dispatch({ type: constants.SET_AUTH_LOADING });
     const res = await services.registerUser(data);
     dispatch({ type: constants.SIGNUP_SUCCESS });
@@ -24,8 +25,9 @@ export const userSignUp = (data, history) => async (dispatch) => {
 
 //   SIGNIN_USER
 
-export const userSignin = (history, data) => async (dispatch) => {
+export const userSignin = (data, history) => async (dispatch) => {
   try {
+    
     dispatch({ type: constants.SET_AUTH_LOADING });
     const res = await services.signInUser(data);
     if (res.data.loginUser.active == false) {

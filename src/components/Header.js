@@ -80,7 +80,7 @@ const Header = withRouter(({location}) => {
                     </Link>
                   )}
 
-                  <Link onClick={() => setActive("Free class*")} class="nav-item nav-link sign-up" to="/">
+                  <Link onClick={() => setActive("Free class*")} class="nav-item nav-link sign-up" to="/signup">
                     SignUp
                   </Link>
                 </div>

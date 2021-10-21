@@ -110,7 +110,7 @@ a.nav-item.nav-link.sign-up:hover,
 
 /********************************* Sign in Form Start *********************************/
 
-.sign-in-form form {
+.sign-in-form Form {
     max-width: 420px;
     margin: 150px auto;
 }
@@ -180,7 +180,7 @@ a.nav-item.nav-link.sign-up:hover,
     line-height: 30px;
 }
 
-.sign-in-form form input {
+.sign-in-form Form input {
     border-radius: 50px;
     font-size: 14px;
     color: var(--black-color);

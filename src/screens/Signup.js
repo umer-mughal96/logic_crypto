@@ -1,12 +1,16 @@
 import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import { errorNotification } from "../utils/notification";
-import {useDispatch , useSelector} from 'react-redux'
+import { useDispatch, useSelector } from 'react-redux'
 import { userSignUp } from "../actions/auth/auth";
+import * as Yup from "yup";
+import { Formik, Form, Field, ErrorMessage } from "formik";
 
 
 
-const Signup = ({history}) => {
+const Signup = ({ history }) => {
+
+  
   const [formData, setFormData] = useState({
     firstName: "",
     lastName: "",
@@ -16,128 +20,158 @@ const Signup = ({history}) => {
   });
 
   const dispatch = useDispatch()
-  const {loading , user} = useSelector((s) => s.Auth)
+  const { loading, user } = useSelector((s) => s.Auth)
 
-  const { firstName, lastName, email, password, confirmPassword } = formData;
 
-  const fornmHandler = (e) => {
-    setFormData({ ...formData, [e.target.name]: e.target.value });
-    console.log(formData)
-  };
+  const SignUpSchema = Yup.object().shape({
+    firstName: Yup.string()
+      .min(3, 'Too Short!')
+      .max(50, 'Too Long!')
+      .required('Required'),
 
-  const onSignupHandler = e => {
-    e.preventDefault();
-    if(!firstName){
-      errorNotification('Name Required')
-      return
-    }
-    if(!lastName){
-      errorNotification('Name Required')
-      return
-    }
-    if(!email){
-      errorNotification('Email Required')
-      return
-    }
-    if(!password){
-      errorNotification('Password Required')
-      return
-    }
-    if(!confirmPassword){
-      errorNotification('Confirm Password Required')
-      return
-    }
-    if(password !== confirmPassword){
-      errorNotification('Password dont match')
-      return
-    }
+    lastName: Yup.string()
+      .min(3, 'Too Short!')
+      .max(50, 'Too Long!')
+      .required('Required'),
 
-    dispatch(userSignUp(formData,history))
+    email: Yup.string().email().required("Email is required"),
 
+    password: Yup.string()
+      .required("Password is required")
+      .min(4, "Password is too short")
+      .matches(/(?=.*[A-Z])/, "Password Must Contain Upper letter")
+      .matches(/(?=.*[0-9])/, "Password must contain a number."),
+
+    confirmPassword: Yup.string()
+      .required("Password is required")
+      .min(4, "Password is too short")
+      .matches(/(?=.*[A-Z])/, "Password Must Contain Upper letter")
+      .matches(/(?=.*[0-9])/, "Password must contain a number.")
+      .oneOf([Yup.ref('password'), null], "Password must match")
+
+  });
+
+
+  const submitHandler = (values) =>{
+    setFormData(values)
+    // console.log([e.target.value])
   }
 
+
   useEffect(() => {
-    if(user){
+    if (user) {
       history.push('/setting-dsh')
     }
-  },[])
+  }, [])
 
   return (
-    <div className="container-fluid crypto-container">
-      <div className="row">
-        <div className="col-12 sign-in-form">
-          <form>
-            <h5>Sign up</h5>
-            <div className="form-group">
-              <input
-                type="text"
-                className="form-control"
-                id="fname"
-                name="firstName"
-                onChange={(e) => fornmHandler(e)}
-                placeholder="Name"
-                value={firstName}
-              />
-            </div>
-            <div className="form-group">
-              <input
-                type="text"
-                className="form-control"
-                id="lname"
-                placeholder="Last Name"
-                name="lastName"
-                onChange={(e) => fornmHandler(e)}
-                value={lastName}
-              />
-            </div>
-            <div className="form-group">
-              <input
-                type="email"
-                className="form-control"
-                id="email"
-                placeholder="Email"
-                name="email"
-                onChange={(e) => fornmHandler(e)}
-                value={email}
-              />
-            </div>
-            <div className="form-group">
-              <input
-                type="password"
-                className="form-control"
-                id="password"
-                placeholder="Password"
-                name="password"
-                onChange={(e) => fornmHandler(e)}
-                value={password}
-              />
-            </div>
-            <div className="form-group">
-              <input
-                type="password"
-                className="form-control"
-                id="confirmpassword"
-                placeholder="Confirm Password"
-                name="confirmPassword"
-                onChange={(e) => fornmHandler(e)}
-                value={confirmPassword}
-              />
-            </div>
-            <div className="sign-in-up">
-              <div className="sign-in">
-                <button  disabled={loading || password !== confirmPassword} className="btn" onClick={(e) => onSignupHandler(e)}>
-                  Sign up
-                </button>
-                <span className="sign-up">
-                  {" "}
-                  or <Link to="/signin">sign in</Link>{" "}
-                </span>
+
+    <Formik
+      initialValues={formData}
+      validationSchema={SignUpSchema}
+      onSubmit={submitHandler}
+    >
+      {(formik) => {
+        const { errors, touched, isValid, dirty,values } = formik;
+        console.log(values)
+        
+        return (
+
+          <div className="container-fluid crypto-container">
+            <div className="row">
+              <div className="col-12 sign-in-form">
+                <Form>
+                  <h5>Sign up</h5>
+                  <div className="form-group">
+                    <Field
+                      type="text"
+                      className={`form-control ${errors.firstName && touched.firstName ?
+                        "input-error" : null}`}
+                      id="fname"
+                      name="firstName"
+                      placeholder="Name"
+                    />
+                    <ErrorMessage name="firstName" component="span" className="error" />
+
+                  </div>
+                  <div className="form-group">
+                    <Field
+                      type="text"
+                      className={`form-control ${errors.lastName && touched.lastName ?
+                        "input-error" : null}`}
+                      id="lname"
+                      placeholder="Last Name"
+                      name="lastName"
+                      
+                    />
+                    <ErrorMessage name="lastName" component="span" className="error" />
+
+                  </div>
+                  <div className="form-group">
+                    <Field
+                      type="email"
+                      className={`form-control ${errors.email && touched.email ?
+                        "input-error" : null}`}
+                      id="email"
+                      placeholder="Email"
+                      name="email"
+                    />
+                    <ErrorMessage name="email" component="span" className="error" />
+
+                  </div>
+                  <div className="form-group">
+                    <Field
+                      type="password"
+                      className={`form-control ${errors.password && touched.password ?
+                        "input-error" : null}`}
+                      id="password"
+                      placeholder="Password"
+                      name="password"
+                    />
+                    <ErrorMessage name="password" component="span" className="error" />
+
+                  </div>
+                  <div className="form-group">
+                    <Field
+                      type="password"
+                      className={`form-control ${errors.confirmPassword && touched.confirmPassword ?
+                        "input-error" : null}`}
+                      id="confirmpassword"
+                      placeholder="Confirm Password"
+                      name="confirmPassword"
+                    />
+                    <ErrorMessage name="confirmPassword" component="span" className="error" />
+
+                  </div>
+                  <div className="sign-in-up">
+                    <div className="sign-in">
+                      <button
+                        className={`btn ${!(dirty && isValid) ? "disabled-btn" : ""}`}
+                        disabled={!(dirty && isValid)}
+                        onClick={() =>  {
+                          if(isValid){
+                            dispatch(userSignUp(values, history))
+                          }
+                        }}
+                        >
+                        Sign up
+                      </button>
+                      <span className="sign-up">
+                        {" "}
+                        or <Link to="/signin">sign in</Link>{" "}
+                      </span>
+                    </div>
+                  </div>
+                </Form>
               </div>
             </div>
-          </form>
-        </div>
-      </div>
-    </div>
+          </div>
+
+        )
+      }}
+    </Formik>
+
+
   );
 };
 
