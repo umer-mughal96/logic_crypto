@@ -58,8 +58,8 @@ const AutomatedTrading = () => {
         <div className="row military-row">
           <div className="col-md-4">
             <div className="Military-work">
-              <div className="work-icon">
-                <i className="fad fa-briefcase mr-2"></i>
+              <div className="work-image pr-2">
+               <img src="files/images/homepage/popular exchange-01.svg" className="pr-2" alt="" />
               </div>
               <div className="work-desc">
                 <p>Works with the top 10+</p>
@@ -69,8 +69,8 @@ const AutomatedTrading = () => {
           </div>
           <div className="col-md-4">
             <div className="Military-work">
-              <div className="work-icon">
-                <i className="fad fa-badge-check mr-2"></i>
+            <div className="work-image">
+                <img src="files/images/homepage/data-encryption.svg" alt="" className="pr-2"/>
               </div>
               <div className="work-desc">
                 <p>Military-grade</p>
@@ -107,7 +107,7 @@ const AutomatedTrading = () => {
         <div className="row automated">
           <div className="col-md-6">
             <div className="automated-image">
-              <img src="files/images/automated/banner-image.jpg" alt="" />
+              <img src="files/images/homepage/Group 153.svg" alt="" />
             </div>
           </div>
           <div className="col-md-6">
@@ -252,7 +252,7 @@ const AutomatedTrading = () => {
           </div>
           <div className="col-md-6">
             <div className="automated-image">
-              <img src="files/images/automated/Group 15.png" alt="" />
+              <img src="files/images/homepage/Group 154.svg" alt="" className='section-images' id='section-images'/>
             </div>
           </div>
         </div>
