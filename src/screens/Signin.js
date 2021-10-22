@@ -70,7 +70,7 @@ const Signin = ({ history }) => {
                       placeholder="Email"
                       name="email"
                     />
-                    <ErrorMessage name="email" component="span" className="error" />
+                    <ErrorMessage name="email" component="span" className="error" style={{color: 'red'}}/>
 
                   </div>
                   <div className="form-group">
@@ -82,7 +82,7 @@ const Signin = ({ history }) => {
                       placeholder="Password"
                       name="password"
                     />
-                    <ErrorMessage name="password" component="span" className="error" />
+                    <ErrorMessage name="password" component="span" className="error" style={{color: 'red'}}/>
 
                   </div>
 

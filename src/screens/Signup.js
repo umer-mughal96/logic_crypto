@@ -91,7 +91,7 @@ const Signup = ({ history }) => {
                       name="firstName"
                       placeholder="Name"
                     />
-                    <ErrorMessage name="firstName" component="span" className="error" />
+                    <ErrorMessage name="firstName" component="span" className="error" style={{color: 'red'}}/>
 
                   </div>
                   <div className="form-group">
@@ -104,7 +104,7 @@ const Signup = ({ history }) => {
                       name="lastName"
                       
                     />
-                    <ErrorMessage name="lastName" component="span" className="error" />
+                    <ErrorMessage name="lastName" component="span" className="error" style={{color: 'red'}}/>
 
                   </div>
                   <div className="form-group">
@@ -116,7 +116,7 @@ const Signup = ({ history }) => {
                       placeholder="Email"
                       name="email"
                     />
-                    <ErrorMessage name="email" component="span" className="error" />
+                    <ErrorMessage name="email" component="span" className="error" style={{color: 'red'}}/>
 
                   </div>
                   <div className="form-group">
@@ -128,7 +128,7 @@ const Signup = ({ history }) => {
                       placeholder="Password"
                       name="password"
                     />
-                    <ErrorMessage name="password" component="span" className="error" />
+                    <ErrorMessage name="password" component="span" className="error" style={{color: 'red'}}/>
 
                   </div>
                   <div className="form-group">
@@ -140,7 +140,7 @@ const Signup = ({ history }) => {
                       placeholder="Confirm Password"
                       name="confirmPassword"
                     />
-                    <ErrorMessage name="confirmPassword" component="span" className="error" />
+                    <ErrorMessage name="confirmPassword" component="span" className="error" style={{color: 'red'}}/>
 
                   </div>
                   <div className="sign-in-up">
