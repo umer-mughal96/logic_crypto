@@ -13,7 +13,7 @@ import { getUserExchanges } from "./actions/exchange/exchange";
 const App = () => {
   const dispatch = useDispatch();
   const stripePromise = loadStripe(process.env.REACT_APP_STRIPE_API_KEY);
-  const {user} = useSelector(s => s.Auth)
+  const { user } = useSelector(s => s.Auth)
 
   useEffect(() => {
     if (user) {
