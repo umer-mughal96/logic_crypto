@@ -74,7 +74,7 @@ const NewRule = () => {
   };
 
 
-  const launchHandler = (e) =>{
+  const launchHandler = (e) => {
     e.preventDefault()
     console.log(newRule)
     dispatch(createNewRule(newRule.order))
@@ -84,7 +84,7 @@ const NewRule = () => {
   const palceTypeHandler = (value) => {
     // dispatch(createNewRule(newRule))
 
-    setNewRule({ ...newRule, order:{...newRule.order, place: value}, place: value })
+    setNewRule({ ...newRule, order: { ...newRule.order, place: value }, place: value })
 
   }
   return (
@@ -135,7 +135,7 @@ const NewRule = () => {
                             name='exchange'
                             class=" ml-2 custom-select form-control"
                             onChange={(e) => onExchangeSelectHandler(e)}
-                            onChange={changeHandler}
+                            // onChange={changeHandler}
                           >
                             <option value="null" defaultValue>
                               Your Exchanges
