@@ -23,6 +23,8 @@ import Payment from "../screens/Payment";
 
 import Blog from "../screens/Blog";
 import BlogDetail from "../screens/BlogDetail";
+import TermConditions from "../screens/TermConditions";
+import Faq from "../screens/Faq";
 
 const stripePromise = loadStripe("pk_test_TYooMQauvdEDq54NiTphI7jx");
 
@@ -61,6 +63,8 @@ const Routes = withRouter(({ location }) => {
           <Route path="/pay" component={Payment} />
           <Route path="/blog" component={Blog} />
           <Route path="/blogdetail" component={BlogDetail} />
+          <Route path="/term" component={TermConditions}></Route>
+          <Route path="/faq" component={Faq}></Route>
         </Switch>
         {location.pathname == "/setting-dsh" ||
         location.pathname == "/rule-dsh" ||

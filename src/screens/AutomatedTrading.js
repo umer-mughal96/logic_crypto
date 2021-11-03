@@ -4,22 +4,18 @@ import { getNomics } from "../actions/auth/auth";
 import VolumeSlider from "../components/RangeSlider/RangeSlider";
 
 const AutomatedTrading = () => {
-
-
   return (
     <div>
       <div className="container-fluid crypto-container">
         <div className="row banner">
           <div className="col-md-6">
             <div className="banner-text">
-
-              <h1>Mechanized Trade with no complexities</h1>
+              <h1>Automated Exchanging Got Simple</h1>
               <p>
-                Indulge yourself with automated transactions and trade through Logic Crypto. Beginners now trade like algorithm experts with no hands on coding and data equations.
+                With us, without coding, you can trade with professional traders
+                and can invest your funds.
               </p>
-              <a className="btn">
-                Start for free
-              </a>
+              <a className="btn">Try for Free</a>
             </div>
           </div>
           <div className="col-md-6">
@@ -31,25 +27,25 @@ const AutomatedTrading = () => {
         <div className="row">
           <div className="col-md-12 p-0">
             <div className="members">
-              <a >
+              <a>
                 <img
                   src="files/images/automated/Clutch-Citibank@2x.png"
                   alt=""
                 />
               </a>
-              <a >
+              <a>
                 <img
                   src="files/images/automated/Clutch-Colorcon@2x.png"
                   alt=""
                 />
               </a>
-              <a >
+              <a>
                 <img
                   src="files/images/automated/Clutch-eShipper@2x.png"
                   alt=""
                 />
               </a>
-              <a >
+              <a>
                 <img src="files/images/automated/Clutch-NBCU@2x.png" alt="" />
               </a>
             </div>
@@ -59,7 +55,11 @@ const AutomatedTrading = () => {
           <div className="col-md-4">
             <div className="Military-work">
               <div className="work-image pr-2">
-               <img src="files/images/homepage/popular exchange-01.svg" className="pr-2" alt="" />
+                <img
+                  src="files/images/homepage/popular exchange-01.svg"
+                  className="pr-2"
+                  alt=""
+                />
               </div>
               <div className="work-desc">
                 <p>Works with the top 10+</p>
@@ -69,8 +69,12 @@ const AutomatedTrading = () => {
           </div>
           <div className="col-md-4">
             <div className="Military-work">
-            <div className="work-image">
-                <img src="files/images/homepage/data-encryption.svg" alt="" className="pr-2"/>
+              <div className="work-image">
+                <img
+                  src="files/images/homepage/data-encryption.svg"
+                  alt=""
+                  className="pr-2"
+                />
               </div>
               <div className="work-desc">
                 <p>Military-grade</p>
@@ -112,13 +116,13 @@ const AutomatedTrading = () => {
           </div>
           <div className="col-md-6">
             <div className="banner-text">
-              <h1>Improvise your own trading Schedules</h1>
+              <h1>Create Automated Exchanging Rules</h1>
               <p>
-                Logic Crypto works anonymously to seek out the best market gestures. Now get in campaigns of trading in spite of juggling with complexities and algorithms. Using Logic crypto, your mechanized trades are on the track within your custom parameters and schedules.
+                Set custom automated trades, 99logitech obsessively attempts out
+                effective market symbols to allow smart allocation of funds
+                while placing you in control of your exchanging machine.
               </p>
-              <a className="btn">
-                Start for free
-              </a>
+              <a className="btn">Try for Free</a>
             </div>
           </div>
         </div>
@@ -128,7 +132,7 @@ const AutomatedTrading = () => {
           <div className="row chart-filters">
             <div className="col-md-12">
               <div className="chart-section">
-                <h2>Test Rule Performance on Historical Data</h2>
+                <h2>Test Rule Fulfillment on Authentic Data</h2>
               </div>
             </div>
             <div className="col-md-3">
@@ -151,7 +155,6 @@ const AutomatedTrading = () => {
                 />
                 <output id="num">0</output> */}
                 <VolumeSlider orientation="vertical" />
-
               </div>
             </div>
             <div className="col-md-3">
@@ -200,10 +203,8 @@ const AutomatedTrading = () => {
         </div>
         <div className="col-md-12">
           <div className="chart-section">
-            <h2>Test your Strategy today</h2>
-            <a className="btn">
-              Start Test
-            </a>
+            <h2>Test Your Procedure Today</h2>
+            <a className="btn">Start Test</a>
           </div>
         </div>
       </div>
@@ -212,9 +213,7 @@ const AutomatedTrading = () => {
           <div className="col-md-12">
             <div className="choose-heading">
               <h2>
-                Choose Among 150+ Rules
-                <br />
-                or Build Your Own
+                Build Your Own Rule or <br /> Select from 150+
               </h2>
             </div>
           </div>
@@ -231,9 +230,7 @@ const AutomatedTrading = () => {
             <img src="files/images/automated/Group 30.png" alt="" />
           </div>
           <div className="col-md-12">
-            <a className="btn mt-3">
-              Start for free
-            </a>
+            <a className="btn mt-3">Try for Free </a>
           </div>
         </div>
       </div>
@@ -241,18 +238,24 @@ const AutomatedTrading = () => {
         <div className="row secure">
           <div className="col-md-6">
             <div className="banner-text">
-              <h1>Exchanges trading are now secured</h1>
+              <h1>Securely Trade over Exchanges</h1>
               <p>
-                For beginners working on favorite exchanges might become a rocket science. But with Logic crypto the situation varies as your automotive instructions could be transferred on your favorite exchanges including Kraken, Coins base Pro and Binance.  The transfer of instructions and exchanges are secured without keys and secret credentials.
+                Logic Crypto is a safe and user-friendly platform to provide
+                automated exchanging instructions to your favorite trades. We
+                have Binance, Kraken, Coinbase Pro, and much more. Also, we do
+                not ask you about private keys or withdrawal rights.
               </p>
-              <a className="btn">
-                Start for free
-              </a>
+              <a className="btn">Try for Free</a>
             </div>
           </div>
           <div className="col-md-6">
             <div className="automated-image">
-              <img src="files/images/homepage/Group 154.svg" alt="" className='section-images' id='section-images'/>
+              <img
+                src="files/images/homepage/Group 154.svg"
+                alt=""
+                className="section-images"
+                id="section-images"
+              />
             </div>
           </div>
         </div>
@@ -260,13 +263,15 @@ const AutomatedTrading = () => {
       <div className="container-fluid crypto-container">
         <div className="row">
           <div className="col-12 update-form">
-            <h1>Entering the Logic Crypto Pros is simple!</h1>
-            <p>To get updates on the market, you can sign up now or Subscribe to the email newsletter.</p>
+            <h1>Take a Start Now</h1>
+            <p>
+            Sign Up now and get updated daily on your inbox
+            </p>
             <form
               action=""
               method="GET"
               id="update-form"
-              style={{ position: 'relative' }}
+              style={{ position: "relative" }}
             >
               <input
                 className="form-control my-0 py-1 amber-border"
@@ -275,9 +280,7 @@ const AutomatedTrading = () => {
                 name="keyword"
                 value=""
               />
-              <a className="btn">
-                Get updates
-              </a>
+              <a className="btn">Get updates</a>
             </form>
           </div>
         </div>
@@ -285,7 +288,7 @@ const AutomatedTrading = () => {
       <div className="container-fluid crypto-container est-cost">
         <div className="row est-cost">
           <div className="col-md-12 mb-4">
-            <h2>Estimate Your Cost</h2>
+            <h2>Evaluate Your Cost</h2>
           </div>
           <div className="col-md-7">
             <form action="">
@@ -310,9 +313,7 @@ const AutomatedTrading = () => {
               <h3>Trader $59.99</h3>
               <p>Cost only</p>
               <h3>0.05% of trade volume</h3>
-              <a className="btn">
-                Start for free
-              </a>
+              <a className="btn">Start for free</a>
             </div>
           </div>
         </div>
@@ -320,7 +321,7 @@ const AutomatedTrading = () => {
       <div className="container-fluid crypto-container">
         <div className="row team">
           <div className="col-md-12">
-            <h2>Meet the Founding Team</h2>
+            <h2>Meet Our Team</h2>
           </div>
           <div className="col-md-4">
             <div className="team-box">
@@ -384,7 +385,7 @@ const AutomatedTrading = () => {
           <div className="col-md-12">
             <div className="row member-second">
               <div className="col-6 col-md-3 col-sm-4">
-                <a >
+                <a>
                   <img
                     src="files/images/automated/Clutch-Citibank@2x.png"
                     alt=""
@@ -392,7 +393,7 @@ const AutomatedTrading = () => {
                 </a>
               </div>
               <div className="col-6 col-md-3 col-sm-4">
-                <a >
+                <a>
                   <img
                     src="files/images/automated/Clutch-Colorcon@2x.png"
                     alt=""
@@ -400,7 +401,7 @@ const AutomatedTrading = () => {
                 </a>
               </div>
               <div className="col-6 col-md-3 col-sm-4">
-                <a >
+                <a>
                   <img
                     src="files/images/automated/Clutch-eShipper@2x.png"
                     alt=""
@@ -408,12 +409,12 @@ const AutomatedTrading = () => {
                 </a>
               </div>
               <div className="col-6 col-md-3 col-sm-4">
-                <a >
+                <a>
                   <img src="files/images/automated/Clutch-NBCU@2x.png" alt="" />
                 </a>
               </div>
               <div className="col-6 col-md-3 col-sm-4">
-                <a >
+                <a>
                   <img
                     src="files/images/automated/Clutch-Citibank@2x.png"
                     alt=""
@@ -421,7 +422,7 @@ const AutomatedTrading = () => {
                 </a>
               </div>
               <div className="col-6 col-md-3 col-sm-4">
-                <a >
+                <a>
                   <img
                     src="files/images/automated/Clutch-Colorcon@2x.png"
                     alt=""
@@ -429,7 +430,7 @@ const AutomatedTrading = () => {
                 </a>
               </div>
               <div className="col-6 col-md-3 col-sm-4">
-                <a >
+                <a>
                   <img
                     src="files/images/automated/Clutch-eShipper@2x.png"
                     alt=""
@@ -437,7 +438,7 @@ const AutomatedTrading = () => {
                 </a>
               </div>
               <div className="col-6 col-md-3 col-sm-4">
-                <a >
+                <a>
                   <img src="files/images/automated/Clutch-NBCU@2x.png" alt="" />
                 </a>
               </div>
@@ -454,7 +455,7 @@ const AutomatedTrading = () => {
               action=""
               method="GET"
               id="update-form"
-              style={{ position: 'relative' }}
+              style={{ position: "relative" }}
             >
               <input
                 className="form-control my-0 py-1 amber-border"
@@ -463,9 +464,7 @@ const AutomatedTrading = () => {
                 name="keyword"
                 value=""
               />
-              <a className="btn">
-                Get updates
-              </a>
+              <a className="btn">Get updates</a>
             </form>
           </div>
         </div>

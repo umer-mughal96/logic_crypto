@@ -2373,6 +2373,28 @@ div.floating-action-menu.active>.action-button>.btn-floating>i {
 
 
 /* Blog Page Ends */
+.Key_Term_headings h2{
+    margin-top: 20px;
+    font-size: 3vmax;
+    color: #222d71;
+    font-weight: var(--font-bold);
 
+}
 
 /* <--- End of Blog CSS ---> */
+
+/* Term Conditions */
+.TermConditions-wrapper{
+    padding: 100px 0px 20px 0px;
+}
+.termheading{
+    margin-bottom: 30px;
+    font-size: 3vmax;
+    color: #222d71;
+    font-weight: var(--font-bold);
+}
+.term-section-list-heading{
+    color: #222d71;
+    font-weight: var(--font-bold);
+}
+/* Term Conditions */

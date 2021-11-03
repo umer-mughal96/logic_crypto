@@ -19,7 +19,9 @@ const Pricing = ({ history }) => {
             <h2>Pricing</h2>
             {/* <Stripe /> */}
             <p>
-            Logic crypto enables beginners as well as experts operating on their favorite exchanges in clicks. Improvise your own crypto strategies with Logic crypto; Join us with a free account.
+              You can develop your trading strategies and these can run
+              automatically on your desired exchange. You can start with a{" "}
+              <Link to="/signup">Free Account</Link> Today
             </p>
           </div>
           <div className="col-md-4 col-xl-3 col-lg-4 col-sm-6 mb-3">
@@ -139,10 +141,10 @@ const Pricing = ({ history }) => {
             <div className="payments">
               <h2>Crypto Payments Accepted</h2>
               <p>
-                We are committed both to crypto traders and the wider Blockchain
-                community as we believe in the possibilities that the technology
-                brings for a greater decentralization of wealth and power, a
-                more open internet, and much more beyond.
+                We believe in the possibilities that technology brings for
+                greater decentralization of power and wealth, more open
+                internet, and much more. So, we are committed both to the
+                Blockchain community and crypto traders.
               </p>
             </div>
           </div>
@@ -151,13 +153,13 @@ const Pricing = ({ history }) => {
       <div className="container-fluid crypto-container est-cost">
         <div className="row est-cost">
           <div className="col-md-12 mb-4">
-            <h2>Estimate Your Cost</h2>
+            <h2>Evaluate Your Cost</h2>
           </div>
           <div className="col-md-7">
             <form action="">
               <div className="row">
                 <div className="col-8">
-                  <h6>How Much Do You Trade Monthly?</h6>
+                  <h6>How much do you trade in every month?</h6>
                 </div>
                 <div className="col-4 text-right">
                   <h2>$630</h2>
@@ -195,9 +197,9 @@ const Pricing = ({ history }) => {
           <div className="col-md-12">
             <div className="choose-heading">
               <h2>
-                Choose Among 150+ Rules
-                <br />
-                or Build Your Own
+                Select From 150+ Strategies
+                {/* <br />
+                or Build Your Own */}
               </h2>
             </div>
           </div>
@@ -223,8 +225,8 @@ const Pricing = ({ history }) => {
       <div className="container-fluid crypto-container">
         <div className="row">
           <div className="col-12 update-form mt-4">
-            <h1>Getting Started Is Easy!</h1>
-            <p>Sign Up Today or Simply Get Market Updates In Your Inbox</p>
+            <h1>Get New Strategies Weekly</h1>
+            <p>Get updates without searching in your inbox every week</p>
             <form
               action=""
               method="GET"
