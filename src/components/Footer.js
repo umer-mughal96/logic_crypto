@@ -89,7 +89,7 @@ const Footer = () => {
                       <a href="#">Resource Library</a>
                     </li>
                     <li>
-                      <a href="#">Privacy</a>
+                      <Link to="/privacypolicy">Privacy Policy</Link>
                     </li>
                     <li>
                       <Link to="/term">Terms & Conditions</Link>
