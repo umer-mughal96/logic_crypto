@@ -1,13 +1,21 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { Link } from "react-router-dom";
 import Sidebar from "../components/Sidebar";
-import {useSelector} from 'react-redux'
+import {useDispatch, useSelector} from 'react-redux'
+import { coinLoss } from "../actions/rules/rules";
 
 const RulesDashboard = () => {
 
   const {user} = useSelector(s => s.Auth)
   const state = useSelector(s => s.User)
   var date = new Date(user.createdAt)
+
+  const dispatch = useDispatch()
+
+
+  useEffect(()=>{
+    dispatch(coinLoss('abc'))
+  })
 
   console.log(state)
   return (

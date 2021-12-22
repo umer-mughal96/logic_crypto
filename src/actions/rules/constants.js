@@ -1,0 +1,7 @@
+
+export const RULE_LOADING = 'RULE_LOADING'
+export const RULE_ERROR = 'RULE_ERROR'
+
+export const COIN_LOSS = 'SET_EXCHANGE_LOSS'
+export const COIN_PROFIT = 'SET_EXCHANGE_PROFIT'
+
