@@ -29,6 +29,7 @@ const Signin = ({ history }) => {
 
   const submitHandler = (values) => {
     setFormData(values)
+    console.log("🚀 ~ file: Signin.js ~ line 32 ~ submitHandler ~ values", values)
     // console.log([e.target.value])
   }
 
@@ -49,6 +50,7 @@ const Signin = ({ history }) => {
     >
       {(formik) => {
         const { errors, touched, isValid, dirty, values } = formik;
+        console.log("🚀 ~ file: Signin.js ~ line 52 ~ Signin ~ dirty", dirty)
 
         return (
 

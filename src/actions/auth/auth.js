@@ -11,7 +11,7 @@ export const userSignUp = (data, history) => async (dispatch) => {
     
     dispatch({ type: constants.SET_AUTH_LOADING });
     const res = await services.registerUser(data);
-    dispatch({ type: constants.SIGNUP_SUCCESS });
+    dispatch({ type: constants.SIGNUP_SUCCESS});
     successNotification(res.data.msg);
     dispatch({ type: constants.RESET_AUTH_STATE });
     history.push("/signin");

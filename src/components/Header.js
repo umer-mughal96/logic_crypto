@@ -2,9 +2,8 @@ import React, { useEffect, useState } from "react";
 import { useSelector } from "react-redux";
 import { Link, withRouter } from "react-router-dom";
 
-const Header = withRouter(({location}) => {
+const Header = withRouter(({ location }) => {
   const { user } = useSelector((s) => s.Auth);
-
 
   const [active, setActive] = useState("");
 
@@ -58,31 +57,84 @@ const Header = withRouter(({location}) => {
               </button>
               <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
                 <div class="navbar-nav ml-auto ad-navbar">
-                  <Link onClick={() => setActive("About")} class={ active == "About" ?  `nav-item nav-link active` : "nav-item nav-link"} to="/enth">
+                  <Link
+                    onClick={() => setActive("About")}
+                    class={
+                      active == "About"
+                        ? `nav-item nav-link active`
+                        : "nav-item nav-link"
+                    }
+                    to="/enth"
+                  >
                     About
                   </Link>
-                  <Link onClick={() => setActive("Pricing")} class={ active == "Pricing" ?  `nav-item nav-link active` : "nav-item nav-link"} to="/pricing">
+                  <Link
+                    onClick={() => setActive("Pricing")}
+                    class={
+                      active == "Pricing"
+                        ? `nav-item nav-link active`
+                        : "nav-item nav-link"
+                    }
+                    to="/pricing"
+                  >
                     Pricing
                   </Link>
-                  <Link onClick={() => setActive("Learn")} class={ active == "Learn" ?  `nav-item nav-link active` : "nav-item nav-link"} to="/categories">
+                  <Link
+                    onClick={() => setActive("Learn")}
+                    class={
+                      active == "Learn"
+                        ? `nav-item nav-link active`
+                        : "nav-item nav-link"
+                    }
+                    to="/categories"
+                  >
                     Learn
                   </Link>
-                  <Link onClick={() => setActive("Invest")} class={ active == "Invest" ?  `nav-item nav-link active` : "nav-item nav-link"} to="/invest">
+                  <Link
+                    onClick={() => setActive("Invest")}
+                    class={
+                      active == "Invest"
+                        ? `nav-item nav-link active`
+                        : "nav-item nav-link"
+                    }
+                    to="/invest"
+                  >
                     Invest
                   </Link>
                   {user ? (
-                    <Link onClick={() => setActive("Dashboard")} class={ active == "Dashboard" ?  `nav-item nav-link active` : "nav-item nav-link"} to="/setting-dsh">
+                    <Link
+                      onClick={() => setActive("Dashboard")}
+                      class={
+                        active == "Dashboard"
+                          ? `nav-item nav-link active`
+                          : "nav-item nav-link"
+                      }
+                      to="/setting-dsh"
+                    >
                       Dashboard
                     </Link>
                   ) : (
-                    <Link onClick={() => setActive("Sign in")} class={ active == "Sign in" ?  `nav-item nav-link active` : "nav-item nav-link"} to="/signin">
-                      Sign in
-                    </Link>
+                    <>
+                      <Link
+                        onClick={() => setActive("Sign in")}
+                        class={
+                          active == "Sign in"
+                            ? `nav-item nav-link active`
+                            : "nav-item nav-link"
+                        }
+                        to="/signin"
+                      >
+                        Sign in
+                      </Link>
+                      <Link
+                        onClick={() => setActive("Free class*")}
+                        class="nav-item nav-link sign-up"
+                        to="/signup"
+                      >
+                        SignUp
+                      </Link>
+                    </>
                   )}
-
-                  <Link onClick={() => setActive("Free class*")} class="nav-item nav-link sign-up" to="/signup">
-                    SignUp
-                  </Link>
                 </div>
               </div>
             </nav>
