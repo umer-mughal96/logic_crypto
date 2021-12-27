@@ -103,7 +103,7 @@ const Signin = ({ history }) => {
                       </button>
                       <span className="sign-up">
                         {" "}
-                        or <Link to="/signin">sign Up</Link>{" "}
+                        or <Link to="/signup">sign Up</Link>{" "}
                       </span>
                     </div>
                     <div className="forgot-pwd">

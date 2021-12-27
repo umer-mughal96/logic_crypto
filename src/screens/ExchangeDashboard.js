@@ -6,16 +6,31 @@ import {
 } from "../actions/exchange/exchange";
 import { useDispatch, useSelector } from "react-redux";
 import Sidebar from "../components/Sidebar";
+import { exchangeKeyValidation } from "../actions/balances/balances";
 
 const ExchangeDashboard = () => {
-  const [exchange, setExchange] = useState("");
+  const [exchange, setExchange] = useState();
   const [apiKey, setApiKey] = useState("");
   const [secretKey, setSecretKey] = useState("");
   const [passPhrase, setPassPhrase] = useState("");
   const dispatch = useDispatch();
   const { exchanges } = useSelector((s) => s.Exchange);
+  const { user } = useSelector(s => s.Auth)
+  const { exchangeKey } = useSelector(s => s.Balance)
+  console.log("🚀 ~ file: ExchangeDashboard.js ~ line 20 ~ ExchangeDashboard ~ exchangeKey", exchangeKey?.status)
+
+  const [exchangeCard, setexchangeCard] = useState(true)
+  console.log("🚀 ~ file: ExchangeDashboard.js ~ line 22 ~ ExchangeDashboard ~ exchangeCard", exchangeCard)
+  console.log("🚀 ~ file: ExchangeDashboard.js ~ line 18 ~ ExchangeDashboard ~ Auth", user)
   const data = useSelector(s => s)
   console.log(data)
+
+  const [keyValidation, setKeyValidation] = useState({
+    exchangeName: null,
+    userId: user._id
+  })
+  console.log("🚀 ~ file: ExchangeDashboard.js ~ line 24 ~ ExchangeDashboard ~ keyValidation", keyValidation)
+
 
   let exhangeNames = [
     "Binance",
@@ -42,6 +57,28 @@ const ExchangeDashboard = () => {
     dispatch(connectExchange(data));
   };
 
+  const selectHandler = (e) =>{
+    setExchange(e.target.value)
+    setKeyValidation({
+      ...keyValidation, exchangeName: e.target.value
+    })
+  }
+
+  useEffect(() => {
+
+    if (keyValidation?.exchangeName != null) {
+      dispatch(exchangeKeyValidation(keyValidation))
+    }
+
+    
+    // if(exchangeKey?.status === 400)
+    // setexchangeCard(true)
+    // else{
+    //   setexchangeCard(false)
+    // }
+  }, [exchange])
+  console.log("🚀 ~ file: ExchangeDashboard.js ~ line 49 ~ ExchangeDashboard ~ exchange", exchangeKey?.status)
+
   return (
     <div className="container-fluid">
       <div className="row">
@@ -60,7 +97,7 @@ const ExchangeDashboard = () => {
                         <select
                           id="inputState"
                           className="custom-select form-control"
-                          onChange={(e) => setExchange(e.target.value)}
+                          onChange={(e) => selectHandler(e)}
                         >
                           <option selected>Choose Exchange</option>
                           {exhangeNames.map((exchange, ind) => (
@@ -125,12 +162,12 @@ const ExchangeDashboard = () => {
                       <h6>Connected Exchange</h6>
                       <p>You haven't connected any exchange yet.</p>
                     </form>
-                    <div class="row">
+                    <div class="row" >
                       {exchanges?.exchanges &&
                         exchanges?.exchanges.map((exc) => {
                           return (
-                            <div class="col-md-12 setting-spacing mb-3">
-                              <div class="account-form">
+                            <div class="col-md-12 setting-spacing mb-3" >
+                              <div class="account-form" style={{boxShadow: exchangeKey?.status === 400 ? '2px solid red !important' : null}}>
                                 <div class="row">
                                   <div class="col-5">
                                     <img
@@ -146,7 +183,7 @@ const ExchangeDashboard = () => {
 
                                       <p>key : {exc.apiKey}</p>
                                       <button
-                                      className="exchange-card-btn"
+                                        className="exchange-card-btn"
                                         style={{
                                           background: "none",
                                           border: "none",

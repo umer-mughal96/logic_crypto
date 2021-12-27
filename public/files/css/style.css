@@ -100,9 +100,10 @@ a.nav-item.nav-link.sign-up:hover,
     font-size: 30px;
 }
 
-.container-fluid.crypto-container {
+
+/* .container-fluid.crypto-container {
     max-width: 1396px;
-}
+} */
 
 
 /********************************* Header End *********************************/
@@ -551,7 +552,7 @@ select#chartdrop.custom-select {
     border-radius: 5px;
     font-size: 14px;
     color: var(--black-color);
-    padding: 0.375rem 0.75rem;
+    /* padding: 0.375rem 0.75rem; */
 }
 
 canvas#myChart {
@@ -1394,6 +1395,7 @@ ul#crypto-tab p {
     box-shadow: 0px 0px 6px #00000029;
     border-radius: 73px;
     padding: 15px;
+    margin-bottom: 1rem;
 }
 
 .crypto-stats p {
@@ -2055,6 +2057,16 @@ div.floating-action-menu.active>.action-button>.btn-floating>i {
     right: 10px;
 }
 
+.form-group .change-form-control {
+    border: none !important;
+}
+
+.form-group .change-custom-select {
+    width: 50%;
+    border: none !important;
+    box-shadow: -2px 0px 2px 0px #2b3990;
+}
+
 @media (max-width: 576px) {
     #rule-tab.nav-pills .nav-link {
         margin: 0px 1px;
@@ -2373,28 +2385,35 @@ div.floating-action-menu.active>.action-button>.btn-floating>i {
 
 
 /* Blog Page Ends */
-.Key_Term_headings h2{
+
+.Key_Term_headings h2 {
     margin-top: 20px;
     font-size: 3vmax;
     color: #222d71;
     font-weight: var(--font-bold);
-
 }
+
 
 /* <--- End of Blog CSS ---> */
 
+
 /* Term Conditions */
-.TermConditions-wrapper{
+
+.TermConditions-wrapper {
     padding: 100px 0px 20px 0px;
 }
-.termheading{
+
+.termheading {
     margin-bottom: 30px;
     font-size: 3vmax;
     color: #222d71;
     font-weight: var(--font-bold);
 }
-.term-section-list-heading{
+
+.term-section-list-heading {
     color: #222d71;
     font-weight: var(--font-bold);
 }
+
+
 /* Term Conditions */

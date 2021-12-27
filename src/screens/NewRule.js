@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { createNewRule } from "../actions/exchange/exchange";
+import { directOrderRule } from "../actions/rules/rules";
 import { getExchangeAssets } from "../actions/user/user";
 import Sidebar from "../components/Sidebar";
 
@@ -19,8 +20,8 @@ const NewRule = () => {
   const { binanceAssets } = useSelector((s) => s.User);
 
   const dispatch = useDispatch();
-  const data = useSelector(s => s.Auth)
-  // console.log(data)
+  const { user } = useSelector(s => s.Auth)
+
 
   const [newRule, setNewRule] = useState({
     demoExchange: '',
@@ -39,37 +40,46 @@ const NewRule = () => {
       date: ''
     },
     order: {
-      amount: '',
-      action: '',
-      // coin: ''
+      user_id: user._id,
+      buy_symbol: "",
+      use_wallet: "",
+      roleType: "",
+      action: "",
+      quantity: null,
+      quantity_behaviour: "",
+      exchange: ""
     },
     startDate: '',
     executeTime: '',
-    ruleName: ''
+    name: ''
   })
-
+  
   const { demoExchange, startDate, executeTime, ruleName, coin, exchange, place, event, timer, order } = newRule
   const { type, rating, price } = event
   const { time, min, date } = timer
   const { amount, action } = order
-
+  
   const changeHandler = (e) => {
     const { name, value } = e.target
     setNewRule({ ...newRule, ...newRule.event, ...newRule.timer, order: { ...order, [name]: value }, [name]: value })
     // setNewRule({ ...event, [e.target.name]: e.target.value})
     // setNewRule({ ...timer, [e.target.name]: e.target.value})
   }
-
+  
   // console.log(newRule)
-
+  console.log("🚀 ~ file: NewRule.js ~ line 28 ~ NewRule ~ newRule", newRule?.order)
+  
   const onExchangeSelectHandler = (e) => {
-    console.log(e.target.value)
+
+    setNewRule({ ...newRule, order: {...newRule.order , exchange: e.target.value} })
+    console.log("🚀 ~ file: NewRule.js ~ line 84 ~ onExchangeSelectHandler ~ e", e)
+
     if (e.target.value !== "null") {
       setSelectedExchange(true)
       dispatch(getExchangeAssets(e.target.value))
     } else {
       setSelectedExchange(false)
-
+      
     }
   };
 
@@ -77,6 +87,7 @@ const NewRule = () => {
   const launchHandler = (e) => {
     e.preventDefault()
     console.log(newRule)
+    dispatch(directOrderRule(newRule.order))
     dispatch(createNewRule(newRule.order))
   }
 
@@ -84,7 +95,7 @@ const NewRule = () => {
   const palceTypeHandler = (value) => {
     // dispatch(createNewRule(newRule))
 
-    setNewRule({ ...newRule, order: { ...newRule.order, place: value }, place: value })
+    setNewRule({ ...newRule, order: { ...newRule.order, roleType: value }})
 
   }
   return (
@@ -135,7 +146,7 @@ const NewRule = () => {
                             name='exchange'
                             class=" ml-2 custom-select form-control"
                             onChange={(e) => onExchangeSelectHandler(e)}
-                            // onChange={changeHandler}
+                          // onChange={changeHandler}
                           >
                             <option value="null" defaultValue>
                               Your Exchanges
@@ -186,7 +197,7 @@ const NewRule = () => {
                               role="tab"
                               aria-controls="pills-event"
                               aria-selected="true"
-                              onClick={() => palceTypeHandler("EVENT")}
+                              onClick={() => palceTypeHandler("event")}
                             >
                               Event <i class="ml-2 fa fa-bolt"></i>
                             </a>
@@ -201,7 +212,7 @@ const NewRule = () => {
                               role="tab"
                               aria-controls="pills-timer"
                               aria-selected="false"
-                              onClick={() => palceTypeHandler("TIMER")}
+                              onClick={() => palceTypeHandler("timer")}
                             >
                               Timer <i class="ml-2 fa fa-clock"></i>
                             </a>
@@ -216,7 +227,8 @@ const NewRule = () => {
                               role="tab"
                               aria-controls="pills-order"
                               aria-selected="false"
-                              onClick={() => palceTypeHandler("Direct")}
+                              name='roleType'
+                              onClick={() => palceTypeHandler('direct')}
                             >
                               Direct Order <i class="ml-2 fa fa-user"></i>
                             </a>
@@ -416,52 +428,86 @@ const NewRule = () => {
                                   <form action="">
                                     <div class="row">
                                       <div class="col-md-6 col-xl-4 col-lg-4 col-12">
+                                        <div class="form-group  d-flex align-items-center" style={{ borderRadius: '22px', border: '2px solid #2b3990' }}>
+
+                                          <span style={{ display: 'flex', width: '100%' }}>
+
+                                            <input
+                                              type="number"
+                                              placeholder="2.5"
+                                              class="form-control change-form-control"
+                                              name="quantity"
+                                              style={{ width: '50%', textAlign: 'center' }}
+                                              onChange={changeHandler}
+                                            />
+
+                                            <select
+                                              id="inputState"
+                                              name="quantity_behaviour"
+                                              class="custom-select d-flex form-control change-custom-select"
+                                              onChange={changeHandler}
+                                              style={{ width: '50%' }}
+                                            >
+                                              <option selected value="usd">USD</option>
+                                              <option value="percentage">
+                                                %
+                                              </option>
+                                              <option value="coins">
+                                                Coins
+                                              </option>
+
+                                            </select>
+                                          </span>
+
+                                        </div>
+                                      </div>
+
+                                      <div class="col-md-6 col-xl-4 col-lg-4 col-12">
                                         <div class="form-group d-flex align-items-center">
+                                          <span>of</span>
                                           <select
                                             id="inputState"
-                                            name='coin'
+                                            name='buy_symbol'
                                             class="custom-select form-control"
                                             onChange={changeHandler}
                                           >
-                                            <option value="">Select Coin</option>
-                                            <option value="BTC">Bit Coin</option>
-                                            <option value="ETH">Etherium</option>
+                                            <option value="">---</option>
+                                            <option value="QTUMBTC">QTUMBTC</option>
+                                            <option value="QTUMUSDT">QTUMUSDT</option>
 
                                           </select>
-                                        </div>
-                                      </div>
-                                      <div class="col-md-6 col-xl-4 col-lg-4 col-12">
-                                        <div class="form-group  d-flex align-items-center">
-                                          <select
-                                            id="inputState"
-                                            name='amount'
-                                            class="custom-select d-flex form-control mr-2"
-                                            onChange={changeHandler}
-                                          >
-                                            <option value="">Select Amount</option>
-                                            <option value="10">
-                                              10
-                                            </option>
-                                            <option value="20">
-                                              20
-                                            </option>
-                                            <option value="30">
-                                              30
-                                            </option>
-                                            <option value="40">
-                                              40
-                                            </option>
-                                            <option value="50">50</option>
-                                            <option value="100">100</option>
-                                            <option value="200">
-                                              200
-                                            </option>
-                                          </select>
-                                          <span>Action</span>
+
+                                          <span>
+                                            <span>with my</span>
+                                          </span>
                                         </div>
                                       </div>
                                       <div class="col-md-6 col-xl-4 col-lg-4 col-12">
                                         <div class="form-group">
+
+                                          <select
+                                            id="inputState"
+                                            name='use_wallet'
+                                            class="custom-select d-flex form-control mr-2"
+                                            placeholder='Action'
+                                            onChange={changeHandler}
+                                          >
+                                            <option selected="">---</option>
+                                            <option value="BTCUSDT">BTCUSDT</option>
+                                            <option value="ETHBTC">ETHBTC</option>
+                                          </select>
+                                        </div>
+
+                                      </div>
+
+                                      <div class="col-md-6 col-xl-4 col-lg-4 col-12">
+
+                                        <div>
+                                          <span>Action</span>
+                                        </div>
+
+                                        <div class="form-group">
+
                                           <select
                                             id="inputState"
                                             name='action'
@@ -469,8 +515,8 @@ const NewRule = () => {
                                             placeholder='Action'
                                             onChange={changeHandler}
                                           >
-                                            <option selected="Buy">BUY</option>
-                                            <option value="Sell">SELL</option>
+                                            <option selected value="buy">BUY</option>
+                                            <option value="sell">SELL</option>
                                           </select>
                                         </div>
                                       </div>
@@ -584,7 +630,7 @@ const NewRule = () => {
                                   class="form-control"
                                   id="demo"
                                   placeholder="Eg. Drive and conquer"
-                                  name='ruleName'
+                                  name='name'
                                   onChange={changeHandler}
                                 />
                               </div>

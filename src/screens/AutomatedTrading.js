@@ -1,9 +1,9 @@
 import React from "react";
-import { useDispatch } from "react-redux";
-import { getNomics } from "../actions/auth/auth";
 import VolumeSlider from "../components/RangeSlider/RangeSlider";
 
+
 const AutomatedTrading = () => {
+
   return (
     <div>
       <div className="container-fluid crypto-container">

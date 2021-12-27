@@ -11,7 +11,7 @@ const iniitialState = {
 
 export const Auth = (state = iniitialState, action) => {
   const { type, payload } = action;
-  switch (action.type) {
+  switch (type) {
     case authConstants.SET_AUTH_LOADING:
       return {
         ...state,

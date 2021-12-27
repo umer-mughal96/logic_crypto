@@ -9,6 +9,7 @@ import { accountDeactivated } from "./actions/auth/auth";
 import { Elements } from "@stripe/react-stripe-js";
 import { loadStripe } from "@stripe/stripe-js";
 import { getUserExchanges } from "./actions/exchange/exchange";
+import { socket } from "./utils/socket";
 
 const App = () => {
   const dispatch = useDispatch();
@@ -17,13 +18,14 @@ const App = () => {
 
   useEffect(() => {
     if (user) {
-      const socket = io(process.env.REACT_APP_BACKEND_SERVER);
-      socket.on("userConnected", (dataFromServer) => {
-        socket.emit("userInfo", { data: user });
-        socket.on("deactivate", (data) => {
-          dispatch(accountDeactivated());
-        });
-      });
+      // const socket = io(process.env.REACT_APP_BACKEND_SERVER);
+      // socket.on("userConnected", (dataFromServer) => {
+      //   socket.emit("userInfo", { data: user });
+      //   socket.on("deactivate", (data) => {
+      //     dispatch(accountDeactivated());
+      //   });
+      // });
+      socket();
     }
   }, [user]);
 

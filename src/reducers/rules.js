@@ -5,6 +5,8 @@ const iniitialState = {
     error: null,
     profit: null,
     loss: null,
+    directOrder: null,
+    rulesList:null
 }
 
 export const Rules = (state = iniitialState, action) => {
@@ -35,6 +37,19 @@ export const Rules = (state = iniitialState, action) => {
                 ...state,
                 loading: false,
                 error: payload
+            }
+
+        case rulesConstants.SET_DIRECT_ORDER_RULE:
+            return{
+                ...state,
+                loading: false,
+                directOrder: payload
+            }
+
+        case rulesConstants.RULE_LISTING_SUCCESS:
+            return{
+                ...state,
+                rulesList: payload
             }
         default:
             return state;

@@ -10,6 +10,8 @@ import { Formik, Form, Field, ErrorMessage } from "formik";
 
 const Signup = ({ history }) => {
 
+
+  
   
   const [formData, setFormData] = useState({
     firstName: "",
@@ -61,6 +63,7 @@ const Signup = ({ history }) => {
   useEffect(() => {
     if (user) {
       history.push('/setting-dsh')
+
     }
   }, [])
 

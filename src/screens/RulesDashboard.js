@@ -1,23 +1,64 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import Sidebar from "../components/Sidebar";
-import {useDispatch, useSelector} from 'react-redux'
-import { coinLoss } from "../actions/rules/rules";
+import { useDispatch, useSelector } from 'react-redux'
+import { socket } from "../utils/socket";
+import { getUserBalance } from "../actions/balances/balances";
+import { ruleListing } from "../actions/rules/rules";
+
+
 
 const RulesDashboard = () => {
 
-  const {user} = useSelector(s => s.Auth)
-  const state = useSelector(s => s.User)
+  const dispatch = useDispatch()
+  const { user } = useSelector(s => s.Auth)
+  const { rulesList } = useSelector(s => s.Rules)
+  console.log("🚀 ~ file: RulesDashboard.js ~ line 16 ~ RulesDashboard ~ rulesList", rulesList)
   var date = new Date(user.createdAt)
 
-  const dispatch = useDispatch()
-
-
-  useEffect(()=>{
-    dispatch(coinLoss('abc'))
+  const [getBalance, setgetBalance] = useState({
+    exchange: 'balance_binance',
+    userId: user._id
   })
 
-  console.log(state)
+  const socketExchange = {
+    exchange: 'market_prices_binance'
+  }
+
+  const [ruleListData, setruleListData] = useState({
+    user_id: user._id,
+    tabName: 'all'
+  })
+  console.log("🚀 ~ file: RulesDashboard.js ~ line 31 ~ RulesDashboard ~ ruleListData", ruleListData)
+
+  const tabHandler = (e) =>{
+  console.log("🚀 ~ file: RulesDashboard.js ~ line 30 ~ tabHandler ~ obj", e.target.name)
+      setruleListData({ ...ruleListData, tabName: e.target.name })
+
+      
+      
+  }
+
+
+  useEffect(() => {
+
+    dispatch(getUserBalance(getBalance))
+      
+    
+    const skt = socket();
+    setInterval(() => {
+      skt.emit('getPrices' , socketExchange.exchange);
+
+    },10000)
+
+    skt.on("sendPrices" , (data) => {
+      console.log(data);
+    })
+
+    dispatch(ruleListing(ruleListData))
+
+  },[ruleListData])
+
   return (
     <div className="container-fluid">
       <div className="row">
@@ -83,6 +124,7 @@ const RulesDashboard = () => {
                   className="nav nav-pills mb-3"
                   id="crypto-tab"
                   role="tablist"
+                  onClick={(e)=> tabHandler(e)}
                 >
                   <li className="nav-item">
                     <a
@@ -93,6 +135,7 @@ const RulesDashboard = () => {
                       role="tab"
                       aria-controls="pills-all"
                       aria-selected="true"
+                      name='all'
                     >
                       All
                     </a>
@@ -106,6 +149,7 @@ const RulesDashboard = () => {
                       role="tab"
                       aria-controls="pills-active"
                       aria-selected="false"
+                      name='active'
                     >
                       Active
                     </a>
@@ -119,6 +163,7 @@ const RulesDashboard = () => {
                       role="tab"
                       aria-controls="pills-paused"
                       aria-selected="false"
+                      name='pause'
                     >
                       Paused
                     </a>
@@ -132,6 +177,7 @@ const RulesDashboard = () => {
                       role="tab"
                       aria-controls="pills-complete"
                       aria-selected="false"
+                      name='completed'
                     >
                       Complete
                     </a>
@@ -148,15 +194,17 @@ const RulesDashboard = () => {
                     <div className="container-fluid">
                       <div className="row">
                         <div className="col-md-12 p-0">
-                          <div className="crypto-stats">
-                            <div className="row">
+
+                          {rulesList?.data?.map((obj, ind)=>(
+                            <div className="crypto-stats">
+                            <div className="row" key={ind}>
                               <div className="col-md-12 col-12 col-sm-12 col-lg-12 col-xl-6 stats-bar">
                                 <div className="bitcoin">
                                   <i className="fab fa-bitcoin"></i>
                                 </div>
                                 <div className="high-low">
                                   <p>
-                                    Buy Low Sell High{" "}
+                                    {obj.name}{" "}
                                     <i className="ml-1 fas fa-arrow-circle-down"></i>
                                   </p>
                                 </div>
@@ -180,189 +228,24 @@ const RulesDashboard = () => {
                                 </div>
                                 <div className="growth">
                                   <p>
-                                    Growth <span>-2.13%</span>
+                                    Growth <span>{obj.buy_symbol_price}%</span>
                                   </p>
                                 </div>
                                 <div className="netprofit">
                                   <p>
-                                    Net Profit <span>-2.13%</span>
+                                    Net Profit <span>{obj.use_wallet_price}%</span>
                                   </p>
                                 </div>
                               </div>
                             </div>
-                          </div>
+                          </div>  
+                          ))}
+                          
                         </div>
                       </div>
                     </div>
                   </div>
-                  <div
-                    className="tab-pane fade"
-                    id="pills-active"
-                    role="tabpanel"
-                    aria-labelledby="pills-active-tab"
-                  >
-                    <div className="container-fluid">
-                      <div className="row">
-                        <div className="col-md-12 p-0">
-                          <div className="crypto-stats">
-                            <div className="row">
-                              <div className="col-md-12 col-12 col-sm-12 col-lg-12 col-xl-6 stats-bar">
-                                <div className="bitcoin">
-                                  <i className="fab fa-bitcoin"></i>
-                                </div>
-                                <div className="high-low">
-                                  <p>
-                                    Buy Low Sell High{" "}
-                                    <i className="ml-1 fas fa-arrow-circle-down"></i>
-                                  </p>
-                                </div>
-                                <div className="demo">
-                                  <p>Demo</p>
-                                </div>
-                                <div className="chart">
-                                  <img
-                                    src="files/images/dashboard/chart-image.svg"
-                                    alt=""
-                                  />
-                                </div>
-                              </div>
-                              <div className="col-md-12 col-12 col-sm-12 col-lg-12 col-xl-6 stats-bar">
-                                <div className="status-toggle">
-                                  <p>Status</p>
-                                  <label className="switch">
-                                    <input type="checkbox" checked />
-                                    <span className="slider round"></span>
-                                  </label>
-                                </div>
-                                <div className="growth">
-                                  <p>
-                                    Growth <span>-2.13%</span>
-                                  </p>
-                                </div>
-                                <div className="netprofit">
-                                  <p>
-                                    Net Profit <span>-2.13%</span>
-                                  </p>
-                                </div>
-                              </div>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                  <div
-                    className="tab-pane fade"
-                    id="pills-paused"
-                    role="tabpanel"
-                    aria-labelledby="pills-paused-tab"
-                  >
-                    <div className="container-fluid">
-                      <div className="row">
-                        <div className="col-md-12 p-0">
-                          <div className="crypto-stats">
-                            <div className="row">
-                              <div className="col-md-12 col-12 col-sm-12 col-lg-12 col-xl-6 stats-bar">
-                                <div className="bitcoin">
-                                  <i className="fab fa-bitcoin"></i>
-                                </div>
-                                <div className="high-low">
-                                  <p>
-                                    Buy Low Sell High{" "}
-                                    <i className="ml-1 fas fa-arrow-circle-down"></i>
-                                  </p>
-                                </div>
-                                <div className="demo">
-                                  <p>Demo</p>
-                                </div>
-                                <div className="chart">
-                                  <img
-                                    src="files/images/dashboard/chart-image.svg"
-                                    alt=""
-                                  />
-                                </div>
-                              </div>
-                              <div className="col-md-12 col-12 col-sm-12 col-lg-12 col-xl-6 stats-bar">
-                                <div className="status-toggle">
-                                  <p>Status</p>
-                                  <label className="switch">
-                                    <input type="checkbox" checked />
-                                    <span className="slider round"></span>
-                                  </label>
-                                </div>
-                                <div className="growth">
-                                  <p>
-                                    Growth <span>-2.13%</span>
-                                  </p>
-                                </div>
-                                <div className="netprofit">
-                                  <p>
-                                    Net Profit <span>-2.13%</span>
-                                  </p>
-                                </div>
-                              </div>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                  <div
-                    className="tab-pane fade"
-                    id="pills-complete"
-                    role="tabpanel"
-                    aria-labelledby="pills-complete-tab"
-                  >
-                    <div className="container-fluid">
-                      <div className="row">
-                        <div className="col-md-12 p-0">
-                          <div className="crypto-stats">
-                            <div className="row">
-                              <div className="col-md-12 col-12 col-sm-12 col-lg-12 col-xl-6 stats-bar">
-                                <div className="bitcoin">
-                                  <i className="fab fa-bitcoin"></i>
-                                </div>
-                                <div className="high-low">
-                                  <p>
-                                    Buy Low Sell High{" "}
-                                    <i className="ml-1 fas fa-arrow-circle-down"></i>
-                                  </p>
-                                </div>
-                                <div className="demo">
-                                  <p>Demo</p>
-                                </div>
-                                <div className="chart">
-                                  <img
-                                    src="files/images/dashboard/chart-image.svg"
-                                    alt=""
-                                  />
-                                </div>
-                              </div>
-                              <div className="col-md-12 col-12 col-sm-12 col-lg-12 col-xl-6 stats-bar">
-                                <div className="status-toggle">
-                                  <p>Status</p>
-                                  <label className="switch">
-                                    <input type="checkbox" checked />
-                                    <span className="slider round"></span>
-                                  </label>
-                                </div>
-                                <div className="growth">
-                                  <p>
-                                    Growth <span>-2.13%</span>
-                                  </p>
-                                </div>
-                                <div className="netprofit">
-                                  <p>
-                                    Net Profit <span>-2.13%</span>
-                                  </p>
-                                </div>
-                              </div>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
+                
                 </div>
               </div>
             </main>
