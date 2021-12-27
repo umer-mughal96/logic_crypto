@@ -181,7 +181,7 @@ const ExchangeDashboard = () => {
                                         {exc.exchangeName} <span>LIVE</span>
                                       </label>
 
-                                      <p>key : {exc.apiKey}</p>
+                                      <p style={{wordBreak: 'break-all'}}>key : {exc.apiKey}</p>
                                       <button
                                         className="exchange-card-btn"
                                         style={{

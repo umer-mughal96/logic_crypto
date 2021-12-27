@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { createNewRule } from "../actions/exchange/exchange";
 import { directOrderRule } from "../actions/rules/rules";
@@ -7,37 +8,49 @@ import Sidebar from "../components/Sidebar";
 
 const NewRule = () => {
 
+  const date = new Date
+  
+
+  const [timerTab, settimerTab] = useState(false)
+  const [directOrderTab, setdirectOrderTab] = useState(false)
+
   const navArray = ['Event', 'Timer', 'Direct Order']
-  const [navItems, setNavItems] = useState(navArray)
-  // setNavItems(navArray)
-  // console.log(navItems)
+
   const [toogler, setToogler] = useState(false);
   const [selectedExchange, setSelectedExchange] = useState(false);
-  const [selectedCoin, setCoinCurrency] = useState("")
-  const [coinMVP, setCoinPVM] = useState("")
-  const [coinPresidencec, setCoinPresidence] = useState("")
+
   const { exchanges } = useSelector((s) => s.Exchange);
   const { binanceAssets } = useSelector((s) => s.User);
 
   const dispatch = useDispatch();
   const { user } = useSelector(s => s.Auth)
-
+  const [currentDateTime, setcurrentDateTime] = useState()
 
   const [newRule, setNewRule] = useState({
-    demoExchange: '',
+    // demoExchange: '',
     exchange: '',
     place: '',
     coin: '',
     event: {
-      // coin:null,
       type: '',
-      rating: '',
-      price: ''
+
+      user_id: user._id,
+      buy_symbol: '',
+      use_wallet: '',
+      status: 'new',
+      type: 'event',
+      created_date: date.toISOString(),
+      symbol: '',
+      has_condition: '',
+      has_match_condition: '',
+      quantity: '',
+      quantity_behaviour: '',
+
+      execution_time: '',
+      execution_count: '',
+      name: ''
     },
     timer: {
-      time: '',
-      min: '',
-      date: ''
     },
     order: {
       user_id: user._id,
@@ -48,30 +61,25 @@ const NewRule = () => {
       quantity: null,
       quantity_behaviour: "",
       exchange: ""
-    },
-    startDate: '',
-    executeTime: '',
-    name: ''
+    }
   })
-  
-  const { demoExchange, startDate, executeTime, ruleName, coin, exchange, place, event, timer, order } = newRule
-  const { type, rating, price } = event
-  const { time, min, date } = timer
-  const { amount, action } = order
-  
+
+  // const { demoExchange, startDate, executeTime, ruleName, coin, exchange, place, event, timer, order } = newRule
+  // const { type, rating, price } = event
+  // const { amount, action } = order
+
   const changeHandler = (e) => {
     const { name, value } = e.target
-    setNewRule({ ...newRule, ...newRule.event, ...newRule.timer, order: { ...order, [name]: value }, [name]: value })
-    // setNewRule({ ...event, [e.target.name]: e.target.value})
-    // setNewRule({ ...timer, [e.target.name]: e.target.value})
+    setNewRule({ ...newRule, ...newRule.event, ...newRule.timer, order: { ...newRule.order, [name]: value }, event: { ...newRule.event, [name]: value }, [name]: value })
+    
   }
-  
-  // console.log(newRule)
-  console.log("🚀 ~ file: NewRule.js ~ line 28 ~ NewRule ~ newRule", newRule?.order)
-  
-  const onExchangeSelectHandler = (e) => {
 
-    setNewRule({ ...newRule, order: {...newRule.order , exchange: e.target.value} })
+  console.log("🚀 ~ file: NewRule.js ~ line 28 ~ NewRule ~ newRule", newRule)
+
+  const onExchangeSelectHandler = (e) => {
+    const value = e.target.value
+
+    setNewRule({ ...newRule, order: { ...newRule.order, exchange: value }, event: { ...newRule.event, exchange: value } })
     console.log("🚀 ~ file: NewRule.js ~ line 84 ~ onExchangeSelectHandler ~ e", e)
 
     if (e.target.value !== "null") {
@@ -79,7 +87,7 @@ const NewRule = () => {
       dispatch(getExchangeAssets(e.target.value))
     } else {
       setSelectedExchange(false)
-      
+
     }
   };
 
@@ -94,10 +102,21 @@ const NewRule = () => {
 
   const palceTypeHandler = (value) => {
     // dispatch(createNewRule(newRule))
-
-    setNewRule({ ...newRule, order: { ...newRule.order, roleType: value }})
+    // settimerTab(true)
+    if (value === 'timer') {
+      settimerTab(true)
+    } else if (value === 'direct') {
+      setdirectOrderTab(true)
+      settimerTab(false)
+    } else {
+      settimerTab(false)
+      setdirectOrderTab(false)
+    }
+    setNewRule({ ...newRule, order: { ...newRule.order, roleType: value }, event: { ...newRule.event, roleType: value } })
 
   }
+
+  
   return (
     <div className="container-fluid crypto-container">
       <div className="row">
@@ -118,9 +137,9 @@ const NewRule = () => {
                           id="inputState"
                           class=" ml-2 custom-select form-control"
                         >
-                          <option selected="">USD</option>
-                          <option value="EURO">EURO</option>
-                          <option value="GBP">GBP</option>
+                          <option selected="usd">USD</option>
+                          <option value="percentage">%</option>
+                          <option value="btc">BTC</option>
                         </select>
                       </div>
                     </div>
@@ -251,8 +270,7 @@ const NewRule = () => {
                                           <select
                                             id="inputState"
                                             class="custom-select form-control mr-2"
-                                            name='coin'
-                                            // onChange={(e) => setCoinCurrency(e.target.value)}
+                                            name='symbol'
                                             onChange={changeHandler}
                                           >
                                             <option selected="">
@@ -279,8 +297,7 @@ const NewRule = () => {
                                           <select
                                             id="inputState"
                                             class="custom-select form-control"
-                                            name='type'
-                                            // onChange={(e) => setCoinPVM(e.target.value)}
+                                            name='has_condition'
                                             onChange={changeHandler}
                                           >
                                             <option selected="" value={null}>---</option>
@@ -299,15 +316,15 @@ const NewRule = () => {
                                           <select
                                             id="inputState"
                                             class="custom-select form-control"
-                                            name='rating'
+                                            name='has_match_condition'
                                             // onChange={(e) => setCoinPresidence(e.target.value)}
                                             onChange={changeHandler}
                                           >
                                             <option selected="" value={null}>---</option>
-                                            <option value="increased">
+                                            <option value="increase">
                                               Increased By
                                             </option>
-                                            <option value="decreased">
+                                            <option value="decrease">
                                               Decreased By
                                             </option>
                                             <option value="lower">
@@ -324,12 +341,14 @@ const NewRule = () => {
                                           <input
                                             type="number"
                                             placeholder="2.5"
-                                            name='price'
+                                            name='quantity'
                                             onChange={changeHandler}
                                           />
                                           <select
                                             id="inputState"
+                                            name="quantity_behaviour"
                                             class="custom-select form-control"
+                                            onChange={changeHandler}
                                           >
                                             <option selected="">USD</option>
                                             <option value="EURO">EURO</option>
@@ -337,6 +356,32 @@ const NewRule = () => {
                                           </select>
                                         </div>
                                       </div>
+
+                                      <div class="col-md-6 col-xl-3 col-lg-3 col-12">
+                                        <div class="form-group">
+                                          <select
+                                            id="inputState"
+                                            class="custom-select form-control"
+                                            name='checking_time'
+                                            onChange={changeHandler}
+                                          >
+                                            <option selected value='from_current_live_price'>from current live price</option>
+                                            <option value="1">
+                                              within 1 minute
+                                            </option>
+                                            <option value="5">
+                                              within 5 minutes
+                                            </option>
+                                            <option value="15">
+                                              within 15 minutes
+                                            </option>
+                                            <option value="30">
+                                              within 30 minutes
+                                            </option>
+                                          </select>
+                                        </div>
+                                      </div>
+
                                     </div>
                                   </form>
                                 </div>
@@ -399,6 +444,7 @@ const NewRule = () => {
                                         <div class="form-group">
                                           <input
                                             type="date"
+                                            name="execution_time"
                                             class="form-control"
                                           />
                                         </div>
@@ -581,43 +627,384 @@ const NewRule = () => {
                         </div>
                       </div>
                     </div>
-                    <div class="row demo-exchange-row">
-                      <div class="col-md-12 col-xl-10 col-lg-12">
-                        <form action="">
-                          <div class="row execute">
-                            <div class="col-md-12 col-xl-4 col-lg-4">
-                              <div class="form-group d-flex align-items-center">
+
+
+                    {timerTab ?
+                      <div class="row demo-exchange-row">
+                        <div class="col-md-12 col-xl-10 col-lg-12">
+                          <form action="">
+                            <div class="row execute">
+
+                              <div class="col-md-12 col-xl-8 col-lg-8">
                                 <div class="form-group  d-flex align-items-center">
-                                  <span class="mr-2">Start</span>
+                                  <span class="mr-2">Execute</span>
                                   <input
-                                    type="date"
+                                    type="text"
                                     class="form-control"
-                                    name='startDate'
-                                    onChange={changeHandler} />
+                                    id="demo"
+                                    placeholder="1"
+                                    name='executeTime'
+                                    onChange={changeHandler}
+                                  />
+                                  <span class="ml-2">times</span>
+                                </div>
+                              </div>
+
+                            </div>
+                          </form>
+                        </div>
+                        <div class="on-state">
+                          <p>EXECUTE</p>
+                        </div>
+                      </div>
+
+                      : directOrderTab ? null :
+
+                        <div>
+
+                          <div class="row demo-exchange-row">
+                            <div class="col-md-12">
+
+                              <div class="tab-content" id="pills-tabContent">
+                                <div
+                                  class="tab-pane fade show active"
+                                  id="pills-event"
+                                  role="tabpanel"
+                                  aria-labelledby="pills-event-tab"
+                                >
+                                  <div class="container-fluid crypto-container">
+                                    <div class="row">
+                                      <div class="col-md-12 p-0">
+                                        <form action="">
+                                          <div class="row">
+                                            <div class="col-md-6 col-xl-4 col-lg-4 col-12">
+                                              <div class="form-group  d-flex align-items-center" style={{ borderRadius: '22px', border: '2px solid #2b3990' }}>
+
+                                                <span style={{ display: 'flex', width: '100%' }}>
+
+                                                  <input
+                                                    type="number"
+                                                    placeholder="2.5"
+                                                    class="form-control change-form-control"
+                                                    name="quantity"
+                                                    style={{ width: '50%', textAlign: 'center' }}
+                                                    onChange={changeHandler}
+                                                  />
+
+                                                  <select
+                                                    id="inputState"
+                                                    name="quantity_behaviour"
+                                                    class="custom-select d-flex form-control change-custom-select"
+                                                    onChange={changeHandler}
+                                                    style={{ width: '50%' }}
+                                                  >
+                                                    <option selected value="usd">USD</option>
+                                                    <option value="percentage">
+                                                      %
+                                                    </option>
+                                                    <option value="coins">
+                                                      Coins
+                                                    </option>
+
+                                                  </select>
+                                                </span>
+
+                                              </div>
+                                            </div>
+
+                                            <div class="col-md-6 col-xl-4 col-lg-4 col-12">
+                                              <div class="form-group d-flex align-items-center">
+                                                <span>of</span>
+                                                <select
+                                                  id="inputState"
+                                                  name='buy_symbol'
+                                                  class="custom-select form-control"
+                                                  onChange={changeHandler}
+                                                >
+                                                  <option value="">---</option>
+                                                  <option value="QTUMBTC">QTUMBTC</option>
+                                                  <option value="QTUMUSDT">QTUMUSDT</option>
+
+                                                </select>
+
+                                                <span>
+                                                  <span>with my</span>
+                                                </span>
+                                              </div>
+                                            </div>
+                                            <div class="col-md-6 col-xl-4 col-lg-4 col-12">
+                                              <div class="form-group">
+
+                                                <select
+                                                  id="inputState"
+                                                  name='use_wallet'
+                                                  class="custom-select d-flex form-control mr-2"
+                                                  placeholder='Action'
+                                                  onChange={changeHandler}
+                                                >
+                                                  <option selected="">---</option>
+                                                  <option value="BTCUSDT">BTCUSDT</option>
+                                                  <option value="ETHBTC">ETHBTC</option>
+                                                </select>
+                                              </div>
+
+                                            </div>
+
+                                            <div class="col-md-6 col-xl-4 col-lg-4 col-12">
+
+                                              <div>
+                                                <span>Action</span>
+                                              </div>
+
+                                              <div class="form-group">
+
+                                                <select
+                                                  id="inputState"
+                                                  name='action'
+                                                  class="custom-select d-flex form-control mr-2"
+                                                  placeholder='Action'
+                                                  onChange={changeHandler}
+                                                >
+                                                  <option selected value="buy">BUY</option>
+                                                  <option value="sell">SELL</option>
+                                                </select>
+                                              </div>
+                                            </div>
+                                          </div>
+                                        </form>
+                                      </div>
+                                    </div>
+                                  </div>
+                                </div>
+                                <div
+                                  class="tab-pane fade"
+                                  id="pills-timer"
+                                  role="tabpanel"
+                                  aria-labelledby="pills-timer-tab"
+                                >
+                                  <div class="container-fluid crypto-container">
+                                    <div class="row">
+                                      <div class="col-md-12 p-0">
+                                        <form action="">
+                                          <div class="row">
+                                            <div class="col-md-6 col-xl-4 col-lg-4 col-12">
+                                              <div class="form-group d-flex align-items-center">
+                                                <select
+                                                  id="inputState"
+                                                  class="custom-select form-control"
+                                                >
+                                                  <option selected="">Every</option>
+                                                  <option value="on">On</option>
+                                                  <option value="rightnow">
+                                                    Right Now
+                                                  </option>
+                                                </select>
+                                              </div>
+                                            </div>
+                                            <div class="col-md-6 col-xl-4 col-lg-4 col-12">
+                                              <div class="form-group  d-flex align-items-center">
+                                                <select
+                                                  id="inputState"
+                                                  class="custom-select d-flex form-control mr-2"
+                                                >
+                                                  <option selected="">
+                                                    5 minutes
+                                                  </option>
+                                                  <option value="10 minutes">
+                                                    10 minutes
+                                                  </option>
+                                                  <option value="15 minutes">
+                                                    15 minutes
+                                                  </option>
+                                                  <option value="30 minutes">
+                                                    30 minutes
+                                                  </option>
+                                                  <option value="hour">1 hour</option>
+                                                  <option value="week">1 week</option>
+                                                  <option value="month">
+                                                    1 month
+                                                  </option>
+                                                </select>
+                                                <span>Starting</span>
+                                              </div>
+                                            </div>
+                                            <div class="col-md-6 col-xl-4 col-lg-4 col-12">
+                                              <div class="form-group">
+                                                <input
+                                                  type="date"
+                                                  name="execution_time"
+                                                  class="form-control"
+                                                />
+                                              </div>
+                                            </div>
+                                          </div>
+                                        </form>
+                                      </div>
+                                    </div>
+                                  </div>
+                                </div>
+                                <div
+                                  class="tab-pane fade"
+                                  id="pills-order"
+                                  role="tabpanel"
+                                  aria-labelledby="pills-order-tab"
+                                >
+                                  <div class="container-fluid crypto-container">
+                                    <div class="row">
+                                      <div class="col-md-12 p-0">
+
+                                        <form action="">
+                                          <div class="row">
+                                            <div class="col-md-6 col-xl-4 col-lg-4 col-12">
+                                              <div class="form-group  d-flex align-items-center" style={{ borderRadius: '22px', border: '2px solid #2b3990' }}>
+
+                                                <span style={{ display: 'flex', width: '100%' }}>
+
+                                                  <input
+                                                    type="number"
+                                                    placeholder="2.5"
+                                                    class="form-control change-form-control"
+                                                    name="quantity"
+                                                    style={{ width: '50%', textAlign: 'center' }}
+                                                    onChange={changeHandler}
+                                                  />
+
+                                                  <select
+                                                    id="inputState"
+                                                    name="quantity_behaviour"
+                                                    class="custom-select d-flex form-control change-custom-select"
+                                                    onChange={changeHandler}
+                                                    style={{ width: '50%' }}
+                                                  >
+                                                    <option selected value="usd">USD</option>
+                                                    <option value="percentage">
+                                                      %
+                                                    </option>
+                                                    <option value="coins">
+                                                      Coins
+                                                    </option>
+
+                                                  </select>
+                                                </span>
+
+                                              </div>
+                                            </div>
+
+                                            <div class="col-md-6 col-xl-4 col-lg-4 col-12">
+                                              <div class="form-group d-flex align-items-center">
+                                                <span>of</span>
+                                                <select
+                                                  id="inputState"
+                                                  name='buy_symbol'
+                                                  class="custom-select form-control"
+                                                  onChange={changeHandler}
+                                                >
+                                                  <option value="">---</option>
+                                                  <option value="QTUMBTC">QTUMBTC</option>
+                                                  <option value="QTUMUSDT">QTUMUSDT</option>
+
+                                                </select>
+
+                                                <span>
+                                                  <span>with my</span>
+                                                </span>
+                                              </div>
+                                            </div>
+                                            <div class="col-md-6 col-xl-4 col-lg-4 col-12">
+                                              <div class="form-group">
+
+                                                <select
+                                                  id="inputState"
+                                                  name='use_wallet'
+                                                  class="custom-select d-flex form-control mr-2"
+                                                  placeholder='Action'
+                                                  onChange={changeHandler}
+                                                >
+                                                  <option selected="">---</option>
+                                                  <option value="BTCUSDT">BTCUSDT</option>
+                                                  <option value="ETHBTC">ETHBTC</option>
+                                                </select>
+                                              </div>
+
+                                            </div>
+
+                                            <div class="col-md-6 col-xl-4 col-lg-4 col-12">
+
+                                              <div>
+                                                <span>Action</span>
+                                              </div>
+
+                                              <div class="form-group">
+
+                                                <select
+                                                  id="inputState"
+                                                  name='action'
+                                                  class="custom-select d-flex form-control mr-2"
+                                                  placeholder='Action'
+                                                  onChange={changeHandler}
+                                                >
+                                                  <option selected value="buy">BUY</option>
+                                                  <option value="sell">SELL</option>
+                                                </select>
+                                              </div>
+                                            </div>
+                                          </div>
+                                        </form>
+
+                                      </div>
+                                    </div>
+                                  </div>
                                 </div>
                               </div>
                             </div>
-                            <div class="col-md-12 col-xl-8 col-lg-8">
-                              <div class="form-group  d-flex align-items-center">
-                                <span class="mr-2">and execute</span>
-                                <input
-                                  type="text"
-                                  class="form-control"
-                                  id="demo"
-                                  placeholder="Demo exchange"
-                                  name='executeTime'
-                                  onChange={changeHandler}
-                                />
-                                <span class="ml-2">times</span>
-                              </div>
+                            <div class="on-state">
+                              <p>THEN</p>
                             </div>
                           </div>
-                        </form>
-                      </div>
-                      <div class="on-state">
-                        <p>EXECUTE</p>
-                      </div>
-                    </div>
+
+                          <div class="row demo-exchange-row">
+                            <div class="col-md-12 col-xl-10 col-lg-12">
+                              <form action="">
+                                <div class="row execute">
+
+                                  <div class="col-md-12 col-xl-4 col-lg-4">
+                                    <div class="form-group d-flex align-items-center">
+
+
+                                      <div class="form-group  d-flex align-items-center">
+                                        <span class="mr-2">Start</span>
+                                        <input
+                                          type="date"
+                                          class="form-control"
+                                          name='execution_time'
+                                          onChange={changeHandler} />
+                                      </div>
+                                    </div>
+                                  </div><div class="col-md-12 col-xl-8 col-lg-8">
+                                    <div class="form-group  d-flex align-items-center">
+                                      <span class="mr-2">and execute</span>
+                                      <input
+                                        type="number"
+                                        class="form-control"
+                                        id="demo"
+                                        placeholder="1"
+                                        name='execution_count'
+                                        onChange={changeHandler} />
+                                      <span class="ml-2">times</span>
+                                    </div>
+                                  </div>
+                                </div>
+                              </form>
+                            </div>
+                            <div class="on-state">
+                              <p>EXECUTE</p>
+                            </div>
+                          </div>
+
+                        </div>
+                    }
+
+
                     <div class="row demo-exchange-row">
                       <div class="col-xl-10 col-lg-12 col-md-12">
                         <form action="">

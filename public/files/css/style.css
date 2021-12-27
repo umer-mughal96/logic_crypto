@@ -145,6 +145,7 @@ a.nav-item.nav-link.sign-up:hover,
     padding: 7px 25px;
     transition-delay: 0.01s;
     transition: background-color 0.5s ease-out;
+    margin: 0 auto;
 }
 
 .sign-in a.btn:hover,
