@@ -9,7 +9,7 @@ import Sidebar from "../components/Sidebar";
 const NewRule = () => {
 
   const date = new Date
-  
+
 
   const [timerTab, settimerTab] = useState(false)
   const [directOrderTab, setdirectOrderTab] = useState(false)
@@ -71,7 +71,7 @@ const NewRule = () => {
   const changeHandler = (e) => {
     const { name, value } = e.target
     setNewRule({ ...newRule, ...newRule.event, ...newRule.timer, order: { ...newRule.order, [name]: value }, event: { ...newRule.event, [name]: value }, [name]: value })
-    
+
   }
 
   console.log("🚀 ~ file: NewRule.js ~ line 28 ~ NewRule ~ newRule", newRule)
@@ -116,7 +116,7 @@ const NewRule = () => {
 
   }
 
-  
+
   return (
     <div className="container-fluid crypto-container">
       <div className="row">
@@ -267,9 +267,9 @@ const NewRule = () => {
                                     <div class="row">
                                       <div class="col-md-6 col-xl-3 col-lg-3 col-12">
                                         <div class="form-group d-flex align-items-center">
-                                          <select
+                                          <select 
                                             id="inputState"
-                                            class="custom-select form-control mr-2"
+                                            class="custom-select form-control mr-2 mb-2 mb-md-2 mb-lg-0"
                                             name='symbol'
                                             onChange={changeHandler}
                                           >
@@ -296,7 +296,7 @@ const NewRule = () => {
                                         <div class="form-group">
                                           <select
                                             id="inputState"
-                                            class="custom-select form-control"
+                                            class="custom-select form-control  mb-2 mb-md-2 mb-lg-0"
                                             name='has_condition'
                                             onChange={changeHandler}
                                           >
@@ -315,7 +315,7 @@ const NewRule = () => {
                                         <div class="form-group">
                                           <select
                                             id="inputState"
-                                            class="custom-select form-control"
+                                            class="custom-select form-control  mb-2 mb-md-2 mb-lg-0"
                                             name='has_match_condition'
                                             // onChange={(e) => setCoinPresidence(e.target.value)}
                                             onChange={changeHandler}
@@ -337,7 +337,7 @@ const NewRule = () => {
                                         </div>
                                       </div>
                                       <div class="col-md-6 col-xl-3 col-lg-3 col-12">
-                                        <div class="form-group currency-select">
+                                        <div class="form-group currency-select ">
                                           <input
                                             type="number"
                                             placeholder="2.5"
@@ -347,7 +347,7 @@ const NewRule = () => {
                                           <select
                                             id="inputState"
                                             name="quantity_behaviour"
-                                            class="custom-select form-control"
+                                            class="custom-select form-control "
                                             onChange={changeHandler}
                                           >
                                             <option selected="">USD</option>
@@ -357,7 +357,7 @@ const NewRule = () => {
                                         </div>
                                       </div>
 
-                                      <div class="col-md-6 col-xl-3 col-lg-3 col-12">
+                                      <div class="col-md-6 col-xl-3 col-lg-3 col-12 pt-2">
                                         <div class="form-group">
                                           <select
                                             id="inputState"
@@ -403,7 +403,7 @@ const NewRule = () => {
                                         <div class="form-group d-flex align-items-center">
                                           <select
                                             id="inputState"
-                                            class="custom-select form-control"
+                                            class="custom-select form-control  mb-2 mb-md-2 mb-lg-0"
                                           >
                                             <option selected="">Every</option>
                                             <option value="on">On</option>
@@ -414,7 +414,7 @@ const NewRule = () => {
                                         </div>
                                       </div>
                                       <div class="col-md-6 col-xl-4 col-lg-4 col-12">
-                                        <div class="form-group  d-flex align-items-center">
+                                        <div class="form-group  d-flex align-items-center  mb-2 mb-md-2 mb-lg-0">
                                           <select
                                             id="inputState"
                                             class="custom-select d-flex form-control mr-2"
@@ -440,7 +440,7 @@ const NewRule = () => {
                                           <span>Starting</span>
                                         </div>
                                       </div>
-                                      <div class="col-md-6 col-xl-4 col-lg-4 col-12">
+                                      <div class="col-md-6 col-xl-4 col-lg-4 col-12 ">
                                         <div class="form-group">
                                           <input
                                             type="date"
@@ -464,17 +464,10 @@ const NewRule = () => {
                             <div class="container-fluid crypto-container">
                               <div class="row">
                                 <div class="col-md-12 p-0">
-
-
-
-
-
-
-
                                   <form action="">
                                     <div class="row">
-                                      <div class="col-md-6 col-xl-4 col-lg-4 col-12">
-                                        <div class="form-group  d-flex align-items-center" style={{ borderRadius: '22px', border: '2px solid #2b3990' }}>
+                                      <div class="col-md-6 col-xl-4 col-lg-4 col-12  mb-2 mb-md-2 mb-lg-0">
+                                        <div class="form-group  d-flex align-items-center "  style={{ borderRadius: '22px', border: '2px solid #2b3990' }}>
 
                                           <span style={{ display: 'flex', width: '100%' }}>
 
@@ -510,11 +503,11 @@ const NewRule = () => {
 
                                       <div class="col-md-6 col-xl-4 col-lg-4 col-12">
                                         <div class="form-group d-flex align-items-center">
-                                          <span>of</span>
+                                          <span class='mx-2'>of</span>
                                           <select
                                             id="inputState"
                                             name='buy_symbol'
-                                            class="custom-select form-control"
+                                            class="custom-select form-control  mb-2 mb-md-2 mb-lg-0"
                                             onChange={changeHandler}
                                           >
                                             <option value="">---</option>
@@ -523,7 +516,7 @@ const NewRule = () => {
 
                                           </select>
 
-                                          <span>
+                                          <span class='mx-2'>
                                             <span>with my</span>
                                           </span>
                                         </div>
@@ -548,7 +541,7 @@ const NewRule = () => {
 
                                       <div class="col-md-6 col-xl-4 col-lg-4 col-12">
 
-                                        <div>
+                                        <div class='pt-2'>
                                           <span>Action</span>
                                         </div>
 
@@ -568,14 +561,6 @@ const NewRule = () => {
                                       </div>
                                     </div>
                                   </form>
-
-
-
-
-
-
-
-
                                 </div>
                               </div>
                             </div>
@@ -618,7 +603,7 @@ const NewRule = () => {
                           <div class="d-block action-button">
                             <span>Add</span>
                             <a
-                              class="btn-floating btn-primary"
+                              class="btn-floating btn-primary ml-2"
                               onClick={() => setToogler(!toogler)}
                             >
                               <i class="fas fa-plus"></i>
@@ -633,24 +618,27 @@ const NewRule = () => {
                       <div class="row demo-exchange-row">
                         <div class="col-md-12 col-xl-10 col-lg-12">
                           <form action="">
-                            <div class="row execute">
+                            <div className="col-md-12">
+                              <div class="row execute">
 
-                              <div class="col-md-12 col-xl-8 col-lg-8">
-                                <div class="form-group  d-flex align-items-center">
-                                  <span class="mr-2">Execute</span>
-                                  <input
-                                    type="text"
-                                    class="form-control"
-                                    id="demo"
-                                    placeholder="1"
-                                    name='executeTime'
-                                    onChange={changeHandler}
-                                  />
-                                  <span class="ml-2">times</span>
+                                <div class="col-md-12 col-xl-8 col-lg-8">
+                                  <div class="form-group execution-time  d-flex align-items-center">
+                                    <span class="mr-2">Execute</span>
+                                    <input
+                                      type="text"
+                                      class="form-control"
+                                      id="demo"
+                                      placeholder="1"
+                                      name='executeTime'
+                                      onChange={changeHandler}
+                                    />
+                                    <span class="ml-2">times</span>
+                                  </div>
                                 </div>
-                              </div>
 
+                              </div>
                             </div>
+
                           </form>
                         </div>
                         <div class="on-state">
@@ -677,7 +665,7 @@ const NewRule = () => {
                                       <div class="col-md-12 p-0">
                                         <form action="">
                                           <div class="row">
-                                            <div class="col-md-6 col-xl-4 col-lg-4 col-12">
+                                            <div class="col-md-6 col-xl-4 col-lg-4 col-12  mb-2 mb-md-2 mb-lg-0">
                                               <div class="form-group  d-flex align-items-center" style={{ borderRadius: '22px', border: '2px solid #2b3990' }}>
 
                                                 <span style={{ display: 'flex', width: '100%' }}>
@@ -714,11 +702,11 @@ const NewRule = () => {
 
                                             <div class="col-md-6 col-xl-4 col-lg-4 col-12">
                                               <div class="form-group d-flex align-items-center">
-                                                <span>of</span>
+                                                <span class='mx-2'>of</span>
                                                 <select
                                                   id="inputState"
                                                   name='buy_symbol'
-                                                  class="custom-select form-control"
+                                                  class="custom-select form-control  mb-2 mb-md-2 mb-lg-0"
                                                   onChange={changeHandler}
                                                 >
                                                   <option value="">---</option>
@@ -727,7 +715,7 @@ const NewRule = () => {
 
                                                 </select>
 
-                                                <span>
+                                                <span class='mx-2'>
                                                   <span>with my</span>
                                                 </span>
                                               </div>
@@ -752,7 +740,7 @@ const NewRule = () => {
 
                                             <div class="col-md-6 col-xl-4 col-lg-4 col-12">
 
-                                              <div>
+                                              <div class='pt-2'>
                                                 <span>Action</span>
                                               </div>
 
@@ -892,7 +880,8 @@ const NewRule = () => {
 
                                             <div class="col-md-6 col-xl-4 col-lg-4 col-12">
                                               <div class="form-group d-flex align-items-center">
-                                                <span>of</span>
+                                                
+                                                <span class='mx-2'>of</span>
                                                 <select
                                                   id="inputState"
                                                   name='buy_symbol'
@@ -905,8 +894,8 @@ const NewRule = () => {
 
                                                 </select>
 
-                                                <span>
-                                                  <span>with my</span>
+                                                <span class='mx-2'>
+                                                  <span class='mx-2'>with my</span>
                                                 </span>
                                               </div>
                                             </div>
@@ -963,34 +952,36 @@ const NewRule = () => {
                           </div>
 
                           <div class="row demo-exchange-row">
-                            <div class="col-md-12 col-xl-10 col-lg-12">
+                            <div class="col-md-12 col-xl-12 col-lg-12">
                               <form action="">
-                                <div class="row execute">
+                                <div class="col-md-12 col-xl-12 col-lg-12">
+                                  <div class="row execute">
+                                    <div class="col-md-12 col-xl-4 col-lg-4 pl-0">
+                                      <div class="form-group d-flex align-items-center">
 
-                                  <div class="col-md-12 col-xl-4 col-lg-4">
-                                    <div class="form-group d-flex align-items-center">
 
-
-                                      <div class="form-group  d-flex align-items-center">
-                                        <span class="mr-2">Start</span>
-                                        <input
-                                          type="date"
-                                          class="form-control"
-                                          name='execution_time'
-                                          onChange={changeHandler} />
+                                        <div class="form-group  d-flex align-items-center  mb-2 mb-md-2 mb-lg-0">
+                                          <span class="mr-2">Start</span>
+                                          <input
+                                            type="date"
+                                            class="form-control"
+                                            name='execution_time'
+                                            onChange={changeHandler} />
+                                        </div>
                                       </div>
                                     </div>
-                                  </div><div class="col-md-12 col-xl-8 col-lg-8">
-                                    <div class="form-group  d-flex align-items-center">
-                                      <span class="mr-2">and execute</span>
-                                      <input
-                                        type="number"
-                                        class="form-control"
-                                        id="demo"
-                                        placeholder="1"
-                                        name='execution_count'
-                                        onChange={changeHandler} />
-                                      <span class="ml-2">times</span>
+                                    <div class="col-md-12 col-xl-8 col-lg-8">
+                                      <div class="form-group  execution-time d-flex align-items-center">
+                                        <span class="mr-2">and execute</span>
+                                        <input
+                                          type="number"
+                                          class="form-control"
+                                          id="demo"
+                                          placeholder="1"
+                                          name='execution_count'
+                                          onChange={changeHandler} />
+                                        <span class="ml-2">times</span>
+                                      </div>
                                     </div>
                                   </div>
                                 </div>
@@ -1006,26 +997,28 @@ const NewRule = () => {
 
 
                     <div class="row demo-exchange-row">
-                      <div class="col-xl-10 col-lg-12 col-md-12">
+                      <div class="col-xl-12 col-lg-12 col-md-12">
                         <form action="">
-                          <div class="row execute">
-                            <div class="col-md-12 col-xl-8 col-lg-7">
-                              <div class="form-group  d-flex align-items-center">
-                                <span class="mr-2">Now name this rule</span>
-                                <input
-                                  type="text"
-                                  class="form-control"
-                                  id="demo"
-                                  placeholder="Eg. Drive and conquer"
-                                  name='name'
-                                  onChange={changeHandler}
-                                />
+                          <div class="col-xl-12 col-lg-12 col-md-12">
+                            <div class="row execute">
+                              <div class="col-md-12 col-xl-8 col-lg-7 pl-0">
+                                <div class="form-group  d-flex align-items-center  mb-2 mb-md-2 mb-lg-0">
+                                  <span  class="mr-2 rule-name">Now name this rule</span>
+                                  <input
+                                    type="text"
+                                    class="form-control"
+                                    id="demo"
+                                    placeholder="Eg. Drive and conquer"
+                                    name='name'
+                                    onChange={changeHandler}
+                                  />
+                                </div>
                               </div>
-                            </div>
-                            <div class="col-md-12 col-xl-4 col-lg-5">
-                              <div class="form-group  d-flex align-items-center whiite-space-pre">
-                                <button class="mr-2">Save Draft</button>
-                                <button onClick={launchHandler}>Launch</button>
+                              <div class="col-md-12 col-xl-4 col-lg-5">
+                                <div class="form-group  d-flex align-items-center whiite-space-pre">
+                                  <button class="mr-2">Save Draft</button>
+                                  <button onClick={launchHandler}>Launch</button>
+                                </div>
                               </div>
                             </div>
                           </div>
