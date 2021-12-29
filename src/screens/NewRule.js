@@ -64,11 +64,7 @@ const NewRule = () => {
 
   const changeHandler = (e) => {
     const { name, value } = e.target
-<<<<<<< HEAD
-    setNewRule({ ...newRule, ...newRule.event, ...newRule.timer, order: { ...newRule.order, [name]: value }, event: { ...newRule.event, [name]: value }, [name]: value })
-=======
     setNewRule({ ...newRule, ...newRule.event, ...newRule.timer, order: { ...newRule.order, [name]: value }, event: { ...newRule.event, [name]: value }  })
->>>>>>> ff8e1a9009e9d367941cbd1264f2c98df00291ac
 
   }
 
@@ -267,13 +263,8 @@ const NewRule = () => {
                                         <div class="form-group d-flex align-items-center">
                                           <select 
                                             id="inputState"
-<<<<<<< HEAD
                                             class="custom-select form-control mr-2 mb-2 mb-md-2 mb-lg-0"
                                             name='symbol'
-=======
-                                            class="custom-select form-control mr-2"
-                                            name='select_coin'
->>>>>>> ff8e1a9009e9d367941cbd1264f2c98df00291ac
                                             onChange={changeHandler}
                                           >
                                             <option selected="">
@@ -318,13 +309,8 @@ const NewRule = () => {
                                         <div class="form-group">
                                           <select
                                             id="inputState"
-<<<<<<< HEAD
                                             class="custom-select form-control  mb-2 mb-md-2 mb-lg-0"
                                             name='has_match_condition'
-=======
-                                            class="custom-select form-control"
-                                            name='has_checking'
->>>>>>> ff8e1a9009e9d367941cbd1264f2c98df00291ac
                                             // onChange={(e) => setCoinPresidence(e.target.value)}
                                             onChange={changeHandler}
                                           >
@@ -354,13 +340,8 @@ const NewRule = () => {
                                           />
                                           <select
                                             id="inputState"
-<<<<<<< HEAD
-                                            name="quantity_behaviour"
-                                            class="custom-select form-control "
-=======
                                             name="checking_symbol"
                                             class="custom-select form-control"
->>>>>>> ff8e1a9009e9d367941cbd1264f2c98df00291ac
                                             onChange={changeHandler}
                                           >
                                             <option selected="usd">USD</option>
@@ -989,19 +970,11 @@ const NewRule = () => {
                                         <input
                                           type="number"
                                           class="form-control"
-<<<<<<< HEAD
-                                          id="demo"
-                                          placeholder="1"
-                                          name='execution_count'
-=======
                                           name='startTime'
->>>>>>> ff8e1a9009e9d367941cbd1264f2c98df00291ac
                                           onChange={changeHandler} />
                                         <span class="ml-2">times</span>
                                       </div>
                                     </div>
-<<<<<<< HEAD
-=======
                                   </div><div class="col-md-12 col-xl-8 col-lg-8">
                                     <div class="form-group  d-flex align-items-center">
                                       <span class="mr-2">and execute</span>
@@ -1014,7 +987,6 @@ const NewRule = () => {
                                         onChange={changeHandler} />
                                       <span class="ml-2">times</span>
                                     </div>
->>>>>>> ff8e1a9009e9d367941cbd1264f2c98df00291ac
                                   </div>
                                 </div>
                               </form>
