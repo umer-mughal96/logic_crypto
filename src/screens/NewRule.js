@@ -32,22 +32,16 @@ const NewRule = () => {
     place: '',
     coin: '',
     event: {
-      type: '',
 
       user_id: user._id,
       buy_symbol: '',
       use_wallet: '',
-      status: 'new',
-      type: 'event',
-      created_date: date.toISOString(),
-      symbol: '',
+      // status: 'new',
+      // created_date: date.toISOString(),
       has_condition: '',
-      has_match_condition: '',
+      has_checking: '',
       quantity: '',
       quantity_behaviour: '',
-
-      execution_time: '',
-      execution_count: '',
       name: ''
     },
     timer: {
@@ -70,7 +64,11 @@ const NewRule = () => {
 
   const changeHandler = (e) => {
     const { name, value } = e.target
+<<<<<<< HEAD
     setNewRule({ ...newRule, ...newRule.event, ...newRule.timer, order: { ...newRule.order, [name]: value }, event: { ...newRule.event, [name]: value }, [name]: value })
+=======
+    setNewRule({ ...newRule, ...newRule.event, ...newRule.timer, order: { ...newRule.order, [name]: value }, event: { ...newRule.event, [name]: value }  })
+>>>>>>> ff8e1a9009e9d367941cbd1264f2c98df00291ac
 
   }
 
@@ -95,7 +93,7 @@ const NewRule = () => {
   const launchHandler = (e) => {
     e.preventDefault()
     console.log(newRule)
-    dispatch(directOrderRule(newRule.order))
+    dispatch(directOrderRule(newRule.event))
     dispatch(createNewRule(newRule.order))
   }
 
@@ -138,7 +136,7 @@ const NewRule = () => {
                           class=" ml-2 custom-select form-control"
                         >
                           <option selected="usd">USD</option>
-                          <option value="percentage">%</option>
+                          <option value="gbp">GBP</option>
                           <option value="btc">BTC</option>
                         </select>
                       </div>
@@ -153,8 +151,8 @@ const NewRule = () => {
                             class="form-control"
                             id="demo"
                             placeholder="Demo exchange"
-                            name='demoExchange'
-                            onChange={changeHandler}
+                            // name='demoExchange'
+                            // onChange={changeHandler}
                           />
                         </div>
                       </div>
@@ -269,8 +267,13 @@ const NewRule = () => {
                                         <div class="form-group d-flex align-items-center">
                                           <select 
                                             id="inputState"
+<<<<<<< HEAD
                                             class="custom-select form-control mr-2 mb-2 mb-md-2 mb-lg-0"
                                             name='symbol'
+=======
+                                            class="custom-select form-control mr-2"
+                                            name='select_coin'
+>>>>>>> ff8e1a9009e9d367941cbd1264f2c98df00291ac
                                             onChange={changeHandler}
                                           >
                                             <option selected="">
@@ -315,8 +318,13 @@ const NewRule = () => {
                                         <div class="form-group">
                                           <select
                                             id="inputState"
+<<<<<<< HEAD
                                             class="custom-select form-control  mb-2 mb-md-2 mb-lg-0"
                                             name='has_match_condition'
+=======
+                                            class="custom-select form-control"
+                                            name='has_checking'
+>>>>>>> ff8e1a9009e9d367941cbd1264f2c98df00291ac
                                             // onChange={(e) => setCoinPresidence(e.target.value)}
                                             onChange={changeHandler}
                                           >
@@ -341,18 +349,23 @@ const NewRule = () => {
                                           <input
                                             type="number"
                                             placeholder="2.5"
-                                            name='quantity'
+                                            name='checking_value'
                                             onChange={changeHandler}
                                           />
                                           <select
                                             id="inputState"
+<<<<<<< HEAD
                                             name="quantity_behaviour"
                                             class="custom-select form-control "
+=======
+                                            name="checking_symbol"
+                                            class="custom-select form-control"
+>>>>>>> ff8e1a9009e9d367941cbd1264f2c98df00291ac
                                             onChange={changeHandler}
                                           >
-                                            <option selected="">USD</option>
-                                            <option value="EURO">EURO</option>
-                                            <option value="GBP">GBP</option>
+                                            <option selected="usd">USD</option>
+                                            <option value="percentage">%</option>
+                                            <option value="btc">BTC</option>
                                           </select>
                                         </div>
                                       </div>
@@ -976,13 +989,32 @@ const NewRule = () => {
                                         <input
                                           type="number"
                                           class="form-control"
+<<<<<<< HEAD
                                           id="demo"
                                           placeholder="1"
                                           name='execution_count'
+=======
+                                          name='startTime'
+>>>>>>> ff8e1a9009e9d367941cbd1264f2c98df00291ac
                                           onChange={changeHandler} />
                                         <span class="ml-2">times</span>
                                       </div>
                                     </div>
+<<<<<<< HEAD
+=======
+                                  </div><div class="col-md-12 col-xl-8 col-lg-8">
+                                    <div class="form-group  d-flex align-items-center">
+                                      <span class="mr-2">and execute</span>
+                                      <input
+                                        type="number"
+                                        class="form-control"
+                                        id="demo"
+                                        placeholder="1"
+                                        name='checkingStartCount'
+                                        onChange={changeHandler} />
+                                      <span class="ml-2">times</span>
+                                    </div>
+>>>>>>> ff8e1a9009e9d367941cbd1264f2c98df00291ac
                                   </div>
                                 </div>
                               </form>
