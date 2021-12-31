@@ -32,7 +32,7 @@ const NewRule = () => {
     place: '',
     coin: '',
     event: {
-
+      roleType: "event",
       user_id: user._id,
       buy_symbol: '',
       use_wallet: '',
@@ -50,9 +50,9 @@ const NewRule = () => {
       user_id: user._id,
       buy_symbol: "",
       use_wallet: "",
-      roleType: "",
+      roleType: "order",
       action: "",
-      quantity: null,
+      quantity: '',
       quantity_behaviour: "",
       exchange: ""
     }
@@ -64,7 +64,7 @@ const NewRule = () => {
 
   const changeHandler = (e) => {
     const { name, value } = e.target
-    setNewRule({ ...newRule, ...newRule.event, ...newRule.timer, order: { ...newRule.order, [name]: value }, event: { ...newRule.event, [name]: value }  })
+    setNewRule({ ...newRule, ...newRule.event, ...newRule.timer, order: { ...newRule.order, [name]: value }, event: { ...newRule.event, [name]: value } })
 
   }
 
@@ -147,8 +147,8 @@ const NewRule = () => {
                             class="form-control"
                             id="demo"
                             placeholder="Demo exchange"
-                            // name='demoExchange'
-                            // onChange={changeHandler}
+                          // name='demoExchange'
+                          // onChange={changeHandler}
                           />
                         </div>
                       </div>
@@ -161,17 +161,20 @@ const NewRule = () => {
                             onChange={(e) => onExchangeSelectHandler(e)}
                           // onChange={changeHandler}
                           >
-                            <option value="null" defaultValue>
+                            <option value="null" >
                               Your Exchanges
                             </option>
-                            {exchanges &&
+                            <option value="Binance" >
+                              Binance
+                            </option>
+                            {/* {exchanges &&
                               exchanges.exchanges.map((ex, ind) => {
                                 return (
                                   <option key={ind} value={ex.exchangeName}>
                                     {ex.exchangeName}
                                   </option>
                                 );
-                              })}
+                              })} */}
                           </select>
                         </div>
                       </div>
@@ -261,7 +264,7 @@ const NewRule = () => {
                                     <div class="row">
                                       <div class="col-md-6 col-xl-3 col-lg-3 col-12">
                                         <div class="form-group d-flex align-items-center">
-                                          <select 
+                                          <select
                                             id="inputState"
                                             class="custom-select form-control mr-2 mb-2 mb-md-2 mb-lg-0"
                                             name='symbol'
@@ -334,7 +337,7 @@ const NewRule = () => {
                                         <div class="form-group currency-select ">
                                           <input
                                             type="number"
-                                            placeholder="2.5"
+                                            placeholder="Checking Value"
                                             name='checking_value'
                                             onChange={changeHandler}
                                           />
@@ -461,13 +464,13 @@ const NewRule = () => {
                                   <form action="">
                                     <div class="row">
                                       <div class="col-md-6 col-xl-4 col-lg-4 col-12  mb-2 mb-md-2 mb-lg-0">
-                                        <div class="form-group  d-flex align-items-center "  style={{ borderRadius: '22px', border: '2px solid #2b3990' }}>
+                                        <div class="form-group  d-flex align-items-center " style={{ borderRadius: '22px', border: '2px solid #2b3990' }}>
 
                                           <span style={{ display: 'flex', width: '100%' }}>
 
                                             <input
                                               type="number"
-                                              placeholder="2.5"
+                                              placeholder="enter quantity"
                                               class="form-control change-form-control"
                                               name="quantity"
                                               style={{ width: '50%', textAlign: 'center' }}
@@ -666,7 +669,7 @@ const NewRule = () => {
 
                                                   <input
                                                     type="number"
-                                                    placeholder="2.5"
+                                                    placeholder="quantity"
                                                     class="form-control change-form-control"
                                                     name="quantity"
                                                     style={{ width: '50%', textAlign: 'center' }}
@@ -747,7 +750,9 @@ const NewRule = () => {
                                                   placeholder='Action'
                                                   onChange={changeHandler}
                                                 >
-                                                  <option selected value="buy">BUY</option>
+
+                                                  <option value="">Select Action</option>
+                                                  <option  value="buy">BUY</option>
                                                   <option value="sell">SELL</option>
                                                 </select>
                                               </div>
@@ -844,7 +849,7 @@ const NewRule = () => {
 
                                                   <input
                                                     type="number"
-                                                    placeholder="2.5"
+                                                    placeholder="quantity"
                                                     class="form-control change-form-control"
                                                     name="quantity"
                                                     style={{ width: '50%', textAlign: 'center' }}
@@ -874,7 +879,7 @@ const NewRule = () => {
 
                                             <div class="col-md-6 col-xl-4 col-lg-4 col-12">
                                               <div class="form-group d-flex align-items-center">
-                                                
+
                                                 <span class='mx-2'>of</span>
                                                 <select
                                                   id="inputState"
@@ -1007,7 +1012,7 @@ const NewRule = () => {
                             <div class="row execute">
                               <div class="col-md-12 col-xl-8 col-lg-7 pl-0">
                                 <div class="form-group  d-flex align-items-center  mb-2 mb-md-2 mb-lg-0">
-                                  <span  class="mr-2 rule-name">Now name this rule</span>
+                                  <span class="mr-2 rule-name">Now name this rule</span>
                                   <input
                                     type="text"
                                     class="form-control"
