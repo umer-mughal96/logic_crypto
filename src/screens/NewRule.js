@@ -101,7 +101,8 @@ const NewRule = () => {
     e.preventDefault()
     console.log("🚀 ~ file: NewRule.js ~ line 107 ~ launchHandler ~ newRule", newRule)
     dispatch(directOrderRule(newRule.order))
-    dispatch(timerRule(newRule.order))
+    dispatch(directOrderRule(newRule.event))
+    dispatch(timerRule(newRule.timer))
     dispatch(createNewRule(newRule.order))
   }
 
