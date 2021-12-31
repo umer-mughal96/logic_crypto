@@ -6,7 +6,7 @@ export const coinProgress = (data) => {
 }
 
 export const directOrder = (data) =>{
-    return axios.post('http://192.168.100.42:3003/orders/placeOrder', data)
+    return axios.post('http://192.168.56.1:3004/orders/placeOrder', data)
 }
 
 export const ruleList = (data) =>{

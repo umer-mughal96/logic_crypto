@@ -58,6 +58,19 @@ export const directOrderRule = (data) => async (dispatch) => {
     }
 }
 
+export const timerRule = (data) => async (dispatch) => {
+    dispatch({type: constants.RULE_LOADING})
+    try {
+
+        const res = await services.directOrder(data)
+        dispatch({type: constants.SET_TIMER_RULE, paylode:res})
+
+    } catch (error) {
+        dispatch({type: constants.RULE_ERROR, payload: error})
+    }
+}
+
+
 export const ruleListing = (data) => async (dispatch) => {
 
     try {

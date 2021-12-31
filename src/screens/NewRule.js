@@ -3,8 +3,10 @@ import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { createNewRule } from "../actions/exchange/exchange";
 import { directOrderRule } from "../actions/rules/rules";
+import { timerRule } from "../actions/rules/rules";
 import { getExchangeAssets } from "../actions/user/user";
 import Sidebar from "../components/Sidebar";
+
 
 const NewRule = () => {
 
@@ -45,6 +47,15 @@ const NewRule = () => {
       name: ''
     },
     timer: {
+      user_id: user._id,
+      action: "",
+      quantity: null,
+      quantity_behaviour: "",
+      buy_symbol: "",
+      use_wallet: "",
+      exchange: "",
+      name: ''
+
     },
     order: {
       user_id: user._id,
@@ -88,8 +99,9 @@ const NewRule = () => {
 
   const launchHandler = (e) => {
     e.preventDefault()
-    console.log(newRule)
-    dispatch(directOrderRule(newRule.event))
+    console.log("🚀 ~ file: NewRule.js ~ line 107 ~ launchHandler ~ newRule", newRule)
+    dispatch(directOrderRule(newRule.order))
+    dispatch(timerRule(newRule.order))
     dispatch(createNewRule(newRule.order))
   }
 
@@ -752,7 +764,7 @@ const NewRule = () => {
                                                 >
 
                                                   <option value="">Select Action</option>
-                                                  <option  value="buy">BUY</option>
+                                                  <option value="buy">BUY</option>
                                                   <option value="sell">SELL</option>
                                                 </select>
                                               </div>

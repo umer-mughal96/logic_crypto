@@ -34,9 +34,6 @@ const RulesDashboard = () => {
   const tabHandler = (e) =>{
   console.log("🚀 ~ file: RulesDashboard.js ~ line 30 ~ tabHandler ~ obj", e.target.name)
       setruleListData({ ...ruleListData, tabName: e.target.name })
-
-      
-      
   }
 
 
