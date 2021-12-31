@@ -6,6 +6,7 @@ const iniitialState = {
     profit: null,
     loss: null,
     directOrder: null,
+    timer: null,
     rulesList:null
 }
 
@@ -44,6 +45,13 @@ export const Rules = (state = iniitialState, action) => {
                 ...state,
                 loading: false,
                 directOrder: payload
+            }
+
+        case rulesConstants.SET_TIMER_RULE:
+            return{
+                ...state,
+                loading: false,
+                timer: payload
             }
 
         case rulesConstants.RULE_LISTING_SUCCESS:
