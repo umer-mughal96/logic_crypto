@@ -63,7 +63,7 @@ const NewRule = () => {
       roleType: "order",
       action: "",
       quantity: "",
-      quantity_behaviour: "",
+      quantity_behaviour: "1",
       exchange: "",
     },
   });
@@ -542,6 +542,9 @@ const NewRule = () => {
                                           class="custom-select d-flex form-control change-custom-select"
                                           onChange={changeHandler}
                                           style={{ width: "50%" }}
+                                          
+
+
                                         >
                                           <option selected value="usd">
                                             USD
@@ -659,6 +662,7 @@ const NewRule = () => {
                                                 textAlign: "center",
                                               }}
                                               onChange={changeHandler}
+                                              defaultValue={newRule.order.quantity_behaviour}
                                             />
 
                                             <select
