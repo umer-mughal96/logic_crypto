@@ -27,7 +27,7 @@ const NewRule = () => {
 
   const [newRule, setNewRule] = useState({
     // demoExchange: '',
-    exchange: "",
+    exchange: "Binance",
     place: "",
     coin: "",
     event: {
@@ -40,31 +40,32 @@ const NewRule = () => {
       has_condition: "",
       has_checking: "",
       quantity: "",
-      quantity_behaviour: "",
+      quantity_behaviour: "usd",
       name: "",
+      exchange: "Binance"
     },
     timer: {
       user_id: user._id,
       action: "buy",
       quantity: "0",
-      quantity_behaviour: "",
+      quantity_behaviour: "usd",
       buy_symbol: "QTUMBTC",
       time_condition:"Every",
       use_wallet: "BTCUSDT",
-      exchange: "",
+      exchange: "Binance",
       name: "",
       roleType: "timer",
       startTimeType:5
     },
     order: {
       user_id: user._id,
-      buy_symbol: "",
-      use_wallet: "",
+      buy_symbol: "QTUMBTC",
+      use_wallet: "BTCUSDT",
       roleType: "order",
-      action: "",
-      quantity: "",
-      quantity_behaviour: "1",
-      exchange: "",
+      action: "buy",
+      quantity: 1,
+      quantity_behaviour: "usd",
+      exchange: "Binance",
     },
   });
 
@@ -115,10 +116,10 @@ const NewRule = () => {
   const launchHandler = (e) => {
     e.preventDefault();
     directOrderTab
-      ? dispatch(directOrderRule(newRule.order))
+      ? dispatch(directOrderRule({...newRule.order, exchange: newRule.exchange}))
       : timerTab
-        ? dispatch(timerRule(newRule.timer))
-        : dispatch(directOrderRule(newRule.event));
+        ? dispatch(timerRule({...newRule.timer, exchange: newRule.exchange}))
+        : dispatch(directOrderRule({...newRule.event, exchange: newRule.exchange}));
 
     // dispatch(createNewRule(newRule.order))
   };
@@ -193,8 +194,8 @@ const NewRule = () => {
                               onChange={(e) => onExchangeSelectHandler(e)}
                             // onChange={changeHandler}
                             >
-                              <option value="null">Your Exchanges</option>
-                              <option value="Binance">Binance</option>
+          
+                              <option value="Binance" defaultValue={newRule.exchange}>Binance</option>
                               {/* {exchanges &&
                               exchanges.exchanges.map((ex, ind) => {
                                 return (
@@ -295,8 +296,9 @@ const NewRule = () => {
                                             class="custom-select form-control mr-2 mb-2 mb-md-2 mb-lg-0"
                                             name="symbol"
                                             onChange={changeHandler}
+                                            defaultValue={newRule.event.symbol}
                                           >
-                                            <option selected="">
+                                            <option selected="" >
                                               any coin
                                             </option>
                                             <option value="anyofmycoins">
@@ -654,7 +656,7 @@ const NewRule = () => {
                                           >
                                             <input
                                               type="number"
-                                              placeholder="enter quantity"
+                                              // placeholder="enter quantity"
                                               class="form-control change-form-control"
                                               name="quantity"
                                               style={{
@@ -662,7 +664,7 @@ const NewRule = () => {
                                                 textAlign: "center",
                                               }}
                                               onChange={changeHandler}
-                                              defaultValue={newRule.order.quantity_behaviour}
+                                              defaultValue={newRule.order.quantity}
                                             />
 
                                             <select
@@ -671,8 +673,9 @@ const NewRule = () => {
                                               class="custom-select d-flex form-control change-custom-select"
                                               onChange={changeHandler}
                                               style={{ width: "50%" }}
+                                              defaultValue={newRule.order.quantity_behaviour}
                                             >
-                                              <option selected value="usd">
+                                              <option value="usd">
                                                 USD
                                               </option>
                                               <option value="percentage">
@@ -695,8 +698,7 @@ const NewRule = () => {
                                             class="custom-select form-control  mb-2 mb-md-2 mb-lg-0"
                                             onChange={changeHandler}
                                           >
-                                            <option value="">---</option>
-                                            <option value="QTUMBTC">
+                                            <option defaultValue={newRule.order.buy_symbol} value="QTUMBTC">
                                               QTUMBTC
                                             </option>
                                             <option value="QTUMUSDT">
@@ -718,8 +720,7 @@ const NewRule = () => {
                                             placeholder="Action"
                                             onChange={changeHandler}
                                           >
-                                            <option selected="">---</option>
-                                            <option value="BTCUSDT">
+                                            <option defaultValue={newRule.order.use_wallet} value="BTCUSDT">
                                               BTCUSDT
                                             </option>
                                             <option value="ETHBTC">
@@ -741,8 +742,9 @@ const NewRule = () => {
                                             class="custom-select d-flex form-control mr-2"
                                             placeholder="Action"
                                             onChange={changeHandler}
+
                                           >
-                                            <option selected value="buy">
+                                            <option selected value="buy" defaultValue={newRule.order.action}>
                                               BUY
                                             </option>
                                             <option value="sell">SELL</option>
