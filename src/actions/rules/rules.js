@@ -51,10 +51,10 @@ export const directOrderRule = (data) => async (dispatch) => {
         const res = await services.directOrder(data)
         console.log(res)
         dispatch({type: constants.SET_DIRECT_ORDER_RULE, payload:res})
+        successNotification('Direct Order Successfully Created')
 
     } catch (error) {
-    console.log("🚀 ~ file: rules.js ~ line 56 ~ directOrderRule ~ error", error)
-
+        errorNotification("Direct Order Created Failed")
     }
 }
 
@@ -72,13 +72,18 @@ export const timerRule = (data) => async (dispatch) => {
 
 
 export const ruleListing = (data) => async (dispatch) => {
-
+    dispatch({type: constants.RULE_LOADING})
     try {
+
         const res = await services.ruleList(data)
         dispatch({type: constants.RULE_LISTING_SUCCESS, payload: res.data})
+        successNotification("Rule Fetch Successfully")
 
     } catch (error) {
-    console.log("🚀 ~ file: rules.js ~ line 67 ~ ruleListing ~ error", error)
+
+        errorNotification("Rule Fetch Failed")
 
     }
 }
+
+

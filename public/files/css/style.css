@@ -1876,8 +1876,68 @@ div.logout:hover {
 }
 
 
-/* Add New Rule Page*/
 
+
+/* rule-history */
+
+.rule-history-box{
+    background-color: white;
+    padding: 25px;
+    width: 95%;
+}
+
+/* rule-history */
+
+
+
+
+/* Add New Rule Page*/
+.Show_balnce_wrapper{
+    background-color: white;
+    padding: 5px;
+    border-radius: 2px;
+}
+.Show_balnce_heading h4{
+    font-size: 17px;
+    font-weight: bold;
+    margin-bottom: 0px;
+}
+.Show_balnce_heading{
+    display: flex;
+    align-items: center;
+    margin: 20px 0px 20px 20px;
+}
+.exchange_image img{
+    width: 25px;
+    height: 25px;
+    margin-right: 5px;
+}
+.blance_exchanges_header{
+    display: flex;
+    align-items: center;
+}
+.blance_exchanges_balnce{
+    display: flex;
+    margin-left: 25px;
+}
+.blance_exchanges_header h5{
+    font-size: 14px;
+    margin-bottom: 0px;
+    font-weight: 700;
+    font-family: 'Poppins';
+    color: grey;
+}
+.rule-history-link{
+    font-weight: bold;
+    font-size: 16px;
+}
+.rule-history-link:hover{
+    border-bottom: 1.5px solid #222d71;
+}
+.blance_exchanges_balnce h4{
+    font-size: 17px;
+    font-weight: bold;
+}
 .add-exchange {
     display: flex;
     align-items: center;

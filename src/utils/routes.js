@@ -26,6 +26,7 @@ import BlogDetail from "../screens/BlogDetail";
 import TermConditions from "../screens/TermConditions";
 import Faq from "../screens/Faq";
 import PrivacyPolicy from "../screens/PrivacyPolicy";
+import RuleHistory from "../screens/RuleHistory";
 
 const stripePromise = loadStripe("pk_test_TYooMQauvdEDq54NiTphI7jx");
 
@@ -37,7 +38,8 @@ const Routes = withRouter(({ location }) => {
         {location.pathname == "/setting-dsh" ||
         location.pathname == "/rule-dsh" ||
         location.pathname == "/rule" ||
-        location.pathname == "/exchange-dsh" ? null : (
+        location.pathname == "/exchange-dsh" ||
+        location.pathname == "/history" ? null : (
           <Header />
         )}
         <Switch>
@@ -54,6 +56,7 @@ const Routes = withRouter(({ location }) => {
             path="/exchange-dsh"
             component={ExchangeDashboard}
           />
+          <AuthenticatedRoute path="/history" component={RuleHistory} />
           <Route path="/pricing" component={Pricing} />
           <Route path="/knowledge" component={Knowledge} />
           <Route path="/enth" component={Enthuasists} />
@@ -71,7 +74,8 @@ const Routes = withRouter(({ location }) => {
         {location.pathname == "/setting-dsh" ||
         location.pathname == "/rule-dsh" ||
         location.pathname == "/rule" ||
-        location.pathname == "/exchange-dsh" ? null : (
+        location.pathname == "/exchange-dsh" ||
+        location.pathname == "/history" ? null : (
           <Footer />
         )}
       </Fragment>
