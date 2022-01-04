@@ -1,60 +1,65 @@
 import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import Sidebar from "../components/Sidebar";
-import { useDispatch, useSelector } from 'react-redux'
+import { useDispatch, useSelector } from "react-redux";
 import { socket } from "../utils/socket";
 import { getUserBalance } from "../actions/balances/balances";
 import { ruleListing } from "../actions/rules/rules";
 
-
-
 const RulesDashboard = () => {
-
-  const dispatch = useDispatch()
-  const { user } = useSelector(s => s.Auth)
-  const { rulesList } = useSelector(s => s.Rules)
-  console.log("🚀 ~ file: RulesDashboard.js ~ line 16 ~ RulesDashboard ~ rulesList", rulesList)
-  var date = new Date(user.createdAt)
+  const dispatch = useDispatch();
+  const { user } = useSelector((s) => s.Auth);
+  const { rulesList } = useSelector((s) => s.Rules);
+  console.log(
+    "🚀 ~ file: RulesDashboard.js ~ line 16 ~ RulesDashboard ~ rulesList",
+    rulesList
+  );
+  var date = new Date(user.createdAt);
 
   const [getBalance, setgetBalance] = useState({
-    exchange: 'balance_binance',
-    userId: user._id
-  })
+    exchange: "balance_binance",
+    user_id: user._id,
+  });
 
   const socketExchange = {
-    exchange: 'market_prices_binance'
-  }
+    exchange: "market_prices_binance",
+  };
 
   const [ruleListData, setruleListData] = useState({
     user_id: user._id,
-    tabName: 'all'
-  })
-  console.log("🚀 ~ file: RulesDashboard.js ~ line 31 ~ RulesDashboard ~ ruleListData", ruleListData)
+    tabName: "all",
+  });
+  console.log(
+    "🚀 ~ file: RulesDashboard.js ~ line 31 ~ RulesDashboard ~ ruleListData",
+    ruleListData
+  );
 
-  const tabHandler = (e) =>{
-  console.log("🚀 ~ file: RulesDashboard.js ~ line 30 ~ tabHandler ~ obj", e.target.name)
-      setruleListData({ ...ruleListData, tabName: e.target.name })
-  }
-
+  const tabHandler = (e) => {
+    console.log(
+      "🚀 ~ file: RulesDashboard.js ~ line 30 ~ tabHandler ~ obj",
+      e.target.name
+    );
+    setruleListData({ ...ruleListData, tabName: e.target.name });
+  };
 
   useEffect(() => {
+    dispatch(getUserBalance(getBalance));
 
-    dispatch(getUserBalance(getBalance))
-      
-    
     const skt = socket();
     setInterval(() => {
-      skt.emit('getPrices' , socketExchange.exchange);
+      skt.emit("getPrices", socketExchange.exchange);
+    }, 10000);
 
-    },10000)
-
-    skt.on("sendPrices" , (data) => {
+    skt.on("sendPrices", (data) => {
       console.log(data);
-    })
+    });
 
-    dispatch(ruleListing(ruleListData))
-
-  },[ruleListData])
+    dispatch(ruleListing(ruleListData));
+    console.log(
+      "🚀 ~ file: RulesDashboard.js ~ line 56 ~ useEffect ~ ruleListData",
+      ruleListData
+    );
+  }, [ruleListData]);
 
   return (
     <div className="container-fluid">
@@ -121,7 +126,7 @@ const RulesDashboard = () => {
                   className="nav nav-pills mb-3"
                   id="crypto-tab"
                   role="tablist"
-                  onClick={(e)=> tabHandler(e)}
+                  onClick={(e) => tabHandler(e)}
                 >
                   <li className="nav-item">
                     <a
@@ -132,7 +137,7 @@ const RulesDashboard = () => {
                       role="tab"
                       aria-controls="pills-all"
                       aria-selected="true"
-                      name='all'
+                      name="all"
                     >
                       All
                     </a>
@@ -146,7 +151,7 @@ const RulesDashboard = () => {
                       role="tab"
                       aria-controls="pills-active"
                       aria-selected="false"
-                      name='active'
+                      name="active"
                     >
                       Active
                     </a>
@@ -160,7 +165,7 @@ const RulesDashboard = () => {
                       role="tab"
                       aria-controls="pills-paused"
                       aria-selected="false"
-                      name='pause'
+                      name="pause"
                     >
                       Paused
                     </a>
@@ -174,7 +179,7 @@ const RulesDashboard = () => {
                       role="tab"
                       aria-controls="pills-complete"
                       aria-selected="false"
-                      name='completed'
+                      name="completed"
                     >
                       Complete
                     </a>
@@ -191,58 +196,59 @@ const RulesDashboard = () => {
                     <div className="container-fluid">
                       <div className="row">
                         <div className="col-md-12 p-0">
-
-                          {rulesList?.data?.map((obj, ind)=>(
+                          {rulesList?.data?.map((obj, ind) => (
                             <div className="crypto-stats">
-                            <div className="row" key={ind}>
-                              <div className="col-md-12 col-12 col-sm-12 col-lg-12 col-xl-6 stats-bar">
-                                <div className="bitcoin">
-                                  <i className="fab fa-bitcoin"></i>
+                              <div className="row" key={ind}>
+                                <div className="col-md-12 col-12 col-sm-12 col-lg-12 col-xl-6 stats-bar">
+                                  <div className="bitcoin">
+                                    <i className="fab fa-bitcoin"></i>
+                                  </div>
+                                  <div className="high-low">
+                                    <Link to="/history">
+                                      <span className="rule-history-link">
+                                        {obj.name}
+                                      </span>
+                                      <i className="ml-1 fas fa-arrow-circle-down"></i>
+                                    </Link>
+                                  </div>
+                                  <div className="demo">
+                                    <p>Demo</p>
+                                  </div>
+                                  <div className="chart">
+                                    <img
+                                      src="files/images/dashboard/chart-image.svg"
+                                      alt=""
+                                    />
+                                  </div>
                                 </div>
-                                <div className="high-low">
-                                  <p>
-                                    {obj.name}{" "}
-                                    <i className="ml-1 fas fa-arrow-circle-down"></i>
-                                  </p>
-                                </div>
-                                <div className="demo">
-                                  <p>Demo</p>
-                                </div>
-                                <div className="chart">
-                                  <img
-                                    src="files/images/dashboard/chart-image.svg"
-                                    alt=""
-                                  />
-                                </div>
-                              </div>
-                              <div className="col-md-12 col-12 col-sm-12 col-lg-12 col-xl-6 stats-bar">
-                                <div className="status-toggle">
-                                  <p>Status</p>
-                                  <label className="switch">
-                                    <input type="checkbox" />
-                                    <span className="slider round"></span>
-                                  </label>
-                                </div>
-                                <div className="growth">
-                                  <p>
-                                    Growth <span>{obj.buy_symbol_price}%</span>
-                                  </p>
-                                </div>
-                                <div className="netprofit">
-                                  <p>
-                                    Net Profit <span>{obj.use_wallet_price}%</span>
-                                  </p>
+                                <div className="col-md-12 col-12 col-sm-12 col-lg-12 col-xl-6 stats-bar">
+                                  <div className="status-toggle">
+                                    <p>Status</p>
+                                    <label className="switch">
+                                      <input type="checkbox" />
+                                      <span className="slider round"></span>
+                                    </label>
+                                  </div>
+                                  <div className="growth">
+                                    <p>
+                                      Growth{" "}
+                                      <span>{obj.buy_symbol_price}%</span>
+                                    </p>
+                                  </div>
+                                  <div className="netprofit">
+                                    <p>
+                                      Net Profit{" "}
+                                      <span>{obj.use_wallet_price}%</span>
+                                    </p>
+                                  </div>
                                 </div>
                               </div>
                             </div>
-                          </div>  
                           ))}
-                          
                         </div>
                       </div>
                     </div>
                   </div>
-                
                 </div>
               </div>
             </main>

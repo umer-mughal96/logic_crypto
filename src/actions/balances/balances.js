@@ -15,7 +15,7 @@ export const getUserBalance = (data) => async (dispatch) => {
         const res = await services.userBalance(data)
 
         if (res.status === 200) {
-            dispatch({ type: constants.GET_BALANCE_SUCCESS, payload: res.data })
+            dispatch({ type: constants.GET_BALANCE_SUCCESS, payload: res.data.balance })
             successNotification('Balance Fetch Successfully')
         }
     } catch (error) {
